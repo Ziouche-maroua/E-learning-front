@@ -1,4 +1,4 @@
-# E-Learning Platform: Linear Algebra Visualizer
+# E-Learning Platform: Linear Algebra Visualization
 
 
 <h1>About</h1>
