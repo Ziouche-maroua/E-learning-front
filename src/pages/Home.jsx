@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import vectorImage from '../assets/images/vectorSpace.webp';
-import linearAppImage from '../assets/images/linearApp.webp';
-import matrixImage from '../assets/images/matrix.webp';
+import vectorImage from '../assets/images/vectorSpace.png';
+import linearAppImage from '../assets/images/linearApp.png';
+import matrixImage from '../assets/images/matrix.png';
 
 const Home = () => {
   return (
