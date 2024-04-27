@@ -33,7 +33,7 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
     showSidebar && (
       <div ref={sidebarRef} className="sidebar absolute top-0 left-15 mt-16 h-96 bg-white shadow-xl">
         <ul className="text-black">
-          <Link to="/motivation">
+          <Link to="/MotivationPage">
             <li className="cursor-pointer mb-2">Motivation</li>
           </Link>
           {/* Add more sidebar items here */}
