@@ -22,21 +22,25 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
     };
   }, [showSidebar]);
 
-  // Toggle sidebar when clicking on home icon only if toggleOnHomeClick is true
-  const handleTriggerClick = () => {
-    if (toggleOnHomeClick) {
-      setShowSidebar(!showSidebar);
-    }
-  };
-
   return (
     showSidebar && (
-      <div ref={sidebarRef} className="sidebar absolute top-0 left-15 mt-16 h-96 bg-white shadow-xl">
+      <div ref={sidebarRef} className="sidebar absolute top-0 left-15 mt-16 h-76 bg-white shadow-xl">
         <ul className="text-black">
           <Link to="/MotivationPage">
             <li className="cursor-pointer mb-2">Motivation</li>
           </Link>
-          {/* Add more sidebar items here */}
+          <Link to="/SettingsPage">
+            <li className="cursor-pointer mb-2 ">Settings</li>
+          </Link>
+          <Link to="/AccountPage">
+            <li className="cursor-pointer mb-2 ">Account</li>
+          </Link>
+          <Link to="/ProfilePage">
+            <li className="cursor-pointer mb-2 ">Profile</li>
+          </Link>
+          <Link to="/LogoutPage">
+            <li className="cursor-pointer mb-2 border-b border-solid border-black">Log out</li>
+          </Link>
         </ul>
       </div>
     )
