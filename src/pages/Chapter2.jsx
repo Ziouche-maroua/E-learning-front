@@ -1,12 +1,16 @@
-
-
 import React from 'react';
+import TopBar from '../components/TopBar'; 
+import LeftPart from '../components/LeftPart';
+import RightPart from '../components/RightPart';
 
 const Chapter2 = () => {
   return (
-    <div>
-      <h1>Chapter 2 : linear transformation</h1>
-      <p>Content for Chapter 2</p>
+    <div className="h-screen flex flex-col">
+      <TopBar />
+      <div className="flex flex-1">
+        <LeftPart />
+        <RightPart />
+      </div>
     </div>
   );
 };

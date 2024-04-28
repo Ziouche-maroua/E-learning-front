@@ -45,7 +45,7 @@ const TopBar = () => {
         </div>
       </div>
       <div>
-        <div className="h-10 w-10 bg-white rounded-full"></div>
+       
       </div>
     </div>
   );

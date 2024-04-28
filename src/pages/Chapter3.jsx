@@ -1,13 +1,16 @@
-// Chapter3.jsx
-
 import React from 'react';
-
+import TopBar from '../components/TopBar'; 
+import LeftPart from '../components/LeftPart';
+import RightPart from '../components/RightPart';
 const Chapter3 = () => {
   return (
-    <div>
-      <h1>Chapter 3 : matrix</h1>
-      <p>Content for Chapter 3</p>
+    <div className="h-screen flex flex-col">
+    <TopBar />
+    <div className="flex flex-1">
+      <LeftPart />
+      <RightPart />
     </div>
+  </div>
   );
 };
 

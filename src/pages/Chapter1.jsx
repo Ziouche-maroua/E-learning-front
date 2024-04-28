@@ -1,4 +1,3 @@
-// Chapter3.jsx
 
 import React from 'react';
 
