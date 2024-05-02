@@ -8,9 +8,9 @@ import Chapter2 from './pages/Chapter2';
 import Chapter3 from './pages/Chapter3';
 import MotivationPage from './pages/MotivationPage';
 import SettingsPage from './pages/SettingsPage';
-import AccountPage from './pages/AccountPage';
 import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
+import GeneralAlgebra from './pages/GeneralAlgebra';
 
 
 const App = () => {
@@ -23,9 +23,9 @@ const App = () => {
       <Route exact path="/chapter3" element={<Chapter3 />} />
       <Route path="/MotivationPage" element={<MotivationPage />} />
       <Route path="/SettingsPage" element={<SettingsPage />} />
-      <Route path="/AccountPage" element={<AccountPage />} />
       <Route path="/ProfilePage" element={<ProfilePage />} />
       <Route path="/LogoutPage" element={<LogoutPage />} />
+      <Route path="/GeneralAlgebra" element={<GeneralAlgebra />} />
 
       </Routes>
     </Router>
