@@ -2,7 +2,7 @@ import React from 'react'
 
 function ProfilePage() {
   return (
-    <div> loading ProfilePage ..</div>
+    <div className="pt-15"> loading ProfilePage ..</div>
   )
 }
 

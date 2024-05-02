@@ -2,7 +2,7 @@ import React from 'react'
 
 function SettingsPage() {
   return (
-    <div>SettingsPage would be in progress !</div>
+    <div className="pt-15">SettingsPage would be in progress !</div>
   )
 }
 
