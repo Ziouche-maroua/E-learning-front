@@ -1,6 +1,5 @@
 # E-Learning Platform: Linear Algebra Visualizer
 
-<span>Ziouche Maroua's branch</span>
 <h1>About</h1>
 This project is the front-end repository of an e-learning platform focused on visualizing linear algebra concepts. The platform aims to provide an interactive learning experience for students studying linear algebra.
 
