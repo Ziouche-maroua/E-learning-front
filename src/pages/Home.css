@@ -1,0 +1,53 @@
+/* Home.css */
+
+/* Main Container */
+.body{
+  margin-left: 0px;
+}
+.main-container {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Main Content */
+  .main-content {
+    margin: 50px auto;
+  }
+  
+  .content-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .page-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .description {
+    font-size: 20px;
+    color: #000;
+    margin: 20px 0;
+  }
+  
+  .chapters {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .chapter {
+    flex: 1;
+    margin-right: 40px;
+    padding: 20px;
+    background-color: #ddd8d8;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    width: 70px;
+    height: 250px;
+  }
+  
+  .chapter:hover {
+    background-color: #e0e0e0;
+  }
+  
