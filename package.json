@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.19",
     "eslint-plugin-react-hooks": "^5.1.0-canary-33a32441e9-20240418",
+    "mafs": "^0.18.5",
     "postcss-cli": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
