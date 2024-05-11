@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import './LeftSideBar.css';
+
+import { Link, useLocation } from 'react-router-dom';
+
+
 
 const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
   const sidebarRef = useRef(null);
@@ -10,6 +12,10 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
       setShowSidebar(false);
     }
   };
+=
+ const route= useLocation()
+ console.log(route.pathname);
+
 
   useEffect(() => {
     if (showSidebar) {
@@ -24,19 +30,21 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
 
   return (
     showSidebar && (
-      <div ref={sidebarRef} className="sidebar absolute top-0 left-15 mt-16 h-76 bg-white shadow-xl">
+
+      <div ref={sidebarRef} className="sidebar fixed top-16 right-0 mt-1 mr-6 h-76 w-48 bg-white shadow-2xl z-10">
         <ul className="text-black">
-          <Link to="/MotivationPage">
+         { route.pathname === "/chapter2" &&<Link to="/MotivationPage">
             <li className="cursor-pointer mb-2">Motivation</li>
-          </Link>
+          </Link>}
           <Link to="/SettingsPage">
-            <li className="cursor-pointer mb-2 ">Settings</li>
+            <li className="cursor-pointer mb-2">Settings</li>
           </Link>
           <Link to="/AccountPage">
-            <li className="cursor-pointer mb-2 ">Account</li>
+            <li className="cursor-pointer mb-2">Account</li>
           </Link>
           <Link to="/ProfilePage">
-            <li className="cursor-pointer mb-2 ">Profile</li>
+            <li className="cursor-pointer mb-2">Profile</li>
+
           </Link>
           <Link to="/LogoutPage">
             <li className="cursor-pointer mb-2 border-b border-solid border-black">Log out</li>
