@@ -22,7 +22,7 @@ export default function Cover() {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const openChooseFile = () => {
-    inputRef.current.click()
+    inputRef.current.click() //Cette référence est utilisée pour ouvrir la boîte de dialogue de sélection de fichier.//
   }
 
   const handleChangeCover = event => {
