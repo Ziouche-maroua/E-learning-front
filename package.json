@@ -3,21 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
+
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-=======
->>>>>>> 8ea4b77b760aac7a701ff7c2bfca92106583d7eb
+
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.19",
     "eslint-plugin-react-hooks": "^5.1.0-canary-33a32441e9-20240418",
-<<<<<<< HEAD
+
     "framer-motion": "^11.1.9",
-=======
->>>>>>> 8ea4b77b760aac7a701ff7c2bfca92106583d7eb
+
     "postcss-cli": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
