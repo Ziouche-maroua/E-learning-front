@@ -45,7 +45,7 @@ function AccountSettings() {
         </Select>
       </FormControl>
       <FormControl id="country">
-        <FormLabel>Country</FormLabel>
+        <FormLabel>University</FormLabel>
         <Select focusBorderColor="brand.blue" placeholder="Select country">
           <option value="america" selected>
             America
