@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://votre-backend.com/api', // URL de base de votre API
+  baseURL: 'http://localhost:3000/api', // URL de base de votre API
   timeout: 5000, // Délai d'attente pour les requêtes en millisecondes
 });
 
@@ -30,5 +30,19 @@ export const axiosPost = async (url, data) => {
     handleError(error);
   }
 };
-
-// Ajoutez d'autres fonctions utilitaires selon les besoins (put, delete, etc.)
+export const axiosPut = async(url) => {
+    try {
+        const response = await instance.put(url);
+        return response.data;
+    }catch(erro){
+        handleError(error);
+    }
+};
+export const axiosDelete = async(url) => {
+    try {
+        const response = await instance.delete(url);
+        return response.data;
+    }catch(erro){
+        handleError(error);
+    }
+};
