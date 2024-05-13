@@ -1,4 +1,4 @@
-// axiosUtils.js
+
 
 import axios from 'axios';
 
@@ -30,19 +30,21 @@ export const axiosPost = async (url, data) => {
     handleError(error);
   }
 };
-export const axiosPut = async(url) => {
+export const axiosPut = async (url) => {
     try {
         const response = await instance.put(url);
         return response.data;
-    }catch(erro){
+    } catch (error) {
         handleError(error);
     }
 };
-export const axiosDelete = async(url) => {
+
+export const axiosDelete = async (url) => {
     try {
         const response = await instance.delete(url);
         return response.data;
-    }catch(erro){
+    } catch (error) {
         handleError(error);
     }
 };
+
