@@ -12,7 +12,7 @@ const TopBar = () => {
   };
 
   return (
-    <div className="fixed top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4">
+    <div className="fixed top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4" >
       <div className="flex items-center">
         <Link to="/" className="text-white text-2xl font-bold flex items-center">
           <span className="text-white">FikrSight</span>

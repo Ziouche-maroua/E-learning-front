@@ -9,27 +9,28 @@ const DefApp = () => {
 
     <TopBar />
       <div className="flex flex-1 pt-16">   
-    <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5">
-    <ul className="space-y-5">
-      <li className="bg-gray-200 text-blue-400">
-        <Link to="/chapter2/definition">Definition</Link>
-      </li>
-      <li className="bg-gray-300">
-        <Link to="/chapter2/properties">Properties</Link>
-      </li>
-      <li className="bg-gray-300">
-        <Link to="/chapter2/Properties">Image and Kernel</Link>
-      </li>
-      <li className="bg-gray-300">
-        <Link to="/chapter2/InjectifSurjectif">Bijectif, Surjectif, Injectif</Link>
-      </li>
-      <li className="bg-gray-300">
-        <Link to="/chapter2/InjectifSurjectif">Endomorphism and Isomorphism</Link>
-      </li>
-      
-    </ul>
+      <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5">
+
+    <ul className="space-y-9">
+  <li className="bg-blue-300 text-blue-400 p-2">
+    <Link to="/chapter2/definition">Definition</Link>
+  </li>
+  <li className="bg-yellow-200 p-2">
+    <Link to="/chapter2/properties">Properties</Link>
+  </li>
+  <li className="bg-blue-300 p-2">
+    <Link to="/chapter2/Properties">Image and Kernel</Link>
+  </li>
+  <li className="bg-yellow-200 p-2">
+    <Link to="/chapter2/InjectifSurjectif">Bijectif, Surjectif, Injectif</Link>
+  </li>
+  <li className="bg-blue-300  p-2">
+    <Link to="/chapter2/InjectifSurjectif">Endomorphism and Isomorphism</Link>
+  </li>
+</ul>
+
   </div>
-    <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5">
+    <div className="w-2/3 border p-4 mx-4 my-5  border-blue-800 shadow-blue-800" >
       <h1>Linear Transformation</h1>
       <h2>Definition</h2>
       <p>
