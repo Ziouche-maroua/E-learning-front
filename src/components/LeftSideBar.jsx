@@ -12,7 +12,7 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
       setShowSidebar(false);
     }
   };
-=
+
  const route= useLocation()
  console.log(route.pathname);
 

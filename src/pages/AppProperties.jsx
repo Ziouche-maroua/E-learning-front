@@ -18,13 +18,16 @@ const AppProperties = () => {
         <Link to="/chapter2/properties">Properties</Link>
       </li>
       <li className="bg-gray-300">
-        <Link to="/chapter2/Properties">Image and Kernel</Link>
+        <Link to="/chapter2/KernalImg">Image and Kernel</Link>
       </li>
       <li className="bg-gray-300">
         <Link to="/chapter2/InjectifSurjectif">Bijectif, Surjectif, Injectif</Link>
       </li>
       <li className="bg-gray-300">
-        <Link to="/chapter2/InjectifSurjectif">Endomorphism and Isomorphism</Link>
+        <Link to="/chapter2/Morphisme">Endomorphism and Isomorphism</Link>
+      </li>
+      <li className="bg-gray-300">
+        <Link to="/chapter2/Quiz">Take a quiz about linear trasformation</Link>
       </li>
       
     </ul>
