@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, Grid, Input, Select } from '@chakra-ui/react'
 import { useState } from 'react'; 
-import { axiosGet } from './axiosUtils';
+import { axiosGet } from './services/axiosUtils';
 
 
      function Accountinfo() {
