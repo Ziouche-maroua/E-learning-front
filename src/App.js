@@ -14,7 +14,7 @@ import GeneralAlgebra from './pages/GeneralAlgebra';
 import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
 import InjSurj from './pages/InjecSurj';
-
+import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -32,9 +32,10 @@ const App = () => {
       <Route path="/chapter2/definition" element={<DefApp />} />
       <Route path="/chapter2/properties" element={<AppProperties/>} />
       <Route path="/chapter2/injectif-surjectif" element={<InjSurj />} />
-
+      <Route path="/chapter2/login" element={<Login />} />
       </Routes>
     </Router>
+    
   );
 };
 
