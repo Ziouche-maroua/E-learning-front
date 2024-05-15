@@ -11,7 +11,7 @@ const Home = () => {
     <div>
       <TopBar />
       <div className="container mx-auto px-2 pt-16">
-        <span className="text-4xl font-bold mt-20 text-blue-300 ">A New Way To Learn <br /> & Get Knowledge</span>
+        <span className="text-4xl font-bold mt-20 text-blue-500 ">A New Way To Learn <br /> & Get Knowledge</span>
         <p className="text-lg my-4 text-[rgba(0,0,0,0.35)]">Learn new skills from the comfort of your home anywhere, anytime.</p>
         <p className="text-3xl mt-15 mb-3 text-black">Explore our courses:</p>
 

@@ -22,8 +22,8 @@ function GeneralAlgebra() {
           />
           <p className="text-xl font-semibold my-4">Vector Spaces</p>
           <div className="flex justify-between items-center">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">10 Lessons</button>
-            <Link to="/chapter1" className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg">View</Link>
+            <button className=" text-black px-4 py-2 rounded-lg">10 Lessons</button>
+            <Link to="/chapter1" className="bg-blue-400 text-gray-900 px-4 py-2 rounded-lg">View</Link>
           </div>
         </div>
         <div className="bg-gray-100 p-8 rounded-lg shadow-md border">
@@ -34,8 +34,8 @@ function GeneralAlgebra() {
           />
           <p className="text-xl font-semibold my-4">Linear Transformations</p>
           <div className="flex justify-between items-center">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">8 Lessons</button>
-            <Link to="/chapter2" className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg">View</Link>
+            <button className=" text-black px-4 py-2 rounded-lg">8 Lessons</button>
+            <Link to="/chapter2" className="bg-blue-400 text-gray-900 px-4 py-2 rounded-lg">View</Link>
           </div>
         </div>
         <div className="bg-gray-100 p-8 rounded-lg shadow-md border">
@@ -46,8 +46,8 @@ function GeneralAlgebra() {
           />
           <p className="text-xl font-semibold my-4">Matrix</p>
           <div className="flex justify-between items-center">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">12 Lessons</button>
-            <Link to="/chapter3" className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg">View</Link>
+            <button className=" text-black px-4 py-2 rounded-lg">12 Lessons</button>
+            <Link to="/chapter3" className="bg-blue-400 text-gray-900 px-4 py-2 rounded-lg">View</Link>
           </div>
         </div>
       </div>

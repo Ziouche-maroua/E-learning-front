@@ -7,7 +7,7 @@ export default function Injectif() {
       {/* One-to-One Linear Transformation */}
       <div style={{ width: '45%', padding: '10px' }}>
         <h3 style={{ textAlign: 'center' }}>One-to-One Linear Transformation</h3>
-        <Mafs background={null}>
+        <Mafs background="white">
           <Transform>
             <Circle center={[-2.1, 0]} radius={1.5} color="yellow" opacity={1} /> {/* Blue circle */}
             <Circle center={[2.1, 0]} radius={1.5} color="yellow" opacity={1} /> {/* Orange circle */}
