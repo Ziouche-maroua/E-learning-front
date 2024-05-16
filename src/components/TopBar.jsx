@@ -1,38 +1,36 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../assets/images/search_icon.png';
-import './TopBar.css';
 import LeftSideBar from './LeftSideBar';
 
 const TopBar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
-  
-  // Toggle sidebar on home icon click
-  const toggleSidebarOnHomeClick = () => {
+const toggleSidebarOnHomeClick = () => {
     setShowSidebar(!showSidebar);
   };
 
   return (
-    <div className="w-full h-16 bg-blue-500 flex justify-between items-center px-4">
-      <div className="flex items-center">
 
+    <div className="fixed top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4">
+      <div className="flex items-center">
         <Link to="/" className="text-white text-2xl font-bold flex items-center">
           <span className="text-white">FikrSight</span>
         </Link>
-       
-       
       </div>
-      <div className="flex items-center flex-grow ml-8">
-        <Link to="/" className="text-white mr-4"> Home </Link>
-        <Link to="/courses" className="text-white mr-4"> Courses </Link>
-        <div className="flex items-center relative">
-          <input
+      <div className="flex items-center relative">
+
+        <div style={{ position: 'relative' }}>
+
+         <input
             type="text"
             placeholder="Search..."
             className="border border-gray-300 rounded-md pl-10 pr-4 py-2 w-96"
           />
-          <div className="absolute left-3 top-2"> <img src={searchIcon} alt="Search" className="w-6 h-6" /> </div>
+
+          <img src={searchIcon} alt="Search" className="w-6 h-6 absolute top-2 left-3" />
         </div>
+
+
       </div>
       <button onClick={toggleSidebarOnHomeClick} className="text-white">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

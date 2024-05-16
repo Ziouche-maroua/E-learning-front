@@ -45,7 +45,7 @@ function Login() {
   };
 
   return (
-    <div className="main-container bg-[#e5f5fa] w-[1218px] h-[805px] relative overflow-hidden mx-auto my-0">
+    <div className="main-container bg-[#e5f5fa] w-[1218px] h-[805px] relative overflow-hidden mx-auto my-0 ">
 
         <div className="relative">
             <div className="absolute w-[400px] mx-auto mt-40 ml-20">
