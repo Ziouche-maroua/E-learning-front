@@ -14,6 +14,7 @@ app.use(
     credentials: true,
   })
 );
+app.use(cors(corsOptions));
 
 //define routes
 const user = require("./routes/user");

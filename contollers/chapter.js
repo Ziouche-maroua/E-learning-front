@@ -121,6 +121,7 @@ async function deleteChapter(req, res) {
   }
 }
 
+
 module.exports = {
   createChapter,
   getAllChapters,
