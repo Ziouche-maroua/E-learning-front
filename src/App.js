@@ -11,11 +11,21 @@ import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
 import GeneralAlgebra from './pages/GeneralAlgebra';
+
+
 import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
 import InjSurj from './pages/InjecSurj';
+import AppQuiz from './pages/AppQuiz';
+import KernalImg from './pages/KernalImg'
+import Morphisme from './pages/Morphisme'
+
+
+
+
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
+
 const App = () => {
   return (
     <Router>
@@ -29,14 +39,19 @@ const App = () => {
       <Route path="/ProfilePage" element={<ProfilePage />} />
       <Route path="/LogoutPage" element={<LogoutPage />} />
       <Route path="/GeneralAlgebra" element={<GeneralAlgebra />} />
+
       <Route path="/chapter2/definition" element={<DefApp />} />
       <Route path="/chapter2/properties" element={<AppProperties/>} />
-      <Route path="/chapter2/injectif-surjectif" element={<InjSurj />} />
+      <Route path="/chapter2/KernalImg" element={<KernalImg/>} />
+      <Route path="/chapter2/InjectifSurjectif" element={<InjSurj/>} />
+      <Route path="/chapter2/Morphisme" element={<Morphisme/>} />
+      <Route path="/chapter2/Quiz" element={<AppQuiz/>} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
+
       </Routes>
     </Router>
-    
+
   );
 };
 

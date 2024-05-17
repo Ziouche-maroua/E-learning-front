@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+
+
 import { Link, useLocation } from 'react-router-dom';
+
 
 const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
   const sidebarRef = useRef(null);
@@ -9,9 +12,12 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
       setShowSidebar(false);
     }
   };
-  
-  const route = useLocation();
-  console.log(route.pathname);
+
+
+ const route= useLocation()
+ console.log(route.pathname);
+
+
 
   useEffect(() => {
     if (showSidebar) {
@@ -26,6 +32,7 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
 
   return (
     showSidebar && (
+
       <div ref={sidebarRef} className="sidebar fixed top-16 right-0 mt-1 mr-6 h-76 w-48 bg-white shadow-lg z-10 rounded-lg p-4">
         <ul className="text-black">
           { route.pathname !== "/" && <Link to="/">
@@ -34,6 +41,7 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
           
           <Link to="/LogoutPage">
             <li className="cursor-pointer mb-2 ">Log out</li>
+
           </Link>
         </ul>
       </div>

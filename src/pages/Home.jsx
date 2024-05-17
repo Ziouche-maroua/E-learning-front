@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <div>
       <TopBar />
+
       <div className="container mx-auto px-2 pt-16 lg:pt-20">
         <span className="block text-center lg:text-left text-3xl sm:text-4xl font-bold mt-6 sm:mt-10 text-blue-300">
           A New Way To Learn <br className="lg:hidden" /> & Get Knowledge
@@ -90,6 +91,7 @@ const Home = () => {
               <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)] text-left">
                 File structure refers to the organization and layout of data within a file, while data structure refers to the organization and storage of data
               </p>
+
              
             </div>
           </div>

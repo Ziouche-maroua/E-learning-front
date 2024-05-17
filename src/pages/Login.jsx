@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logImage from '../assets/images/log-image.jpg';
@@ -11,9 +12,11 @@ const Login= () =>{
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
 
   const submitForm = (action) => {
     const userData = {
@@ -21,7 +24,9 @@ const Login= () =>{
       password: password,
     };
 
+
     if (action === 'login') {
+
       console.log("Login with success");
       // Handle login logic here
     }
@@ -38,6 +43,7 @@ const Login= () =>{
   };
 
   return (
+
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
         <div className="md:w-1/3 flex justify-center items-center p-4">
@@ -103,6 +109,7 @@ const Login= () =>{
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

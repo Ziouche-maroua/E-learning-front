@@ -1,8 +1,11 @@
+
 import React, { useState } from 'react';
+
 import Def from '../components/DefOfLinearTransformation';
 import DefDynamic from '../components/TransformationDynamicExample';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+
 
 const DefApp = () => {
   const [showSections, setShowSections] = useState(false);
@@ -55,6 +58,7 @@ const DefApp = () => {
           {showSections ? 'Hide Sections' : 'Show Sections'}
         </button>
       </div>
+
     </div>
   );
 };

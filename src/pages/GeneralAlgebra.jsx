@@ -8,6 +8,7 @@ import matrixImage from '../assets/images/matrix.png';
 function GeneralAlgebra() {
   return (
     <div>
+
       <TopBar className="fixed top-0 left-0 right-0 z-10" />
       <div className="container mx-auto px-4 pt-16 lg:pt-24">
         <h1 className="text-4xl font-bold my-8">Explore Linear Algebra Visually</h1>
@@ -45,11 +46,14 @@ function GeneralAlgebra() {
             <div className="absolute bottom-0 right-0 mb-4 mr-4">
               <Link to="/chapter3" className="bg-blue-100 text-blue-500 px-4 py-2 rounded-lg">View</Link>
             </div>
+
           </div>
         </div>
       </div>
     </div>
+
   );
 }
 
 export default GeneralAlgebra;
+
