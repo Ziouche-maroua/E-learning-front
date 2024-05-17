@@ -40,10 +40,10 @@ const InjecSurj = () => {
       <h1>Linear Transformation</h1>
       <h2>Bijectif, Surjectif, Injectif</h2>
       <h3>Bijectif :</h3>
-      <p>this </p>
+      <p> </p>
       <Bijective/>
       <h3>Injective :</h3>
-      <p>thos </p>
+      <p></p>
       <Injectif/>
       <h3>Surjective</h3>
       <p>Given two sets X and Y, a binary relation

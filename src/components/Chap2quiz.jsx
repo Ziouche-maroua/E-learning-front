@@ -89,7 +89,7 @@ const Chap2quiz = () => {
                 <div key={index} style={{ marginBottom: '20px' }}>
                     <div style={{ marginBottom: '10px' }}>{question.question}</div>
                     {question.options.map((option, optionIndex) => (
-                        <div key={optionIndex} style={{ marginBottom: '5px' }}>
+                        <div key={optionIndex} style={{ marginBottom: '5px', border: '1px solid #ccc', padding: '5px', borderRadius: '5px' }}>
                             <input
                                 type="radio"
                                 name={`option-${index}`}
@@ -97,9 +97,11 @@ const Chap2quiz = () => {
                                 checked={answers[index] === option}
                                 onChange={() => handleAnswerChange(index, option)}
                             />
-                            <label style={{ marginLeft: '5px' }}>{option}</label>
-                            {showAnswers && answers[index] === question.correctAnswer && (
-                                <span style={{ marginLeft: '10px', color: 'green' }}>✔️</span>
+                            <label style={{ marginLeft: '5px', color: showAnswers && answers[index] === question.correctAnswer ? 'green' : answers[index] !== question.correctAnswer && answers[index] === option ? 'red' : 'black' }}>
+                                {option}
+                            </label>
+                            {showAnswers && answers[index] === option && (
+                                <span style={{ marginLeft: '10px', color: answers[index] === question.correctAnswer ? 'green' : 'red' }}> {answers[index] === question.correctAnswer ? '✔️' : '❌'}</span>
                             )}
                         </div>
                     ))}
@@ -116,6 +118,7 @@ const Chap2quiz = () => {
 };
 
 export default Chap2quiz;
+
 
 
 

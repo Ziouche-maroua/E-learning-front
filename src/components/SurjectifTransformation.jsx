@@ -42,6 +42,8 @@ export default function Surjectif() {
                 length={2}
               />
               <Circle center={[2.1, 0]} radius={1.5} color="yellow" opacity={1} />
+              <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
             </Transform>
           </Mafs>
         </div>
@@ -62,7 +64,8 @@ export default function Surjectif() {
               />
               <Circle center={[2.1, 0]} radius={1.5} color="#60a5fa" opacity={1}/>
               <Circle center={[2.1, 0]} radius={1} color="#40A578" opacity={1}/>
-                
+              <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text> 
             
       
             </Transform>

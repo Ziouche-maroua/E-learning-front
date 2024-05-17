@@ -15,6 +15,8 @@ export default function Injectif() {
             <Vector tail={[-2.6, 0.5]} tip={[3.2, -0.2]} color="#FF8A08" opacity={1} /> {/* Pink vector */}
             <Vector tail={[-2.6, 0.8]} tip={[2.5, 0.3]} color="#FF8A08" opacity={1} /> {/* Pink vector */}
             <Vector tail={[-2.6, 1.3]} tip={[3, 1]} color="#FF8A08" opacity={1} /> {/* Pink vector */}
+            <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
           </Transform>
         </Mafs>
       </div>
@@ -30,6 +32,8 @@ export default function Injectif() {
             <Vector tail={[-2.6, 0.5]} tip={[3.2, -0.2]} color="#40A578" opacity={1} /> {/* Pink vector */}
             <Vector tail={[-2.6, 0.8]} tip={[3.2, -0.15]} color="#40A578" opacity={1} /> {/* Pink vector */}
             <Vector tail={[-2.6, 1.3]} tip={[3, 1]} color="#40A578" opacity={1} /> {/* Pink vector */}
+            <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
           </Transform>
         </Mafs>
       </div>

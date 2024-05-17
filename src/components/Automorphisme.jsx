@@ -14,7 +14,8 @@ export default function AutomorphismVisualization() {
             <Vector tail={[-2, 0]} tip={[2, 0]} color="ORANGE" opacity={1} /> {/* Pink vector */}
             <Vector tail={[-2, 1]} tip={[1.5, 1]} color="ORANGE" opacity={1} /> {/* Additional vector */}
             <Vector tail={[-1.2, -1]} tip={[2, -1]} color="ORANGE" opacity={1} /> {/* Additional vector */}
-          
+            <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
           </Transform>
         </Mafs>
       </div>

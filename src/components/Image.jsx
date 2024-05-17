@@ -14,6 +14,8 @@ export default function Kernel() {
             <Circle center={[2, 0]} radius={1} color="blue" opacity={1} /> {/* Codomain Circle (Orange) */}
         
             <Vector tail={[-2, 0]} tip={[2, 0]} color="#60a5fa" opacity={1} /> {/* Pink vector */}
+            <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
           </Transform> 
         </Mafs> 
       </div> 
