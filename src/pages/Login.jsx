@@ -1,9 +1,13 @@
-/* Login.jsx */
-
 import React, { useState } from 'react';
-import './Login.css'; // Import your CSS file here
+import logImage from '../assets/images/log-image.jpg';
+import emailIcon from '../assets/images/email.png';
+import eyeIcon from '../assets/images/eye-icon.png';
+import googleIcon from '../assets/images/google.png';
+import microsoftIcon from '../assets/images/microsoft.png';
+import { axiosPost } from './services/axiosUtils';
 
-function Login() {
+
+function Login() { 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -19,19 +23,31 @@ function Login() {
     setShowPasswordTwo(!showPasswordTwo);
   };
 
-  const submitForm = (action) => {
+  const submitForm = async (action) => {
+
     const userData = {
       email: email,
       password: password,
     };
-
-    if (action === 'signup') {
-      console.log("Signup with success");
-      // Handle signup logic here
-    } else if (action === 'login') {
-      console.log("Login with success");
-      // Handle login logic here
+  
+    try {
+      if (action === 'signup') {
+        const response = await axiosPost('/student/register', userData);
+        console.log('Response from backend:', response.data);
+        console.log('Signup successful');
+        // Gérer la réponse du backend et d'autres actions nécessaires après l'inscription réussie
+      } else if (action === 'login') {
+        const response = await axiosPost('/student/login', userData);
+        console.log('Response from backend:', response.data);
+        console.log('Login successful');
+        // Gérer la réponse du backend et d'autres actions nécessaires après la connexion réussie
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      // Gérer les erreurs (par exemple, afficher un message d'erreur à l'utilisateur)
     }
+
+   
   };
 
   const handleGoogleSignUp = () => {
@@ -45,53 +61,89 @@ function Login() {
   };
 
   return (
-    <div className="main-container bg-[#e5f5fa] w-[1218px] h-[805px] relative overflow-hidden mx-auto my-0 ">
-
-        <div className="relative">
-            <div className="absolute w-[400px] mx-auto mt-40 ml-20">
-            <img src="../assets/images/log-image.jpg" alt="LogImage" className="w-full h-auto rounded-[150px]" />
+    <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
+      <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
+        <div className="md:w-1/3 flex justify-center items-center  p-4">
+          <img src={logImage} alt="LogImage" className="w-full max-h-96 object-contain rounded-lg shadow-lg" />
+        </div>
+        <div className="md:w-2/3 p-8 md:p-16 flex flex-col justify-center">
+          <div className="mb-6">
+            <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
+            <h3 className="text-4xl font-bold text-[#67adee]">LearnVisual</h3>
+          </div>
+          <p className="text-lg font-light mb-6">Create your account and unlock a world of knowledge at your fingertips</p>
+          <div className="space-y-4">
+            <div className="relative w-full">
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email"
+                className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+              />
+              <img src={emailIcon} alt="Email" className="absolute left-2 top-1/2 transform -translate-y-1/2 w-6 h-6" />
             </div>
-        </div>
-
-      <div className="w-[563px] h-[619px] absolute top-[38px] left-[718px] z-[26]">
-        <div className="flex w-[563px] flex-col gap-[34px] items-start flex-nowrap relative mt-0 mr-0 mb-0 ml-0">
-          <div className="flex w-[312px] flex-col items-start shrink-0 flex-nowrap relative z-[1]">
-            <span className="flex w-[311px] h-[39px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[36px] font-medium leading-[39px] relative text-left whitespace-nowrap z-[2]">Welcome to</span>
-            <span className="flex w-[312px] h-[42px] justify-start items-start shrink-0 basis-auto font-['Inter'] text-[40px] font-bold leading-[42px] text-[#67adee] relative text-left whitespace-nowrap z-[3]">LearnVisual</span>
+            <div className="relative w-full">
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+              />
+              
+            </div>
+            <div className="relative w-full">
+              <input
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                type={showPasswordTwo ? 'text' : 'password'}
+                placeholder="Confirm Password"
+                className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+              />
+              
+            </div>
+            <div className="relative w-full">
+              <input
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                type="tel"
+                placeholder="Phone Number"
+                className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+              />
+            </div>
           </div>
-          <span className="flex w-[523px] h-[48px] justify-start items-start shrink-0 font-['Inter'] text-[20px] font-extralight leading-[24.205px] text-[#000] relative text-left z-[4]">Create your account and unlock a world of knowledge<br />at your fingertips</span>
-        </div>
-        <div className="flex w-[307px] flex-col items-start flex-nowrap relative z-[5] mt-[34px] mr-0 mb-0 ml-0">
-          <div className="input-container">
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className="input-field bg-custom-blue" />
-            <img src="../assets/images/email.png" alt="Email" className="inputs-icon" />
+          <div className="flex space-x-20 mt-6 ">
+            <button
+              onClick={() => submitForm('signup')}
+              className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+            >
+              Sign up
+            </button>
+            <button
+              onClick={() => submitForm('login')}
+              className="w-[113px] h-[40px] bg-[#79bffb] rounded-md text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+            >
+              Log in
+            </button>
           </div>
-          <div className="input-container">
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} placeholder="Password" className="input-field bg-custom-blue" />
-            {/* <img src="../assets/images/eye-icon.png" alt="Eye icon" className="inputs-icon" onClick={togglePasswordVisibility} /> */}
+          <span className="block text-lg font-extralight text-[#000] mt-6">Or you can join with</span>
+          <div className="flex gap-6 mt-4">
+            <button
+              onClick={handleGoogleSignUp}
+              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+            >
+              <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2" />
+              Sign up with
+            </button>
+            <button
+              onClick={handleMicrosoftSignUp}
+              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+            >
+              <img src={microsoftIcon} alt="Microsoft" className="w-6 h-6 mr-2" />
+              Sign up with
+            </button>
           </div>
-          <div className="input-container">
-            <input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} type={showPasswordTwo ? 'text' : 'password'} placeholder="Confirm Password" className="input-field bg-custom-blue" />
-            {/* <img src="../assets/images/eye-icon.png" alt="Eye icon" className="inputs-icon" onClick={togglePasswordVisibilityTwo} /> */}
-          </div>
-          <div className="input-container">
-            <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} type="tel" placeholder="Phone Number" className="input-field bg-custom-blue" />
-          </div>
-        </div>
-        <div className="flex w-[263px] gap-[37px] items-start flex-nowrap relative z-[19] mt-[34px] mr-0 mb-0 ml-0">
-          <button onClick={() => submitForm('signup')} className="w-[113px] h-[40px] shrink-0 bg-[#5fa1f0] rounded-[10px] border-none relative z-20 pointer font-bold text-white shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white">Sign up</button>
-          <button onClick={() => submitForm('login')} className="w-[113px] h-[40px] shrink-0 bg-[#79bffb] border-none relative z-[21] pointer font-bold text-white rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white">Log in</button>
-        </div>
-        <span className="block h-[27px] font-['Inter'] text-[16px] font-extralight leading-[19.364px] text-[#000] relative text-left whitespace-nowrap z-[24] mt-[24px] mr-0 mb-0 ml-[14px]">Or you can join with</span>
-        <div className="flex w-[376px] gap-[34px] items-start flex-nowrap relative z-[26] mt-[16px] mr-0 mb-0 ml-0">
-          <button onClick={handleGoogleSignUp} className="w-[160px] h-[45px] shrink-0 border-none relative z-[27] bg-[#79bffb] pointer text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white">
-            <img src="../assets/images/google.png" alt="Google" className="inputs-icon" />
-            Sign up with
-          </button>
-          <button onClick={handleMicrosoftSignUp} className="w-[160px] h-[45px] shrink-0 border-none relative z-[27] bg-[#79bffb] pointer text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white">
-            <img src="../assets/images/microsoft.png" alt="Microsoft" className="inputs-icon" />
-            Sign up with
-          </button>
         </div>
       </div>
     </div>

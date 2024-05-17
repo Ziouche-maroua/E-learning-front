@@ -21,8 +21,7 @@ import { axiosGet } from './services/axiosUtils';
 
     // Appel de la fonction pour récupérer les informations de l'utilisateur lors du montage du composant
     fetchUserInfo();
-  }, []); // Le tableau vide en tant que deuxième argument signifie que ce useEffect ne s'exécute qu'une seule fois, équivalent à componentDidMount
-
+  }, []); 
 
   
   return (
