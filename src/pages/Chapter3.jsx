@@ -1,7 +1,7 @@
 import React from 'react';
 import TopBar from '../components/TopBar'; 
-
 import Matrixoperation from './Matrixoperation';
+
 
 const Chapter3 = () => {
   return (
@@ -10,6 +10,7 @@ const Chapter3 = () => {
 
     <div className="flex flex-1 pt-16">
      <Matrixoperation/>
+     
     
 
     </div>

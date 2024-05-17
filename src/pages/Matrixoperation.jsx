@@ -2,6 +2,7 @@ import React from 'react';
 import MultMat from '../components/MultMat';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import MatrixAddition from '../components/ADDmat'
 
 const Matrixoperation = () => {
   return (
@@ -35,6 +36,8 @@ const Matrixoperation = () => {
       
 
       <MultMat/>
+
+      <MatrixAddition/>
       
      
     </div>
