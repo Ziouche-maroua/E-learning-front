@@ -5,18 +5,22 @@ import LeftSideBar from './LeftSideBar';
 
 const TopBar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+
 const toggleSidebarOnHomeClick = () => {
     setShowSidebar(!showSidebar);
   };
 
   return (
 
+
+ 
     <div className="fixed top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4">
       <div className="flex items-center">
         <Link to="/" className="text-white text-2xl font-bold flex items-center">
           <span className="text-white">FikrSight</span>
         </Link>
       </div>
+
       <div className="flex items-center relative">
 
         <div style={{ position: 'relative' }}>
@@ -32,6 +36,8 @@ const toggleSidebarOnHomeClick = () => {
 
 
       </div>
+
+
       <button onClick={toggleSidebarOnHomeClick} className="text-white">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -42,4 +48,6 @@ const toggleSidebarOnHomeClick = () => {
   );
 };
 
+
 export default TopBar;
+

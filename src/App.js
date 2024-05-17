@@ -12,6 +12,7 @@ import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
 import GeneralAlgebra from './pages/GeneralAlgebra';
 
+
 import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
 import InjSurj from './pages/InjecSurj';
@@ -19,6 +20,11 @@ import AppQuiz from './pages/AppQuiz';
 import KernalImg from './pages/KernalImg'
 import Morphisme from './pages/Morphisme'
 
+
+
+
+import Login from './pages/Login';
+import SignUp from './pages/Signup'
 
 const App = () => {
   return (
@@ -40,10 +46,12 @@ const App = () => {
       <Route path="/chapter2/InjectifSurjectif" element={<InjSurj/>} />
       <Route path="/chapter2/Morphisme" element={<Morphisme/>} />
       <Route path="/chapter2/Quiz" element={<AppQuiz/>} />
-
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
 
       </Routes>
     </Router>
+
   );
 };
 
