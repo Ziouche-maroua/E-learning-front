@@ -6,24 +6,33 @@ import emailIcon from '../assets/images/email.png';
 import googleIcon from '../assets/images/google.png';
 import microsoftIcon from '../assets/images/microsoft.png';
 
-const Login= () =>{
+const SignUp = () =>{
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordTwo, setShowPasswordTwo] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
+  const togglePasswordVisibilityTwo = () => {
+    setShowPasswordTwo(!showPasswordTwo);
+  };
+
   const submitForm = (action) => {
     const userData = {
+      name: name,
       email: email,
       password: password,
+      confirmPassword: confirmPassword,
     };
 
-    if (action === 'login') {
-      console.log("Login with success");
-      // Handle login logic here
+    if (action === 'signup') {
+      console.log("Signup with success");
+      // Handle signup logic here
     }
   };
 
@@ -52,6 +61,15 @@ const Login= () =>{
           <div className="space-y-4">
             <div className="relative w-full">
               <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="Name"
+                className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+              />
+            </div>
+            <div className="relative w-full">
+              <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 type="email"
@@ -68,20 +86,30 @@ const Login= () =>{
                 placeholder="Password"
                 className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
               />
-             
+              
+            </div>
+            <div className="relative w-full">
+              <input
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                type={showPasswordTwo ? 'text' : 'password'}
+                placeholder="Confirm Password"
+                className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+              />
+
             </div>
           </div>
           <div className="flex space-x-4 mt-6">
             <button
-              onClick={() => submitForm('login')}
+              onClick={() => submitForm('signup')}
               className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
-              Log in
+              Sign up
             </button>
             <div className="flex items-center">
-              <span className="ml-2">Don't have an account?</span>
-              <Link to="/signup" className="ml-2 text-[#79bffb] font-bold">
-                Go to Sign up
+              <span className="ml-2">Already have an account?</span>
+              <Link to="/login" className="ml-2 text-[#79bffb] font-bold">
+                Go to Log In
               </Link>
             </div>
           </div>
@@ -108,4 +136,4 @@ const Login= () =>{
   );
 }
 
-export default Login;
+export default SignUp;

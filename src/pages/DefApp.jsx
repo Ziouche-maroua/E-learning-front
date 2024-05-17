@@ -15,7 +15,7 @@ const DefApp = () => {
     <div className="h-screen flex flex-col">
       <TopBar />
       <div className="flex flex-1 pt-16">
-        <div className={`w-full lg:w-1/3 border ${showSections ? '' : 'hidden'} border-blue-800 shadow-blue-800 p-4 mx-4 my-5 lg:block`}>
+        <div className={`w-full lg:w-1/3 border ${showSections ? '' : 'hidden lg:block'} border-blue-800 shadow-blue-800 p-4 mx-4 my-5`}>
           <ul className="space-y-9">
             <li className="bg-blue-300 text-blue-400 p-2">
               <Link to="/chapter2/definition">Definition</Link>
@@ -34,7 +34,7 @@ const DefApp = () => {
             </li>
           </ul>
         </div>
-        <div className={`w-full lg:w-2/3 border p-4 mx-4 my-5 border-blue-800 shadow-blue-800`}>
+        <div className="w-full lg:w-2/3 border p-4 mx-4 my-5 border-blue-800 shadow-blue-800">
           <h1>Linear Transformation</h1>
           <h2>Definition</h2>
           <p>
@@ -47,9 +47,9 @@ const DefApp = () => {
           <DefDynamic />
         </div>
       </div>
-      <div className="fixed bottom-4 right-4">
+      <div className="fixed bottom-4 right-4 lg:hidden">
         <button
-          className={`px-2 py-1 bg-blue-500 text-white rounded-md shadow-md`}
+          className="px-2 py-1 bg-blue-500 text-white rounded-md shadow-md"
           onClick={toggleSections}
         >
           {showSections ? 'Hide Sections' : 'Show Sections'}

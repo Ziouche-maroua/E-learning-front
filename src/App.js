@@ -15,7 +15,7 @@ import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
 import InjSurj from './pages/InjecSurj';
 import Login from './pages/Login';
-
+import SignUp from './pages/Signup'
 const App = () => {
   return (
     <Router>
@@ -32,7 +32,8 @@ const App = () => {
       <Route path="/chapter2/definition" element={<DefApp />} />
       <Route path="/chapter2/properties" element={<AppProperties/>} />
       <Route path="/chapter2/injectif-surjectif" element={<InjSurj />} />
-      <Route path="/chapter2/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
       </Routes>
     </Router>
     
