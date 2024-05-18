@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import Chap3quiz from '../components/Chap3quiz';
 
 const MatrixQuiz = () => {
   return (
@@ -34,7 +35,7 @@ const MatrixQuiz = () => {
     <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
       <h1>MATRIX</h1>
       <h2>Operation</h2>
-      
+      <Chap3quiz/>
 
 
       

@@ -24,7 +24,7 @@ const TopBar = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="border border-gray-300 rounded-md pl-10 pr-4 py-2 w-96"
+            className="border border-gray-300 rounded-full pl-10 pr-4 py-2 w-96"
           />
           <img src={searchIcon} alt="Search" className="w-6 h-6 absolute top-2 left-3" />
         </div>
