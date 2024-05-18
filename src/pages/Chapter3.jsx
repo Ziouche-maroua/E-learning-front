@@ -1,19 +1,14 @@
 import React from 'react';
 import TopBar from '../components/TopBar'; 
-import Matrixoperation from './Matrixoperation';
+import Matrixdef from './Matrixdef';
 
 
 const Chapter3 = () => {
   return (
     <div className="h-screen flex flex-col ">
     <TopBar />
-
-    <div className="flex flex-1 pt-16">
-     <Matrixoperation/>
-     
-    
-
-    </div>
+   <Matrixdef/>
+   
   </div>
   );
 };
