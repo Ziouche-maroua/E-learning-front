@@ -80,6 +80,10 @@ async function loginStudent(req, res) {
 
     // Respond with token
     res.json({ token, user });
+
+    // Retrieve all chapters
+    const chapters = await getAllChapters();
+    const quizzes = await getAllQuizzes();
   } catch (error) {
     console.error("Login error:", error);
 

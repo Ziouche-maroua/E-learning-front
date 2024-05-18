@@ -16,3 +16,4 @@ router.get("/modules/:moduleId/chapters/:id", chapter.getChapterById);
 router.delete("/modules/:moduleId/chapters/:id", chapter.deleteChapter);
 
 module.exports = router;
+
