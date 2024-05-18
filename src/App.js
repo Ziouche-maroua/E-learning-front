@@ -11,6 +11,7 @@ import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
 import GeneralAlgebra from './pages/GeneralAlgebra';
+import SignUp from './pages/SignUp'
 
 import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
@@ -20,10 +21,13 @@ import KernalImg from './pages/KernalImg'
 import Morphisme from './pages/Morphisme'
 
 
+
 const App = () => {
   return (
     <Router>
       <Routes>
+        
+<Route exact path="/" element ={<SignUp/>}/>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/chapter1" element={<Chapter1 />} />
       <Route exact path="/chapter2" element={<Chapter2 />} />

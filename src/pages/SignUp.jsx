@@ -1,41 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { Link ,useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logImage from '../assets/images/log-image.jpg';
 import emailIcon from '../assets/images/email.png';
+import { useForm } from 'react-hook-form';
 import googleIcon from '../assets/images/google.png';
 import microsoftIcon from '../assets/images/microsoft.png';
-import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import toast from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
-const Login = () => {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const { handleSubmit, register, formState: { errors } } = useForm();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = (data) => {
-    axios.get(`http://localhost:3002/utilisateurs?email=${data.email}&password=${data.password}`)
-  .then((res) => {
-    if (res.data.length > 0) {
-      localStorage.setItem("utilisateur", JSON.stringify(res.data[0]));
-    }
-  })
-  .catch((err) => {
-    console.error("Error retrieving user data:", err);
-    // Gérer les erreurs de requête
-  });
+  const togglePasswordVisibilityTwo = () => {
+    setShowPasswordTwo(!showPasswordTwo);
+  };
 
-   // axios.post("http://localhost:3002/utilisateurs", data)
-      //.then((res) => {
-       // console.log(res);
-       // console.log("Success");
-      //}).catch((err) => {
-        //console.log(err);
-        //alert("Error");
-     // });
+  const onSubmit = (data) => {
+    if (data.password !== data.confirmPassword) {
+     toast.error("Passwords do not match");
+    } else {axios.post("http://localhost:3002/utilisateurs", data)
+    .then((res) => {
+      console.log(res);
+     toast.success("Successful registartion")
+    }).catch((err) => {
+      console.log(err);
+      toast.error("An error has occured");
+    });
+        
+
+      
+    }
   };
 
   const handleGoogleSignUp = () => {
@@ -47,12 +47,6 @@ const Login = () => {
     console.log("Microsoft sign up clicked");
     // Handle Microsoft sign up logic here
   };
-  const navigate = useNavigate();
-  useEffect(()=>{
-    if(!localStorage.getItem("utilisateurs")){
-      navigate("/login")
-    }
-  })
 
   return (
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
@@ -70,12 +64,29 @@ const Login = () => {
             <div className="space-y-4">
               <div className="relative w-full">
                 <input
+                  type="text"
+                  placeholder="Name"
+                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  {...register("name", {
+                    required: "Please enter your name",
+                    pattern: { value: /^[A-Za-z]+$/i, message: "Invalid name" },
+                    minLength: { value: 3, message: "Name must be at least 3 characters" }
+                  })}
+                />
+                {errors.name && <span>{errors.name.message}</span>}
+              </div>
+              <div className="relative w-full">
+                <input
                   type="email"
                   placeholder="Email"
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
-                  {...register("email", { required: "Please enter your email" })}
+                  {...register("email", {
+                    required: "Please enter an email",
+                    pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, message: "Invalid email address" },
+                    minLength: { value: 6, message: "Email must be at least 6 characters" }
+                  })}
                 />
-                {errors.email && <span className="text-red-500">{errors.email.message}</span>}
+                {errors.email && <span>{errors.email.message}</span>}
                 <img src={emailIcon} alt="Email" className="absolute left-2 top-1/2 transform -translate-y-1/2 w-6 h-6" />
               </div>
               <div className="relative w-full">
@@ -83,9 +94,24 @@ const Login = () => {
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
-                  {...register("password", { required: "Please enter your password" })}
+                  {...register("password", {
+                    required: "Please enter a password",
+                    minLength: { value: 6, message: "Password must be at least 6 characters" }
+                  })}
                 />
-                {errors.password && <span className="text-red-500">{errors.password.message}</span>}
+                {errors.password && <span>{errors.password.message}</span>}
+              </div>
+              <div className="relative w-full">
+                <input
+                  type={showPasswordTwo ? 'text' : 'password'}
+                  placeholder="Confirm Password"
+                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  {...register("confirmPassword", {
+                    required: "Please confirm your password",
+                    minLength: { value: 6, message: "Password must be at least 6 characters" }
+                  })}
+                />
+                {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
               </div>
             </div>
             <div className="flex space-x-4 mt-6">
@@ -93,12 +119,12 @@ const Login = () => {
                 type="submit"
                 className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
               >
-                Log in
+                Sign up
               </button>
               <div className="flex items-center">
-                <span className="ml-2">Don't have an account?</span>
-                <Link to="/signup" className="ml-2 text-[#79bffb] font-bold">
-                  Go to Sign up
+                <span className="ml-2">Already have an account?</span>
+                <Link to="/login" className="ml-2 text-[#79bffb] font-bold">
+                  Go to Log In
                 </Link>
               </div>
             </div>
@@ -126,4 +152,4 @@ const Login = () => {
   );
 }
 
-export default Login;
+export default SignUp;
