@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-
+import MatrixTranspose from '../components/TransposeMat.jsx'
 import ElemMat from '../components/ElemMat';
 
 const Elementary = () => {
@@ -37,7 +37,7 @@ const Elementary = () => {
       <h1>MATRIX</h1>
       <h2>Operation</h2>
       <ElemMat/>
-      
+      <MatrixTranspose/>
       
      
     </div>

@@ -1,57 +1,55 @@
-import React from 'react';
+
+
+
+import React, { useState } from 'react';
 
 const MatrixVisualizations = () => {
-    // Define square matrix
+    const [nullMatrixRows, setNullMatrixRows] = useState(3);
+    const [nullMatrixCols, setNullMatrixCols] = useState(3);
+
+    // Define other matrices
     const squareMatrix = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9]
     ];
 
-    // Define null matrix
-    const nullMatrix = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ];
-
-    // Define row matrix
     const rowMatrix = [[1, 2, 3]];
 
-    // Define column matrix
     const columnMatrix = [
         [1],
         [2],
         [3]
     ];
 
-    // Define diagonal matrix
     const diagonalMatrix = [
         [1, 0, 0],
         [0, 2, 0],
         [0, 0, 3]
     ];
 
-    // Define identity matrix
     const identityMatrix = [
         [1, 0, 0],
         [0, 1, 0],
         [0, 0, 1]
     ];
 
-    // Define upper triangular matrix
     const upperTriangularMatrix = [
         [1, 2, 3],
         [0, 4, 5],
         [0, 0, 6]
     ];
 
-    // Define lower triangular matrix
     const lowerTriangularMatrix = [
         [1, 0, 0],
         [2, 3, 0],
         [4, 5, 6]
     ];
+
+    // Function to generate a null matrix of given size
+    const generateNullMatrix = (rows, cols) => {
+        return Array(rows).fill().map(() => Array(cols).fill(0));
+    };
 
     // Rendering function
     const renderMatrix = (matrix, gridCols, colors = []) => (
@@ -72,7 +70,6 @@ const MatrixVisualizations = () => {
 
     // Colors for matrices
     const squareColors = squareMatrix.flat().map((_, index) => '#BAE1FF');
-    const nullColors = nullMatrix.flat().map((_, index) => 'transparent');
     const rowColors = rowMatrix.flat().map((_, index) => '#FFDFBA');
     const columnColors = columnMatrix.flat().map((_, index) => '#FFB3BA');
 
@@ -85,33 +82,68 @@ const MatrixVisualizations = () => {
         <div className="flex flex-col justify-center items-center mt-10 space-y-10">
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Square and Null Matrices</h3>
-                <p className="mb-2">A square matrix has the same number of rows and columns. A null matrix has all elements equal to zero.</p>
+                <div className="mb-2">
+                    <p className="inline-block mr-10">A square matrix has the same number of rows and columns.</p>
+                    <p className="inline-block">A null matrix has all elements equal to zero.</p>
+                </div>
                 <div className="flex justify-center items-center space-x-10">
                     <div className="mr-10">
                         {renderMatrix(squareMatrix, 3, squareColors)}
                     </div>
                     <div>
-                        {renderMatrix(nullMatrix, 3, nullColors)}
+                        <div className="flex space-x-4 mb-4">
+                            <div>
+                                <label className="block mb-2">Rows</label>
+                                <select
+                                    value={nullMatrixRows}
+                                    onChange={(e) => setNullMatrixRows(parseInt(e.target.value))}
+                                    className="p-2 border border-gray-300 rounded"
+                                >
+                                    {[2, 3, 4, 5].map(size => (
+                                        <option key={size} value={size}>{size}</option>
+                                    ))}
+                                </select>
+                            </div>
+                            <div>
+                                <label className="block mb-2">Columns</label>
+                                <select
+                                    value={nullMatrixCols}
+                                    onChange={(e) => setNullMatrixCols(parseInt(e.target.value))}
+                                    className="p-2 border border-gray-300 rounded"
+                                >
+                                    {[2, 3, 4, 5].map(size => (
+                                        <option key={size} value={size}>{size}</option>
+                                    ))}
+                                </select>
+                            </div>
+                        </div>
+                        {renderMatrix(generateNullMatrix(nullMatrixRows, nullMatrixCols), nullMatrixCols)}
                     </div>
                 </div>
             </div>
 
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Row and Column Matrices</h3>
-                <p className="mb-2">A row matrix has a single row with multiple columns. A column matrix has a single column with multiple rows.</p>
+                <div className="mb-2">
+                    <p className="inline-block mr-10">A row matrix has a single row with multiple columns.</p>
+                    <p className="inline-block">A column matrix has a single column with multiple rows.</p>
+                </div>
                 <div className="flex justify-center items-center space-x-10">
                     <div className="mr-10">
-                        {renderMatrix(rowMatrix, 3, rowColors)}
+                        {renderMatrix(rowMatrix, rowMatrix[0].length, rowColors)}
                     </div>
                     <div>
-                        {renderMatrix(columnMatrix, 3, columnColors)}
+                        {renderMatrix(columnMatrix, 1, columnColors)}
                     </div>
                 </div>
             </div>
 
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Diagonal and Identity Matrices</h3>
-                <p className="mb-2">A diagonal matrix has non-zero elements only on its main diagonal. An identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere.</p>
+                <div className="mb-2">
+                    <p className="inline-block mr-10">A diagonal matrix has non-zero elements only on its main diagonal.</p>
+                    <p className="inline-block">An identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere.</p>
+                </div>
                 <div className="flex justify-center items-center space-x-10">
                     <div className="mr-10">
                         {renderMatrix(diagonalMatrix, 3, diagonalColors)}
@@ -124,7 +156,10 @@ const MatrixVisualizations = () => {
 
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Upper and Lower Triangular Matrices</h3>
-                <p className="mb-2">An upper triangular matrix has non-zero elements only on and above the main diagonal. A lower triangular matrix has non-zero elements only on and below the main diagonal.</p>
+                <div className="mb-2">
+                    <p className="inline-block mr-10">An upper triangular matrix has non-zero elements only on and above the main diagonal.</p>
+                    <p className="inline-block">A lower triangular matrix has non-zero elements only on and below the main diagonal.</p>
+                </div>
                 <div className="flex justify-center items-center space-x-10">
                     <div className="mr-10">
                         {renderMatrix(upperTriangularMatrix, 3, upperTriangularColors)}

@@ -1,8 +1,8 @@
 import React from 'react';
-import MultMat from '../components/MultMat';
+
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import MatrixAddition from '../components/ADDmat'
+
 
 const Matrixdef = () => {
   return (
@@ -36,6 +36,7 @@ const Matrixdef = () => {
     <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
       <h1>MATRIX</h1>
       <h2>Operation</h2>
+      
       
 
       
