@@ -114,14 +114,8 @@ const SignUp = () => {
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("last_name", {
                     required: "Please enter your last name",
-                    pattern: {
-                      value: /^[A-Za-z]+$/i,
-                      message: "Invalid last name",
-                    },
-                    minLength: {
-                      value: 3,
-                      message: "Last name must be at least 3 characters",
-                    },
+                    
+                    minLength: { value: 3, message: "Last name must be at least 3 characters" }
                   })}
                 />
                 {errors.last_name && <span>{errors.last_name.message}</span>}
