@@ -22,20 +22,20 @@ const SignUp = () => {
   };
 
   const onSubmit = (data) => {
+    console.log(data)
+    
     if (data.password !== data.confirmPassword) {
-     toast.error("Passwords do not match");
-    } else {axios.post("http://localhost:3002/utilisateurs", data)
-    .then((res) => {
-      console.log(res);
-     toast.success("Successful registartion")
-    }).catch((err) => {
-      console.log(err);
-      toast.error("An error has occured");
-    });
-        
-
-      
-    }
+      toast.error("Passwords do not match");
+    } else {
+      axios.post("http://localhost:3001/api/student/register", data)
+        .then((res) => {
+          console.log(res);
+          toast.success("Successful registration");
+        }).catch((err) => {
+          console.log(err);
+          toast.error("An error has occurred");
+        });
+   }
   };
 
   const handleGoogleSignUp = () => {
@@ -65,21 +65,47 @@ const SignUp = () => {
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder="first-name"
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
-                  {...register("name", {
-                    required: "Please enter your name",
-                    pattern: { value: /^[A-Za-z]+$/i, message: "Invalid name" },
-                    minLength: { value: 3, message: "Name must be at least 3 characters" }
+                  {...register("first_name", {
+                    required: "Please enter your first name",
+                    pattern: { value: /^[A-Za-z]+$/i, message: "Invalid first name" },
+                    minLength: { value: 3, message: "First name must be at least 3 characters" }
                   })}
                 />
-                {errors.name && <span>{errors.name.message}</span>}
+                {errors.firstName && <span>{errors.firs_name.message}</span>}
+              </div>
+              <div className="relative w-full">
+                <input
+                  type="text"
+                  placeholder="last-name"
+                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  {...register("last_name", {
+                    required: "Please enter your last name",
+                    pattern: { value: /^[A-Za-z]+$/i, message: "Invalid last name" },
+                    minLength: { value: 3, message: "Last name must be at least 3 characters" }
+                  })}
+                />
+                {errors.lastName && <span>{errors.last_name.message}</span>}
+              </div>
+              <div className="relative w-full">
+                <input
+                  type="text"
+                  placeholder="Matricule"
+                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  {...register("matricule_student", {
+                    required: "Please enter your matricule",
+                    minLength: { value: 4, message: "Matricule must be at least 4 characters" }
+                  })}
+                />
+                {errors.matricule && <span>{errors.matricule_student.message}</span>}
               </div>
               <div className="relative w-full">
                 <input
                   type="email"
                   placeholder="Email"
-                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  className="pl-10 pr-4 py-2 w-full
+                  .bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("email", {
                     required: "Please enter an email",
                     pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, message: "Invalid email address" },
