@@ -5,22 +5,22 @@ import { axiosGet } from './services/axiosUtils';
 
      function Accountinfo() {
   // Déclarez des états locaux pour stocker les informations récupérées du backend
-  const [users, setUsers] = useState(null);
+  const [students, setStudents] = useState(null);
 
   useEffect(() => {
     // Fonction pour récupérer les informations de l'utilisateur depuis le backend
-    const fetchUserInfo = async () => {
+    const fetchStudentInfo = async () => {
       try {
         // Envoi de la requête HTTP GET au backend pour récupérer les informations de l'utilisateur
-        const userData = await axiosGet('/users'); // Utilisez la fonction axiosGet avec le chemin relatif spécifique à votre backend
-        setUsers(userData); // Mise à jour de l'état avec les données récupérées
+        const studentData = await axios.get("http://localhost:3001/api/students"); // Utilisez la fonction axiosGet avec le chemin relatif spécifique à votre backend
+        setStudents(studentData); // Mise à jour de l'état avec les données récupérées
       } catch (error) {
         console.error('Erreur lors de la récupération des informations utilisateur:', error);
       }
     };
 
     // Appel de la fonction pour récupérer les informations de l'utilisateur lors du montage du composant
-    fetchUserInfo();
+    fetchStudentInfo();
   }, []); 
 
   
