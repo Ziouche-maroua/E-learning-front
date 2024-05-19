@@ -14,7 +14,6 @@ app.use(
     credentials: true,
   })
 );
-app.use(cors(corsOptions));
 
 //define routes
 const user = require("./routes/user");
@@ -33,6 +32,7 @@ app.use("/api", quizz);
 app.use("/api", chapter);
 app.use("/api", moduleRoutes);
 app.use("/api/question", questions); // Use question routes
+app.use(cors());
 
 //starting the server
 const PORT = process.env.PORT || 3001; // Use the PORT environment variable if set, otherwise default to 3000
