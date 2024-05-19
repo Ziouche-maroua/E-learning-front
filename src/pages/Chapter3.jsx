@@ -1,17 +1,19 @@
 import React from 'react';
 import TopBar from '../components/TopBar'; 
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
+
 
 
 const Chapter3 = () => {
-  
-const navigate = useNavigate();
+  const navigate = useNavigate();
 useEffect(()=>{
-  if(!localStorage.getItem("utilisateurs")){
+  if(!localStorage.getItem("student")){
     navigate("/login")
   }
-})
+});
+
   return (
     <div className="h-screen flex flex-col ">
     <TopBar />

@@ -17,16 +17,16 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
-    axios.get(`http://localhost:3002/utilisateurs?email=${data.email}&password=${data.password}`)
+    axios.get(`http://localhost:3001/student?email=${data.email}&password=${data.password}`)
   .then((res) => {
     if (res.data.length > 0) {
-      localStorage.setItem("utilisateur", JSON.stringify(res.data[0]));
+      localStorage.setItem("student", JSON.stringify(res.data[0]));
+      toast.success("Successful connection ")
+    } else{
+      toast.error("les identifiants sont incorrectes")
     }
   })
-  .catch((err) => {
-    console.error("Error retrieving user data:", err);
-    // Gérer les erreurs de requête
-  });
+  
 
    // axios.post("http://localhost:3002/utilisateurs", data)
       //.then((res) => {
@@ -47,12 +47,7 @@ const Login = () => {
     console.log("Microsoft sign up clicked");
     // Handle Microsoft sign up logic here
   };
-  const navigate = useNavigate();
-  useEffect(()=>{
-    if(!localStorage.getItem("utilisateurs")){
-      navigate("/login")
-    }
-  })
+ 
 
   return (
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">

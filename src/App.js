@@ -1,5 +1,3 @@
-// App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -11,7 +9,7 @@ import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
 import GeneralAlgebra from './pages/GeneralAlgebra';
-import SignUp from './pages/SignUp'
+
 
 import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
@@ -22,12 +20,14 @@ import Morphisme from './pages/Morphisme'
 
 
 
+
+import Login from './pages/Login';
+import SignUp from './pages/SignUp'
+
 const App = () => {
   return (
     <Router>
       <Routes>
-        
-<Route exact path="/" element ={<SignUp/>}/>
       <Route exact path="/" element={<Home />} />
       <Route exact path="/chapter1" element={<Chapter1 />} />
       <Route exact path="/chapter2" element={<Chapter2 />} />
@@ -44,10 +44,12 @@ const App = () => {
       <Route path="/chapter2/InjectifSurjectif" element={<InjSurj/>} />
       <Route path="/chapter2/Morphisme" element={<Morphisme/>} />
       <Route path="/chapter2/Quiz" element={<AppQuiz/>} />
-
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
 
       </Routes>
     </Router>
+
   );
 };
 

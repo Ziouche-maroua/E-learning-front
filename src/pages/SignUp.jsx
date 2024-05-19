@@ -22,21 +22,25 @@ const SignUp = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
     
     if (data.password !== data.confirmPassword) {
       toast.error("Passwords do not match");
     } else {
-      axios.post("http://localhost:3001/api/student/register", data)
-        .then((res) => {
-          console.log(res);
+     
+        try {
+          const response = axios.post("http://localhost:3001/api/student/register", data);
+          console.log(response);
           toast.success("Successful registration");
-        }).catch((err) => {
-          console.log(err);
+        } catch (error) {
+          console.error(error);
           toast.error("An error has occurred");
-        });
+        }
+      };
+    
    }
-  };
+  
+  
 
   const handleGoogleSignUp = () => {
     console.log("Google sign up clicked");
@@ -51,10 +55,10 @@ const SignUp = () => {
   return (
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
-        <div className="md:w-1/3 flex justify-center items-center p-4">
-          <img src={logImage} alt="LogImage" className="w-full max-h-96 object-contain rounded-lg shadow-lg" />
+        <div className="md:w-1/2 flex justify-center items-center p-4">
+          <img src={logImage} alt="LogImage" className="w-full max-h-[500px] object-contain rounded-lg shadow-lg" />
         </div>
-        <div className="md:w-2/3 p-8 md:p-16 flex flex-col justify-center">
+        <div className="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
           <div className="mb-6">
             <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
             <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
@@ -65,20 +69,20 @@ const SignUp = () => {
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="first-name"
+                  placeholder="First name"
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("first_name", {
                     required: "Please enter your first name",
                     pattern: { value: /^[A-Za-z]+$/i, message: "Invalid first name" },
-                    minLength: { value: 3, message: "First name must be at least 3 characters" }
+                    minLength: { value: 3, message: "First name must be at least 3 characters" },
                   })}
                 />
-                {errors.firstName && <span>{errors.firs_name.message}</span>}
+                {errors.first_name && <span>{errors.first_name.message}</span>}
               </div>
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="last-name"
+                  placeholder="Last name"
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("last_name", {
                     required: "Please enter your last name",
@@ -86,7 +90,7 @@ const SignUp = () => {
                     minLength: { value: 3, message: "Last name must be at least 3 characters" }
                   })}
                 />
-                {errors.lastName && <span>{errors.last_name.message}</span>}
+                {errors.last_name && <span>{errors.last_name.message}</span>}
               </div>
               <div className="relative w-full">
                 <input
@@ -95,17 +99,17 @@ const SignUp = () => {
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("matricule_student", {
                     required: "Please enter your matricule",
-                    minLength: { value: 4, message: "Matricule must be at least 4 characters" }
+                    minLength: { value: 4, message: "Matricule must be at least 4 characters" },
+                    maxLength: { value: 4, message: "Matricule must be at most 4 characters" }
                   })}
                 />
-                {errors.matricule && <span>{errors.matricule_student.message}</span>}
+                {errors.matricule_student && <span>{errors.matricule_student.message}</span>}
               </div>
               <div className="relative w-full">
                 <input
                   type="email"
                   placeholder="Email"
-                  className="pl-10 pr-4 py-2 w-full
-                  .bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("email", {
                     required: "Please enter an email",
                     pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, message: "Invalid email address" },
@@ -140,16 +144,16 @@ const SignUp = () => {
                 {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
               </div>
             </div>
-            <div className="flex space-x-4 mt-6">
+            <div className="mt-6">
               <button
                 type="submit"
                 className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
               >
                 Sign up
               </button>
-              <div className="flex items-center">
-                <span className="ml-2">Already have an account?</span>
-                <Link to="/login" className="ml-2 text-[#79bffb] font-bold">
+              <div className="mt-2">
+                <span className="mr-2">Already have an account?</span>
+                  <Link to="/login" className="ml-2 text-[#79bffb] font-bold">
                   Go to Log In
                 </Link>
               </div>
@@ -177,5 +181,7 @@ const SignUp = () => {
     </div>
   );
 }
+
+
 
 export default SignUp;
