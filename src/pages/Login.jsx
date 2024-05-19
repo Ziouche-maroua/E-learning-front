@@ -7,6 +7,7 @@ import microsoftIcon from "../assets/images/microsoft.png";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,29 +20,35 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+  const navigate = useNavigate();
+  const onSubmit = async (data) => {
+    try {
+      const loginResponse = await axios.post(
+        "http://localhost:3001/api/student/login",
+        data
+      );
+      console.log(loginResponse.data);
 
-  const onSubmit = (data) => {
-    //   axios.get(`http://localhost:3001/student?email=${data.email}&password=${data.password}`)
-    // .then((res) => {
-    //   if (res.data.length > 0) {
-    //     localStorage.setItem("student", JSON.stringify(res.data[0]));
-    //     toast.success("Successful connection ")
-    //   } else{
-    //     toast.error("les identifiants sont incorrectes")
-    //   }
-    // })
+      // Handle successful login
+      if (loginResponse.status === 200) {
+        toast.success("Successful login");
+        await Cookies.set("token", loginResponse.data.token);
+        navigate("/"); // Store token in cookie, expires in 7 days
+      } else {
+        toast.error("Login failed");
+      }
+    } catch (loginError) {
+      // Handle any errors that occurred during the login attempt
+      console.error(loginError);
 
-    console.log(data);
-    axios
-      .post("http://localhost:3001/api/login", data)
-      .then((res) => {
-        console.log(res);
-        console.log("Success");
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("Error");
-      });
+      if (loginError.response && loginError.response.status === 404) {
+        toast.error("account not exsist");
+      } else if (loginError.response && loginError.response.status === 401) {
+        toast.error("Invalid credentials");
+      } else {
+        toast.error("An error occurred during login");
+      }
+    }
   };
 
   const handleGoogleSignUp = () => {
