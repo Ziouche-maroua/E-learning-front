@@ -47,18 +47,17 @@ const Home = () => {
   return (
     <div>
       <TopBar />
-      {loading ? (
-        <h1 className="w-full text-center">Loading...</h1>
-      ) : (
-        <div className="container mx-auto px-2 pt-16">
-          <span className="text-4xl font-bold mt-20 text-blue-300 ">
-            A New Way To Learn <br /> & Get Knowledge
-          </span>
-          <p className="text-lg my-4 text-[rgba(0,0,0,0.35)]">
-            Learn new skills from the comfort of your home anywhere, anytime.
-          </p>
-          <p className="text-3xl mt-15 mb-3 text-black">Explore our courses:</p>
-
+      <div className="container mx-auto px-2 pt-16">
+        <span className="text-4xl font-bold mt-20 text-blue-300 ">
+          A New Way To Learn <br /> & Get Knowledge
+        </span>
+        <p className="text-lg my-4 text-[rgba(0,0,0,0.35)]">
+          Learn new skills from the comfort of your home anywhere, anytime.
+        </p>
+        <p className="text-3xl mt-15 mb-3 text-black">Explore our courses:</p>
+        {loading ? (
+          <h1 className="w-full text-center">Loading...</h1>
+        ) : (
           <div className="grid grid-cols-4 gap-8">
             {modules.map((module) => (
               <div className="h-87 bg-gray-100 p-8 rounded-lg shadow-md border">
@@ -88,8 +87,8 @@ const Home = () => {
               </div>
             ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };
