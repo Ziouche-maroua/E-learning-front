@@ -46,37 +46,34 @@ function Accountinfo() {
   if (loading) {
     return <div>Loading...</div>; // Render a loading indicator while fetching data
   }
+ 
   return (
-    <Grid
-      templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-      gap={6}
-    >
-      <FormControl id="firstName">
-        <FormLabel>First Name</FormLabel>
-        <p>{user ? user?.student?.firstName : "Loading..."}</p>
-      </FormControl>
-      <FormControl id="lastName">
-        <FormLabel>Last Name</FormLabel>
-        <p>{user ? user.lastName : "Loading..."}</p>
-      </FormControl>
-      <FormControl id="phoneNumber">
-        <FormLabel>Phone Number</FormLabel>
-        <p>{user ? user.phoneNumber : "Loading..."}</p>
-      </FormControl>
-      <FormControl id="emailAddress">
-        <FormLabel>Email Address</FormLabel>
-        <p>{user ? user?.student?.user?.email : "Loading..."}</p>
-      </FormControl>
-
-      <FormControl id="city">
-        <FormLabel>City</FormLabel>
-        <p>{user ? user.City : "Loading..."}</p>
-      </FormControl>
-      <FormControl id="university">
-        <FormLabel>University</FormLabel>
-        <p>{user ? user.University : "Loading..."}</p>
-      </FormControl>
-    </Grid>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-gray-50 rounded-md shadow-md">
+      <div className="form-control">
+        <label className="form-label text-gray-700">First Name</label>
+        <p className="text-gray-900">{user ? user?.student?.firstName : "Loading..."}</p>
+      </div>
+      <div className="form-control">
+        <label className="form-label text-gray-700">Last Name</label>
+        <p className="text-gray-900">{user ? user.lastName : "Loading..."}</p>
+      </div>
+      <div className="form-control">
+        <label className="form-label text-gray-700">Phone Number</label>
+        <p className="text-gray-900">{user ? user.phoneNumber : "Loading..."}</p>
+      </div>
+      <div className="form-control">
+        <label className="form-label text-gray-700">Email Address</label>
+        <p className="text-gray-900">{user ? user?.student?.user?.email : "Loading..."}</p>
+      </div>
+      <div className="form-control">
+        <label className="form-label text-gray-700">City</label>
+        <p className="text-gray-900">{user ? user.City : "Loading..."}</p>
+      </div>
+      <div className="form-control">
+        <label className="form-label text-gray-700">University</label>
+        <p className="text-gray-900">{user ? user.University : "Loading..."}</p>
+      </div>
+    </div>
   );
 }
 
