@@ -1,4 +1,4 @@
-/*
+
 
 
 import React, { useEffect, useState } from "react";
@@ -165,96 +165,6 @@ const Login = () => {
   );
 };
 
-export default Login; */
+export default Login; 
 
-
-import React, { useState } from "react";
-
-const UserProfile = () => {
-  const [isEditing, setIsEditing] = useState(false);
-
-  const handleEditProfile = () => {
-    setIsEditing(!isEditing);
-  };
-
-  return (
-    <div className="bg-[#e5f5fa] min-h-screen flex justify-center items-center py-10">
-      <div className="bg-white rounded-lg shadow-md p-8 max-w-4xl w-full flex flex-col md:flex-row items-center md:items-start">
-        <div className="flex flex-col items-center md:mr-8">
-          <div className="relative w-32 h-32 bg-[#dfeaf1] rounded-full overflow-hidden flex items-center justify-center mb-4">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="User"
-              className="w-full h-full object-cover"
-            />
-           
-          </div>
-          <div className="space-y-8 mt-4">
-            <div className="flex justify-between w-full">
-              <span className="font-bold pr-4">Evaluation</span>
-              <span className="bg-gray-100 rounded p-2 w-24"></span>
-            </div>
-            <div className="flex justify-between w-full">
-              <span className="font-bold pr-4">Bonus</span>
-              <span className="bg-gray-100 rounded p-2 w-24"></span>
-            </div>
-            <div className="flex justify-between w-full">
-              <span className="font-bold pr-4">Total</span>
-              <span className="bg-gray-100 rounded p-2 w-24"></span>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 md:mt-0 md:ml-8 w-full">
-          <h2 className="text-2xl font-bold mb-4">User Profile</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block font-semibold">First Name</label>
-              <input
-                type="text"
-                defaultValue="Jonathan"
-                readOnly={!isEditing}
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
-              />
-            </div>
-            <div>
-              <label className="block font-semibold">Last Name</label>
-              <input
-                type="text"
-                defaultValue="Parsons"
-                readOnly={!isEditing}
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
-              />
-            </div>
-            <div>
-              <label className="block font-semibold">Email</label>
-              <input
-                type="email"
-                defaultValue="j.parsons@gmail.com"
-                readOnly={!isEditing}
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
-              />
-            </div>
-            <div>
-              <label className="block font-semibold">Matricule</label>
-              <input
-                type="text"
-                defaultValue="USTHB"
-                readOnly
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
-              />
-            </div>
-            <button
-              onClick={handleEditProfile}
-              className="bg-blue-500 text-white rounded px-4 py-2 mt-4"
-            >
-              {isEditing ? "Save Profile" : "Edit Profile"}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default UserProfile;
 
