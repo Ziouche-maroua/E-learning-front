@@ -1,22 +1,18 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logImage from '../assets/images/log-image.jpg';
 import emailIcon from '../assets/images/email.png';
-
 import googleIcon from '../assets/images/google.png';
 import microsoftIcon from '../assets/images/microsoft.png';
 
-const Login= () =>{
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
 
   const submitForm = (action) => {
     const userData = {
@@ -24,26 +20,23 @@ const Login= () =>{
       password: password,
     };
 
-
     if (action === 'login') {
-
-      console.log("Login with success");
+      console.log('Login with success');
       // Handle login logic here
     }
   };
 
   const handleGoogleSignUp = () => {
-    console.log("Google sign up clicked");
+    console.log('Google sign up clicked');
     // Handle Google sign up logic here
   };
 
   const handleMicrosoftSignUp = () => {
-    console.log("Microsoft sign up clicked");
+    console.log('Microsoft sign up clicked');
     // Handle Microsoft sign up logic here
   };
 
   return (
-
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
         <div className="md:w-1/3 flex justify-center items-center p-4">
@@ -74,18 +67,17 @@ const Login= () =>{
                 placeholder="Password"
                 className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
               />
-             
             </div>
           </div>
-          <div className="flex space-x-4 mt-6">
+          <div className="mt-6">
             <button
               onClick={() => submitForm('login')}
               className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               Log in
             </button>
-            <div className="flex items-center">
-              <span className="ml-2">Don't have an account?</span>
+            <div className="mt-2">
+              <span>Don't have an account?</span>
               <Link to="/signup" className="ml-2 text-[#79bffb] font-bold">
                 Go to Sign up
               </Link>
@@ -109,7 +101,6 @@ const Login= () =>{
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );

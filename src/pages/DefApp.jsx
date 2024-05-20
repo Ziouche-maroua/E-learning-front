@@ -20,14 +20,14 @@ const DefApp = () => {
       <div className="flex flex-1 pt-16">
         <div className={`w-full lg:w-1/3 border ${showSections ? '' : 'hidden lg:block'} border-blue-800 shadow-blue-800 p-4 mx-4 my-5`}>
           <ul className="space-y-9">
-            <li className="bg-blue-300 text-blue-400 p-2">
+            <li className="bg-blue-300 text-yellow-100 p-2">
               <Link to="/chapter2/definition">Definition</Link>
             </li>
             <li className="bg-yellow-200 p-2">
               <Link to="/chapter2/properties">Properties</Link>
             </li>
             <li className="bg-blue-300 p-2">
-              <Link to="/chapter2/Properties">Image and Kernel</Link>
+              <Link to="/chapter2/KernalImg">Image and Kernel</Link>
             </li>
             <li className="bg-yellow-200 p-2">
               <Link to="/chapter2/InjectifSurjectif">Bijectif, Surjectif, Injectif</Link>

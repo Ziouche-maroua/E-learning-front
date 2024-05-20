@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logImage from '../assets/images/log-image.jpg';
 import emailIcon from '../assets/images/email.png';
-
 import googleIcon from '../assets/images/google.png';
 import microsoftIcon from '../assets/images/microsoft.png';
 
-const SignUp = () =>{
+const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -86,7 +85,6 @@ const SignUp = () =>{
                 placeholder="Password"
                 className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
               />
-              
             </div>
             <div className="relative w-full">
               <input
@@ -96,18 +94,17 @@ const SignUp = () =>{
                 placeholder="Confirm Password"
                 className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
               />
-
             </div>
           </div>
-          <div className="flex space-x-4 mt-6">
+          <div className="mt-6">
             <button
               onClick={() => submitForm('signup')}
               className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               Sign up
             </button>
-            <div className="flex items-center">
-              <span className="ml-2">Already have an account?</span>
+            <div className="mt-2">
+              <span>Already have an account?</span>
               <Link to="/login" className="ml-2 text-[#79bffb] font-bold">
                 Go to Log In
               </Link>
