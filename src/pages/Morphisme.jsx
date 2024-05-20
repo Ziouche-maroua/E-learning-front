@@ -4,6 +4,7 @@ import Isomorphisme from '../components/Isomorphisme';
 import Endomorphisme from '../components/Endomorphisme'
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import Chatbox from '../components/ChatBox';
 const Morphisme = () => {
   return (
     <div className="h-screen flex flex-col">
@@ -52,6 +53,7 @@ const Morphisme = () => {
 
       </div>
       </div>
+      <Chatbox/>
       </div>
   );
 };

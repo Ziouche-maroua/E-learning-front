@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import Chatbox from '../components/ChatBox';  
 import algebra from '../assets/images/algebra.webp';
 import algorithm from '../assets/images/algorithm.png';
 import sfsd from '../assets/images/sfsd.webp';
@@ -21,7 +22,6 @@ const Home = () => {
         <p className="text-3xl mt-10 mb-3 text-black">Explore our courses:</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
-          {/* Algebra Module */}
           <Link to="/MotivationPage">
             <div className="h-auto bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center">
               <img
@@ -36,12 +36,10 @@ const Home = () => {
                 <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)] text-left">
                   The branch of mathematics dealing with vector spaces and linear mappings between these spaces, used to solve systems of linear equations
                 </p>
-              
               </div>
             </div>
           </Link>
 
-          {/* Algorithm Module */}
           <div className="h-auto bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center">
             <img
               src={algorithm}
@@ -55,11 +53,9 @@ const Home = () => {
               <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)] text-left">
                 A step-by-step procedure or set of rules for solving a problem or accomplishing a task, often used in computer science and mathematics
               </p>
-             
             </div>
           </div>
 
-          {/* Probability Module */}
           <div className="h-auto bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center">
             <img
               src={probability}
@@ -73,11 +69,9 @@ const Home = () => {
               <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)] text-left">
                 The branch of mathematics concerned with the likelihood of events occurring, based on the analysis of random variables and uncertainty
               </p>
-             
             </div>
           </div>
 
-          {/* File Structure and Data Structure Module */}
           <div className="h-auto bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center">
             <img
               src={sfsd}
@@ -91,12 +85,12 @@ const Home = () => {
               <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)] text-left">
                 File structure refers to the organization and layout of data within a file, while data structure refers to the organization and storage of data
               </p>
-
-             
             </div>
           </div>
         </div>
       </div>
+
+      <Chatbox />  {/* Add the Chatbox component  */}
     </div>
   );
 };

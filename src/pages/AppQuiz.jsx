@@ -1,5 +1,6 @@
 import React from 'react';
 import Chap2quiz from '../components/Chap2quiz';
+import Chatbox from '../components/ChatBox'; 
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 
@@ -39,6 +40,7 @@ const Quiz = () => {
       
   </div>
   </div>
+  <Chatbox/>
   </div>
   );
   };

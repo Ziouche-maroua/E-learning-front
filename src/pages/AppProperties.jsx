@@ -1,5 +1,6 @@
 import React from 'react';
 import AppProps from '../components/PropsOfLinearTransformation';
+import Chatbox from '../components/ChatBox'; 
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 
@@ -51,6 +52,7 @@ const AppProperties = () => {
      
     </div>
     </div>
+    <Chatbox/>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../components/TopBar'; 
-
+import Chatbox from '../components/ChatBox'; 
 
 const Chapter3 = () => {
   return (
@@ -10,6 +10,7 @@ const Chapter3 = () => {
     <div className="flex flex-1 pt-16">
 
     </div>
+    <Chatbox/>
   </div>
   );
 };

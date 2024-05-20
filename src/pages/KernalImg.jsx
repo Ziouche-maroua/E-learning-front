@@ -3,6 +3,7 @@ import Kernal from '../components/Kernal';
 import Image from '../components/Image'
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import Chatbox from '../components/ChatBox';
 
 const KernalImg = () => {
   return (
@@ -51,6 +52,7 @@ const KernalImg = () => {
 
   </div>
   </div>
+  <Chatbox/>
   </div>
   );
   };

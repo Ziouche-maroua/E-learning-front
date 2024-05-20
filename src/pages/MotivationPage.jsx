@@ -7,6 +7,7 @@ import chemistry from '../assets/images/chemistry.webp';
 import gps from '../assets/images/gps.png';
 
 
+
 const MotivationPage = () => {
   return (
     <div>
@@ -54,6 +55,7 @@ const MotivationPage = () => {
         </div>
 
       </div>
+     
     </div>
   );
 };

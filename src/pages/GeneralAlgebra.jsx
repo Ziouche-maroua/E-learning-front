@@ -4,7 +4,7 @@ import TopBar from '../components/TopBar';
 import vectorImage from '../assets/images/vectorSpace.png';
 import linearAppImage from '../assets/images/linearApp.png';
 import matrixImage from '../assets/images/matrix.png';
-
+import Chatbox from '../components/ChatBox'; 
 function GeneralAlgebra() {
   return (
     <div>
@@ -50,6 +50,7 @@ function GeneralAlgebra() {
           </div>
         </div>
       </div>
+      <Chatbox/>
     </div>
 
   );

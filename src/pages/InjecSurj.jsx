@@ -4,6 +4,7 @@ import TopBar from '../components/TopBar';
 import Bijective from '../components/Bijective';
 import Injectif from '../components/InjectifTransformation';
 import Surjectif from '../components/SurjectifTransformation';
+import Chatbox from '../components/ChatBox'; 
 
 const InjecSurj = () => {
   return (
@@ -49,6 +50,7 @@ const InjecSurj = () => {
 
   </div>
   </div>
+  <Chatbox/>
   </div>
   );
   };

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import Chatbox from '../components/ChatBox'; 
 import Def from '../components/DefOfLinearTransformation';
 import DefDynamic from '../components/TransformationDynamicExample';
 import { Link } from 'react-router-dom';
@@ -58,7 +58,7 @@ const DefApp = () => {
           {showSections ? 'Hide Sections' : 'Show Sections'}
         </button>
       </div>
-
+    <Chatbox/>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import logImage from '../assets/images/log-image.jpg';
 import emailIcon from '../assets/images/email.png';
 import googleIcon from '../assets/images/google.png';
 import microsoftIcon from '../assets/images/microsoft.png';
-
+import Chatbox from '../components/ChatBox'; 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -102,6 +102,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <Chatbox/>
     </div>
   );
 }
