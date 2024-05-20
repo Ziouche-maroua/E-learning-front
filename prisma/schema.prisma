@@ -11,6 +11,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+
 // User model representing users in the application(inheritance)
 model User {
   id         Int      @id @default(autoincrement()) // Unique identifier for the user
@@ -40,13 +41,15 @@ model Student {
 
 // Module model representing modules in the course
 model Module {
-  id           Int       @id @default(autoincrement()) // Unique identifier for the module
-  name          String    @unique // Name of the module
+  id             Int            @id @default(autoincrement()) // Unique identifier for the module
+  name           String         @unique // Name of the module
   // Reference to the associated Teacher
- // teacher      Teacher?   @relation("TeacherToModule",fields: [teacherId], references: [id]) 
+  // teacher      Teacher?   @relation("TeacherToModule",fields: [teacherId], references: [id]) 
   //teacherId    Int  ?     // Foreign key to the Teacher table
-  chapters     Chapter[] // One-to-many relationship with Chapter model
-  userActivities UserActivity[] 
+  chapters       Chapter[] // One-to-many relationship with Chapter model
+  userActivities UserActivity[]
+  description    String?
+  imgLink        String?
 }
 
 // Chapter model representing chapters in the Module
