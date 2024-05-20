@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 // import { axiosGet } from "./services/axiosUtils";
 import axios from "axios";
@@ -32,6 +31,7 @@ function Accountinfo() {
 
         // Update the state with the retrieved data
         await setStudents(studentData.data);
+        console.log(user);
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des informations utilisateur:",
@@ -48,7 +48,6 @@ function Accountinfo() {
     fetchStudentInfo();
   }, []);
 
-
   return (
     <div className="bg-[#e5f5fa] min-h-screen flex justify-center items-center py-10">
       <div className="bg-white rounded-lg shadow-md p-8 max-w-4xl w-full flex flex-col md:flex-row items-center md:items-start">
@@ -59,7 +58,6 @@ function Accountinfo() {
               alt="User"
               className="w-full h-full object-cover"
             />
-           
           </div>
           <div className="space-y-8 mt-4">
             <div className="flex justify-between w-full">
@@ -83,36 +81,44 @@ function Accountinfo() {
               <label className="block font-semibold">First Name</label>
               <input
                 type="text"
-                
                 readOnly={!isEditing}
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
+                className={`w-full bg-gray-100 rounded p-2 ${
+                  !isEditing ? "bg-gray-100" : "bg-white"
+                }`}
+                value={user?.student?.user.first_name}
               />
             </div>
             <div>
               <label className="block font-semibold">Last Name</label>
               <input
                 type="text"
-               
                 readOnly={!isEditing}
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
+                className={`w-full bg-gray-100 rounded p-2 ${
+                  !isEditing ? "bg-gray-100" : "bg-white"
+                }`}
+                value={user?.student?.user.last_name}
               />
             </div>
             <div>
               <label className="block font-semibold">Email</label>
               <input
                 type="email"
-               
                 readOnly={!isEditing}
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
+                className={`w-full bg-gray-100 rounded p-2 ${
+                  !isEditing ? "bg-gray-100" : "bg-white"
+                }`}
+                value={user?.student?.user.email}
               />
             </div>
             <div>
               <label className="block font-semibold">Matricule</label>
               <input
                 type="text"
-               
                 readOnly
-                className={`w-full bg-gray-100 rounded p-2 ${!isEditing ? "bg-gray-100" : "bg-white"}`}
+                className={`w-full bg-gray-100 rounded p-2 ${
+                  !isEditing ? "bg-gray-100" : "bg-white"
+                }`}
+                value={user?.student?.matricule}
               />
             </div>
             <button
