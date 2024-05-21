@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 
 
 
-
 const Chapter3 = () => {
   const navigate = useNavigate();
 useEffect(()=>{
@@ -19,7 +18,7 @@ useEffect(()=>{
     <TopBar />
 
     <div className="flex flex-1 pt-16">
-     
+
     </div>
   </div>
   );

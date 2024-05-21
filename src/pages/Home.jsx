@@ -47,6 +47,8 @@ const Home = () => {
   return (
     <div>
       <TopBar />
+
+
       <div className="container mx-auto px-2 pt-16">
         <span className="text-4xl font-bold mt-20 text-blue-300 ">
           A New Way To Learn <br /> & Get Knowledge
@@ -86,6 +88,7 @@ const Home = () => {
                 </div>
               </div>
             ))}
+
           </div>
         )}
       </div>
