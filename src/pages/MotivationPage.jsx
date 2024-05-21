@@ -100,6 +100,7 @@ const MotivationPage = () => {
           onClick={handleGoToChapters}
         >
           Go to Chapters
+          
         </button>
       </div>
     </div>
