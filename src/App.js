@@ -1,5 +1,3 @@
-// App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
@@ -24,7 +22,9 @@ import Morphisme from './pages/Morphisme'
 
 
 import Login from './pages/Login';
-import SignUp from './pages/Signup'
+
+import SignUp from './pages/SignUp'
+
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
       <Route exact path="/chapter2" element={<Chapter2 />} />
       <Route exact path="/chapter3" element={<Chapter3 />} />
       <Route path="/MotivationPage" element={<MotivationPage />} />
-      <Route path="/SettingsPage" element={<SettingsPage />} />
+      <Route path="/SettingsPage" element={<SettingsPage />} /> 
       <Route path="/ProfilePage" element={<ProfilePage />} />
       <Route path="/LogoutPage" element={<LogoutPage />} />
       <Route path="/GeneralAlgebra" element={<GeneralAlgebra />} />
