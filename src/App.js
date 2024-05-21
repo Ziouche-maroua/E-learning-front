@@ -12,19 +12,18 @@ import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
 import GeneralAlgebra from './pages/GeneralAlgebra';
 
-
 import DefApp from './pages/DefApp'
 import AppProperties from './pages/AppProperties';
 import InjSurj from './pages/InjecSurj';
 import AppQuiz from './pages/AppQuiz';
 import KernalImg from './pages/KernalImg'
 import Morphisme from './pages/Morphisme'
+import Matrixdef from './pages/Matrixdef';
+import Elementary from './pages/Elementary';
+import MatrixQuiz from './pages/MatrixQuiz';
+import MatrixInverse from './pages/MatInverse';
+import Matrixoperation from './pages/Matrixoperation'
 
-
-
-
-import Login from './pages/Login';
-import SignUp from './pages/Signup'
 
 const App = () => {
   return (
@@ -46,12 +45,16 @@ const App = () => {
       <Route path="/chapter2/InjectifSurjectif" element={<InjSurj/>} />
       <Route path="/chapter2/Morphisme" element={<Morphisme/>} />
       <Route path="/chapter2/Quiz" element={<AppQuiz/>} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+
+<Route path="/chapter3/Matdefinition" element={<Matrixdef />} />
+      <Route path="/chapter3/Elementary" element={<Elementary/>} />
+      <Route path="/chapter3/MatrixInverse" element={<MatrixInverse/>} />
+      <Route path="/chapter3/operations" element={<Matrixoperation/>} />
+      
+      <Route path="/chapter3/Quiz3" element={<MatrixQuiz/>} />
 
       </Routes>
     </Router>
-
   );
 };
 
