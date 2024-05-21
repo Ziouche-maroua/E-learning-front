@@ -24,7 +24,7 @@ const MotivationPage = () => {
         navigate("/GeneralAlgebra");
       } else {
         // Afficher une fenêtre modale demandant à l'utilisateur de s'inscrire d'abord
-        toast.error("Vous devez d'abord vous inscrire !");
+        toast.error("You must register first !");
         console.log(token);
         // Rediriger vers la page de sign up
         return navigate("/signup");

@@ -11,6 +11,8 @@ import Cookies from "js-cookie";
 const Home = () => {
   const [modules, setModules] = useState([]);
   const [loading, setLoading] = useState(false);
+ 
+
 
   useEffect(() => {
     // Function to fetch modules information from the backend
@@ -40,10 +42,12 @@ const Home = () => {
         console.log(modules);
       }
     };
+    
 
     // Call the function to fetch modules information when the component mounts
     fetch();
   }, []);
+  
   return (
     <div>
       <TopBar />
@@ -76,12 +80,7 @@ const Home = () => {
                       linear mappings between these spaces, used to solve
                       systems of linear equations ...
                     </p>
-                    <Link
-                      to="/MotivationPage"
-                      className="text-sm font-semibold text-blue-500 underline cursor-pointer"
-                    >
-                      Learn More
-                    </Link>
+                   
                   </div>
                 </div>
               </div>

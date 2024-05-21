@@ -4,8 +4,50 @@ import TopBar from '../components/TopBar';
 import vectorImage from '../assets/images/vectorSpace.png';
 import linearAppImage from '../assets/images/linearApp.png';
 import matrixImage from '../assets/images/matrix.png';
+import { useState ,useEffect } from 'react'; 
+import  axios from 'axios';
+import Cookies from "js-cookie";
+
 
 function GeneralAlgebra() {
+  const [chapters,setChapters]=useState([]);
+  const [loadingChapters,setLoadingChapters]=useState(false);
+
+  
+  const fetchChapters = async () => {
+    try {
+      setLoadingChapters(true);
+      const response = await axios.get("http://localhost:3001/api/chapters", {
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`, // Replace with your actual token
+          "Content-Type": "application/json",
+          // Add other headers as needed
+        },
+      });
+
+      setChapters(response.data);
+      console.log(response);
+    } catch (error) {
+      console.error("Erreur lors de la récupération des informations utilisateur:", error);
+    } finally {
+      setLoadingChapters(false);
+      console.log(chapters);
+    }
+  };
+
+  // Call the fetchModules function when the component mounts
+  useEffect(() => {
+   
+    fetchChapters(); // Fetch chapters when the component mounts
+  }, []);
+  
+  
+  
+  
+  
+  
+  
+  
   return (
     <div>
     <TopBar />
