@@ -1,9 +1,4 @@
-
-
-
-import React, { useEffect, useState } from "react";
-
-
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logImage from "../assets/images/log-image.jpg";
 import emailIcon from "../assets/images/email.png";
@@ -16,16 +11,15 @@ import Cookies from "js-cookie";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   const navigate = useNavigate();
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
   const onSubmit = async (data) => {
     try {
       const loginResponse = await axios.post(
@@ -33,21 +27,19 @@ const Login = () => {
         data
       );
       console.log(loginResponse.data);
-
-      // Handle successful login
+      
       if (loginResponse.status === 200) {
         toast.success("Successful login");
-        await Cookies.set("token", loginResponse.data.token);
-        navigate("/"); // Store token in cookie, expires in 7 days
+        Cookies.set("token", loginResponse.data.token); // Store token in cookie, no await needed
+        navigate("/"); 
       } else {
         toast.error("Login failed");
       }
     } catch (loginError) {
       // Handle any errors that occurred during the login attempt
       console.error(loginError);
-
       if (loginError.response && loginError.response.status === 404) {
-        toast.error("account not exsist");
+        toast.error("Account does not exist");
       } else if (loginError.response && loginError.response.status === 401) {
         toast.error("Invalid credentials");
       } else {
@@ -82,8 +74,7 @@ const Login = () => {
             <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
           </div>
           <p className="text-lg font-light mb-6">
-            Create your account and unlock a world of knowledge at your
-            fingertips
+            Create your account and unlock a world of knowledge at your fingertips
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-4">
@@ -165,6 +156,4 @@ const Login = () => {
   );
 };
 
-export default Login; 
-
-
+export default Login;

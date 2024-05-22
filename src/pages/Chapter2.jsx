@@ -1,8 +1,13 @@
 
 import TopBar from '../components/TopBar'; 
+
+
+
+
 import DefApp from './DefApp'; 
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+
 
 
 const Chapter2 = () => {
@@ -16,11 +21,10 @@ useEffect(()=>{
   return (
     <div className="h-screen flex flex-col">
       <TopBar />
-      <div className="flex flex-1 pt-16">
+
+     
         <DefApp/>
 
-
-      </div>
     </div>
   );
 };

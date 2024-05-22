@@ -9,6 +9,7 @@ import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
 import GeneralAlgebra from './pages/GeneralAlgebra';
+import Signup from './pages/Signup';
 
 
 import DefApp from './pages/DefApp'
@@ -22,7 +23,9 @@ import Morphisme from './pages/Morphisme'
 
 
 import Login from './pages/Login';
-import SignUp from './pages/SignUp'
+
+
+
 
 const App = () => {
   return (
@@ -45,7 +48,7 @@ const App = () => {
       <Route path="/chapter2/Morphisme" element={<Morphisme/>} />
       <Route path="/chapter2/Quiz" element={<AppQuiz/>} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/signup" element={<Signup />} />
 
       </Routes>
     </Router>

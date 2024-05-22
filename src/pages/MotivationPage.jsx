@@ -1,3 +1,6 @@
+import computerVision from "../assets/images/computerVision.webp";
+import chemistry from "../assets/images/chemistry.webp";
+import gps from "../assets/images/gps.png";
 import React, { useState } from "react";
 import axios from "axios";
 import TopBar from "../components/TopBar";
@@ -27,7 +30,7 @@ const MotivationPage = () => {
         navigate("/GeneralAlgebra");
       } else {
         // Afficher une fenêtre modale demandant à l'utilisateur de s'inscrire d'abord
-        toast.error("Vous devez d'abord vous inscrire !");
+        toast.error("You must register first !");
         console.log(token);
         // Rediriger vers la page de sign up
         return navigate("/signup");
@@ -79,51 +82,53 @@ const MotivationPage = () => {
   return (
     <div>
       <TopBar />
-      <div className="pt-16 ml-5 mr-15">
-        <p className="text-4xl font-medium text-blue-500 ml-12 mt-16">
-          Motivation
-        </p>
 
-        <span className="text-xl font-medium text-blue-700 ml-12 mt-4">
+      <div className="pt-16 mx-12">
+        <p className="text-4xl font-medium text-yellow-500 ml-12">Motivation</p>
+
+        <span className="text-xl font-medium text-blue-700 ml-12 mt-8">
           Real-world Use Cases:
         </span>
-        <div className="grid grid-cols-3 gap-8 ml-12 mt-8">
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ml-12 mt-6">
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md border w-full md:w-80 h-96 flex flex-col items-center">
             <img
-              src={vectorImage}
+              src={computerVision}
               alt="Vector Spaces"
-              className="w-24 h-24 mx-auto"
+              className="w-32 h-32"
             />
-            <span className="text-lg font-medium text-blue-500 mt-4">
+            <span className="text-lg font-medium text-blue-500 mt-4 text-center">
               Computer Vision
             </span>
-            <p className="text-sm text-gray-700 mt-2">
+            <p className="text-sm text-gray-700 mt-2 text-center">
               Matrices help describe object positions and movements in images
               (seen as pixels).
               <br />
               Image projection determines object distance and position.
             </p>
           </div>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md border">
+
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md border w-full md:w-80 h-96 flex flex-col items-center">
             <img
-              src={linearAppImage}
+              src={chemistry}
               alt="Linear Transformations"
-              className="w-24 h-24 mx-auto"
+              className="w-32 h-32"
             />
-            <span className="text-lg font-medium text-blue-500 mt-4">
+            <span className="text-lg font-medium text-blue-500 mt-4 text-center">
               Chemistry
             </span>
-            <p className="text-sm text-gray-700 mt-2">
+            <p className="text-sm text-gray-700 mt-2 text-center">
               It utilizes matrices to organize chemical data and linear
               transformations to analyze how properties change, enabling
               chemists to model reactions and understand complex systems more
               effectively.
             </p>
           </div>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md border">
-            <img src={matrixImage} alt="Matrix" className="w-24 h-24 mx-auto" />
-            <span className="text-lg font-medium text-blue-500 mt-4">GPS</span>
-            <p className="text-sm text-gray-700 mt-2">
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md border w-full md:w-80 h-96 flex flex-col items-center">
+            <img src={gps} alt="Matrix" className="w-32 h-32" />
+            <span className="text-lg font-medium text-blue-500 mt-4 text-center">
+              GPS
+            </span>
+            <p className="text-sm text-gray-700 mt-2 text-center">
               GPS systems use linear algebra concepts like matrices and
               transformations to pinpoint locations accurately. Matrices
               organize satellite data, while transformations convert signals
