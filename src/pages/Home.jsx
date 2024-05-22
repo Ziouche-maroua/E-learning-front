@@ -11,8 +11,6 @@ import Cookies from "js-cookie";
 const Home = () => {
   const [modules, setModules] = useState([]);
   const [loading, setLoading] = useState(false);
- 
-
 
   useEffect(() => {
     // Function to fetch modules information from the backend
@@ -42,17 +40,13 @@ const Home = () => {
         console.log(modules);
       }
     };
-    
 
     // Call the function to fetch modules information when the component mounts
     fetch();
   }, []);
-  
   return (
     <div>
       <TopBar />
-
-
       <div className="container mx-auto px-2 pt-16">
         <span className="text-4xl font-bold mt-20 text-blue-300 ">
           A New Way To Learn <br /> & Get Knowledge
@@ -66,17 +60,16 @@ const Home = () => {
         ) : (
           <div className="grid grid-cols-4 gap-8">
             {modules.map((module) => (
-              <div className="h-87 bg-gray-100 p-8 rounded-lg shadow-md border">
-                <Link to={`/MotivationPage?id=${module.id}`} className="text-sm font-semibold text-blue-500 underline cursor-pointer"
-                    >
-                    
+              <Link
+                to={`/MotivationPage?id=${module.id}`}
+                className="h-87 bg-gray-100 p-8 rounded-lg shadow-md border"
+              >
                 <img
                   src={`${module.imgLink}.webp`}
                   onError={(e) => (e.target.src = `${module.imgLink}.png`)}
                   alt={`${module.imgLink} module`}
                   className="w-24 h-24 mx-auto"
                 />
-                    </Link>
 
                 <div className="h-full flex flex-col justify-between">
                   <div>
@@ -86,12 +79,10 @@ const Home = () => {
                       linear mappings between these spaces, used to solve
                       systems of linear equations ...
                     </p>
-                   
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
-
           </div>
         )}
       </div>
