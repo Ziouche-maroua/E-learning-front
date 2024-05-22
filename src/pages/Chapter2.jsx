@@ -11,12 +11,7 @@ import { useEffect } from 'react';
 
 
 const Chapter2 = () => {
-  const navigate = useNavigate();
-useEffect(()=>{
-  if(!localStorage.getItem("student")){
-    navigate("/login")
-  }
-});
+
   
   return (
     <div className="h-screen flex flex-col">

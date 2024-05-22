@@ -8,7 +8,8 @@ import microsoftIcon from "../assets/images/microsoft.png";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
-const Signup = () => {
+
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -21,20 +22,25 @@ const Signup = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   const togglePasswordVisibilityTwo = () => {
     setShowPasswordTwo(!showPasswordTwo);
   };
+
   const onSubmit = async (data) => {
     console.log(data);
+
     if (data.password !== data.confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
+
     try {
       const response = await axios.post(
         "http://localhost:3001/api/student/register",
         data
       );
+
       if (response?.status === 201) {
         console.log(response.data);
         toast.success("Successful registration");
@@ -48,22 +54,30 @@ const Signup = () => {
     } catch (error) {
       if ( error.response.status === 400) {
         toast.error("User already exists");
+<<<<<<< HEAD
         console.log(error);
 
+=======
+
+        console.log(Cookies.get("token"));
+>>>>>>> 6f5edf31be038b6702842f649c833700be49515a
       } else {
         console.error(error);
         toast.error("An error has occurred");
       }
     }
   };
+
   const handleGoogleSignUp = () => {
     console.log("Google sign up clicked");
     // Handle Google sign up logic here
   };
+
   const handleMicrosoftSignUp = () => {
     console.log("Microsoft sign up clicked");
     // Handle Microsoft sign up logic here
   };
+
   return (
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
@@ -111,11 +125,6 @@ const Signup = () => {
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("last_name", {
                     required: "Please enter your last name",
-
-                    minLength: {
-                      value: 3,
-                      message: "Last name must be at least 3 characters",
-                    },
 
                     minLength: {
                       value: 3,
@@ -246,4 +255,5 @@ const Signup = () => {
     </div>
   );
 };
-export default Signup;
+
+export default SignUp;
