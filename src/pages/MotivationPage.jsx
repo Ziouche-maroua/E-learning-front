@@ -62,8 +62,8 @@ const MotivationPage = () => {
         );
 
         // Update the state with the retrieved data
-        await setChapters(response.data);
         console.log(response);
+        await setChapters(response.data);
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des informations utilisateur:",
@@ -72,13 +72,13 @@ const MotivationPage = () => {
       } finally {
         // Set loading to false after data is fetched or an error occurs
         setLoading(false);
-        console.log(chapters);
       }
     };
 
     // Call the function to fetch modules information when the component mounts
     fetch();
   }, []);
+  console.log(chapters);
   return (
     <div>
       <TopBar />
