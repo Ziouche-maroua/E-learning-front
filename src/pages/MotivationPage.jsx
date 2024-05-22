@@ -13,8 +13,6 @@ import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 
 const MotivationPage = () => {
-  const [chapters, setChapters] = useState([]);
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const query = new URLSearchParams(useLocation().search);
   const id = query.get("id");
@@ -27,9 +25,11 @@ const MotivationPage = () => {
 
       if (token) {
         // L'utilisateur a déjà effectué le sign up, rediriger vers la page des chapitres
-        navigate("/GeneralAlgebra");
+        navigate("/GeneralAlgebra?id=" + id);
       } else {
         // Afficher une fenêtre modale demandant à l'utilisateur de s'inscrire d'abord
+        Cookies.set("redirectAfterSignup", "/GeneralAlgebra?id=" + id);
+
         toast.error("You must register first !");
         console.log(token);
         // Rediriger vers la page de sign up
@@ -44,41 +44,6 @@ const MotivationPage = () => {
     }
   };
 
-  useEffect(() => {
-    // Function to fetch modules information from the backend
-    const fetch = async () => {
-      try {
-        setLoading(true);
-        // Send HTTP GET request to the backend to retrieve modules information
-        const response = await axios.get(
-          `http://localhost:3001/api/modules/${id}/chapters`,
-          {
-            headers: {
-              Authorization: `Bearer ${Cookies.get("token")}`, // Replace with your actual token
-              "Content-Type": "application/json",
-              // Add other headers as needed
-            },
-          }
-        );
-
-        // Update the state with the retrieved data
-        await setChapters(response.data);
-        console.log(response);
-      } catch (error) {
-        console.error(
-          "Erreur lors de la récupération des informations utilisateur:",
-          error
-        );
-      } finally {
-        // Set loading to false after data is fetched or an error occurs
-        setLoading(false);
-        console.log(chapters);
-      }
-    };
-
-    // Call the function to fetch modules information when the component mounts
-    fetch();
-  }, []);
   return (
     <div>
       <TopBar />
