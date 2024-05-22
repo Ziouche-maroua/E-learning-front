@@ -7,11 +7,14 @@ import matrixImage from '../assets/images/matrix.png';
 import { useState ,useEffect } from 'react'; 
 import  axios from 'axios';
 import Cookies from "js-cookie";
+import { useLocation } from 'react-router-dom';
 
 
 function GeneralAlgebra() {
   const [chapters,setChapters]=useState([]);
   const [loadingChapters,setLoadingChapters]=useState(false);
+
+
 
   
   const fetchChapters = async () => {
@@ -37,6 +40,7 @@ function GeneralAlgebra() {
 
   // Call the fetchModules function when the component mounts
   useEffect(() => {
+
    
     fetchChapters(); // Fetch chapters when the component mounts
   }, []);
