@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logImage from "../assets/images/log-image.jpg";
 import emailIcon from "../assets/images/email.png";
 import { useForm } from "react-hook-form";
@@ -8,7 +8,8 @@ import microsoftIcon from "../assets/images/microsoft.png";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
-const Signup = () => {
+
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -16,38 +17,38 @@ const Signup = () => {
     register,
     formState: { errors },
   } = useForm();
-  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   const togglePasswordVisibilityTwo = () => {
     setShowPasswordTwo(!showPasswordTwo);
   };
+
   const onSubmit = async (data) => {
     console.log(data);
+
     if (data.password !== data.confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
+
     try {
       const response = await axios.post(
         "http://localhost:3001/api/student/register",
         data
       );
+
       if (response?.status === 201) {
         console.log(response.data);
         toast.success("Successful registration");
         await Cookies.set("token", response.data.token); // Token will expire in 7 days
-        const route = Cookies.get("redirectAfterSignup");
-        if (route) {
-          navigate(route);
-          Cookies.remove("redirectAfterSignup");
-        } else navigate("/");
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
         toast.error("User already exists");
+
         console.log(Cookies.get("token"));
       } else {
         console.error(error);
@@ -55,14 +56,17 @@ const Signup = () => {
       }
     }
   };
+
   const handleGoogleSignUp = () => {
     console.log("Google sign up clicked");
     // Handle Google sign up logic here
   };
+
   const handleMicrosoftSignUp = () => {
     console.log("Microsoft sign up clicked");
     // Handle Microsoft sign up logic here
   };
+
   return (
     <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
@@ -110,16 +114,8 @@ const Signup = () => {
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("last_name", {
                     required: "Please enter your last name",
-
-                    minLength: {
-                      value: 3,
-                      message: "Last name must be at least 3 characters",
-                    },
-
-                    minLength: {
-                      value: 3,
-                      message: "Last name must be at least 3 characters",
-                    },
+                    
+                    minLength: { value: 3, message: "Last name must be at least 3 characters" }
                   })}
                 />
                 {errors.last_name && <span>{errors.last_name.message}</span>}
@@ -245,4 +241,5 @@ const Signup = () => {
     </div>
   );
 };
-export default Signup;
+
+export default SignUp;
