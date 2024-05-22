@@ -28,6 +28,8 @@ const MotivationPage = () => {
         navigate("/GeneralAlgebra?id=" + id);
       } else {
         // Afficher une fenêtre modale demandant à l'utilisateur de s'inscrire d'abord
+        Cookies.set("redirectAfterSignup", "/GeneralAlgebra?id=" + id);
+
         toast.error("You must register first !");
         console.log(token);
         // Rediriger vers la page de sign up

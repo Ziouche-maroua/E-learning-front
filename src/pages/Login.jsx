@@ -18,7 +18,11 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = async (data) => {
     try {
@@ -27,11 +31,13 @@ const Login = () => {
         data
       );
       console.log(loginResponse.data);
-      
+
       if (loginResponse.status === 200) {
         toast.success("Successful login");
         Cookies.set("token", loginResponse.data.token); // Store token in cookie, no await needed
-        navigate("/"); 
+        const route = Cookies.get("redirectAfterSignup");
+        if (route) navigate(route);
+        else navigate("/");
       } else {
         toast.error("Login failed");
       }
@@ -74,7 +80,8 @@ const Login = () => {
             <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
           </div>
           <p className="text-lg font-light mb-6">
-            Create your account and unlock a world of knowledge at your fingertips
+            Create your account and unlock a world of knowledge at your
+            fingertips
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-4">
