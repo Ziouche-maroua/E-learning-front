@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 
 const MatrixVisualizations = () => {
@@ -82,15 +79,19 @@ const MatrixVisualizations = () => {
         <div className="flex flex-col justify-center items-center mt-10 space-y-10">
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Square and Null Matrices</h3>
-                <div className="mb-2">
-                    <p className="inline-block mr-10">A square matrix has the same number of rows and columns.</p>
-                    <p className="inline-block">A null matrix has all elements equal to zero.</p>
-                </div>
                 <div className="flex justify-center items-center space-x-10">
-                    <div className="mr-10">
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#BAE1FF] inline-block mr-2"></span>
+                            <p>A square matrix has the same number of rows and columns.</p>
+                        </div>
                         {renderMatrix(squareMatrix, 3, squareColors)}
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-gray-300 inline-block mr-2"></span>
+                            <p>A null matrix has all elements equal to zero.</p>
+                        </div>
                         <div className="flex space-x-4 mb-4">
                             <div>
                                 <label className="block mb-2">Rows</label>
@@ -124,15 +125,19 @@ const MatrixVisualizations = () => {
 
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Row and Column Matrices</h3>
-                <div className="mb-2">
-                    <p className="inline-block mr-10">A row matrix has a single row with multiple columns.</p>
-                    <p className="inline-block">A column matrix has a single column with multiple rows.</p>
-                </div>
                 <div className="flex justify-center items-center space-x-10">
-                    <div className="mr-10">
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#FFDFBA] inline-block mr-2"></span>
+                            <p>A row matrix has a single row with multiple columns.</p>
+                        </div>
                         {renderMatrix(rowMatrix, rowMatrix[0].length, rowColors)}
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#FFB3BA] inline-block mr-2"></span>
+                            <p>A column matrix has a single column with multiple rows.</p>
+                        </div>
                         {renderMatrix(columnMatrix, 1, columnColors)}
                     </div>
                 </div>
@@ -140,15 +145,19 @@ const MatrixVisualizations = () => {
 
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Diagonal and Identity Matrices</h3>
-                <div className="mb-2">
-                    <p className="inline-block mr-10">A diagonal matrix has non-zero elements only on its main diagonal.</p>
-                    <p className="inline-block">An identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere.</p>
-                </div>
                 <div className="flex justify-center items-center space-x-10">
-                    <div className="mr-10">
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#BAE1FF] inline-block mr-2"></span>
+                            <p>A diagonal matrix has non-zero elements only on its main diagonal.</p>
+                        </div>
                         {renderMatrix(diagonalMatrix, 3, diagonalColors)}
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#BAFFC9] inline-block mr-2"></span>
+                            <p>An identity matrix is a square matrix with ones on the main diagonal and zeros elsewhere.</p>
+                        </div>
                         {renderMatrix(identityMatrix, 3, identityColors)}
                     </div>
                 </div>
@@ -156,15 +165,19 @@ const MatrixVisualizations = () => {
 
             <div className="text-center">
                 <h3 className="text-lg font-semibold mb-2">Upper and Lower Triangular Matrices</h3>
-                <div className="mb-2">
-                    <p className="inline-block mr-10">An upper triangular matrix has non-zero elements only on and above the main diagonal.</p>
-                    <p className="inline-block">A lower triangular matrix has non-zero elements only on and below the main diagonal.</p>
-                </div>
                 <div className="flex justify-center items-center space-x-10">
-                    <div className="mr-10">
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#FFDFBA] inline-block mr-2"></span>
+                            <p>An upper triangular matrix has non-zero elements only on and above the main diagonal.</p>
+                        </div>
                         {renderMatrix(upperTriangularMatrix, 3, upperTriangularColors)}
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex items-center mb-2">
+                            <span className="w-3 h-3 rounded-full bg-[#FFB3BA] inline-block mr-2"></span>
+                            <p>A lower triangular matrix has non-zero elements only on and below the main diagonal.</p>
+                        </div>
                         {renderMatrix(lowerTriangularMatrix, 3, lowerTriangularColors)}
                     </div>
                 </div>

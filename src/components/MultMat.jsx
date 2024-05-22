@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 
 const MatrixAnimation = () => {
+    
     const [matrixA, setMatrixA] = useState([[1, 2], [3, 4]]);
     const [matrixB, setMatrixB] = useState([[5, 6], [7, 8]]);
     const [step, setStep] = useState(0);
@@ -65,11 +66,17 @@ const MatrixAnimation = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-10 space-y-5">
+            <div className=" text-yellow-900 text-2xl font-bold mb-4">Matrices Multiplications </div>
+          <p className="text-center"> For matrices A and B, in order to form the product AB, the number of columns of A must equal the number
+of rows of B. Consider a product AB where A has dimensions m×n and B has dimensions n× p. Then the
+dimensions of the product are  m×p
+</p> 
+
             <div className="flex justify-center items-center space-x-10">
                 <div className="text-center">
                     <h3 className="text-lg font-semibold mb-2">Matrix A</h3>
                     <div className="grid grid-cols-2 gap-1">
-                        {matrixA.map((row, i) => (
+                        {matrixA.map((row,i) => (
                             <React.Fragment key={i}>
                                 {row.map((cell, j) => (
                                     <input
@@ -158,6 +165,8 @@ const MatrixAnimation = () => {
                     Animate Multiplication
                 </button>
             </div>
+            <span>Note that the two outside numbers give the dimensions of the product. If the two middle numbers do not
+                    match, we cannot multiply the matrices</span>
         </div>
     );
 };

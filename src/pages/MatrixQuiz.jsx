@@ -10,7 +10,7 @@ const MatrixQuiz = () => {
     <TopBar />
       <div className="flex flex-1 pt-16">   
     <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
-    <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-purple-900 ">  ALGEBRA
+    <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-yellow-900 ">  MATRIX
             <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span></h2>
     <ul className="space-y-9">
       <li className="bg-gray-300 p-2 rounded-md">
@@ -33,8 +33,7 @@ const MatrixQuiz = () => {
     </ul>
   </div>
     <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
-    <h1 className="text-center text-3xl font-bold mb-4">Matrices</h1>
-      
+    
       <Chap3quiz/>
 
 

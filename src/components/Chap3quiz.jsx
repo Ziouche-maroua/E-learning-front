@@ -81,13 +81,12 @@ const Chap3quiz = () => {
         <div>
             {questions.map((question, index) => (
                 <div key={index} style={{ marginBottom: '20px' }}>
-                    <div style={{ marginBottom: '10px' }}>{question.question}</div>
+                    <div style={{ marginBottom: '10px', fontSize: '18px', fontWeight: 'bold' }}>{question.question}</div>
                     {question.options.map((option, optionIndex) => (
                         <div 
                             key={optionIndex} 
                             style={{ 
                                 marginBottom: '5px', 
-                                border: '1px solid #ccc', 
                                 padding: '5px', 
                                 borderRadius: '5px', 
                                 backgroundColor: showAnswers 

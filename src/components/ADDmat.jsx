@@ -184,10 +184,9 @@ const MatrixAdditionAnimation = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-10 space-y-4">
-            <h2 className="text-2xl font-semibold mb-4">Addition of Matrices</h2>
-            <p className="text-lg text-center">
-                Matrix addition is a mathematical operation that defines how to add two matrices. It involves adding corresponding elements of two matrices to generate a new matrix.
-            </p>
+            <h2 className="text-2xl font-bold mb-4 text-yellow-900">Addition of Matrices</h2>
+           <p  className="text-center ">To add two matrices, the matrices have to be of the same size. The addition works by simply adding corresponding entries of the matrices.
+          </p> 
             
             <div className="flex justify-center items-center space-x-6">
                 <div className="text-center">

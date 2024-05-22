@@ -14,10 +14,10 @@ const MotivationPage = () => {
       <TopBar />
 
       <div className="pt-16 mx-12">
-        <p className="text-4xl font-medium text-yellow-500 ml-12">Motivation</p>
+        <p className="text-4xl font-medium text-blue-300 ml-12">Motivation</p>
         
-        <span className="text-xl font-medium text-blue-700 ml-12 mt-8">Real-world Use Cases:</span>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ml-12 mt-6">
+        <span className="text-xl font-medium text-green-700 ml-12 mt-17">Real-world Use Cases:</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ml-12 mt-2">
           <div className="bg-gray-100 p-6 rounded-lg shadow-md border w-full md:w-80 h-96 flex flex-col items-center">
             <img src={computerVision} alt="Vector Spaces" className="w-32 h-32" />
             <span className="text-lg font-medium text-blue-500 mt-4 text-center">Computer Vision</span>

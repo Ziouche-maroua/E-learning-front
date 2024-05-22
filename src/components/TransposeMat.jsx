@@ -56,7 +56,7 @@ const MatrixVisualizations = () => {
             <p className="font-bold mb-2">A =</p>
             {renderMatrix(matrix, 3, originalColors)}
           </div>
-          <div className="text-2xl font-bold">→</div>
+          <div className="text-4xl font-semibold">→</div>
           <div className="text-center">
             <p className="font-bold mb-2">A<sup>T</sup> =</p>
             {renderMatrix(transposeMatrix(matrix), 2, transposeColors)}
