@@ -56,6 +56,7 @@ function GeneralAlgebra() {
     <div>
 
       <TopBar className="fixed top-0 left-0 right-0 z-10" />
+      
       <div className="container mx-auto px-4 pt-16 lg:pt-24">
         <h1 className="text-4xl font-bold my-8">Explore Linear Algebra Visually</h1>
         <p className="text-lg mb-8">There are 3 chapters in Linear Algebra</p>

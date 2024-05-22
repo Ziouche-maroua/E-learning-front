@@ -39,9 +39,10 @@ const Signup = () => {
         await Cookies.set("token", response.data.token); // Token will expire in 7 days
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+      if ( error.response.status === 400) {
         toast.error("User already exists");
-        console.log(Cookies.get("token"));
+        console.log(error);
+
       } else {
         console.error(error);
         toast.error("An error has occurred");

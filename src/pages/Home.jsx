@@ -67,12 +67,16 @@ const Home = () => {
           <div className="grid grid-cols-4 gap-8">
             {modules.map((module) => (
               <div className="h-87 bg-gray-100 p-8 rounded-lg shadow-md border">
+                <Link to={`/MotivationPage?id=${module.id}`} className="text-sm font-semibold text-blue-500 underline cursor-pointer"
+                    >
+                    
                 <img
                   src={`${module.imgLink}.webp`}
                   onError={(e) => (e.target.src = `${module.imgLink}.png`)}
                   alt={`${module.imgLink} module`}
                   className="w-24 h-24 mx-auto"
                 />
+                    </Link>
 
                 <div className="h-full flex flex-col justify-between">
                   <div>
