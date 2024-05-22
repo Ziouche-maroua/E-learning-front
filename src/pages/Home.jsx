@@ -75,9 +75,7 @@ const Home = () => {
                   <div>
                     <p className="text-xl font-semibold my-4">{module.name}</p>
                     <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
-                      The branch of mathematics dealing with vector spaces and
-                      linear mappings between these spaces, used to solve
-                      systems of linear equations ...
+                      {module.description}
                     </p>
                   </div>
                 </div>

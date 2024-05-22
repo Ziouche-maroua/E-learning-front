@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 
-const SignUp = () => {
+const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -54,13 +54,8 @@ const SignUp = () => {
     } catch (error) {
       if ( error.response.status === 400) {
         toast.error("User already exists");
-<<<<<<< HEAD
-        console.log(error);
-
-=======
 
         console.log(Cookies.get("token"));
->>>>>>> 6f5edf31be038b6702842f649c833700be49515a
       } else {
         console.error(error);
         toast.error("An error has occurred");
@@ -256,4 +251,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
