@@ -77,7 +77,7 @@ const Home = () => {
                       systems of linear equations ...
                     </p>
                     <Link
-                      to="/MotivationPage"
+                      to={`/MotivationPage?id=${module.id}`}
                       className="text-sm font-semibold text-blue-500 underline cursor-pointer"
                     >
                       Learn More
