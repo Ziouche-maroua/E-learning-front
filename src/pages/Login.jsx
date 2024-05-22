@@ -36,8 +36,10 @@ const Login = () => {
         toast.success("Successful login");
         Cookies.set("token", loginResponse.data.token); // Store token in cookie, no await needed
         const route = Cookies.get("redirectAfterSignup");
-        if (route) navigate(route);
-        else navigate("/");
+        if (route) {
+          navigate(route);
+          Cookies.remove("redirectAfterSignup");
+        } else navigate("/");
       } else {
         toast.error("Login failed");
       }
