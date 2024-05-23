@@ -48,8 +48,13 @@ const SignUp = () => {
     } catch (error) {
       if (error.response && error.response.status === 400) {
         toast.error("User already exists");
+<<<<<<< HEAD
+        console.log(error);
+
+=======
 
         console.log(Cookies.get("token"));
+>>>>>>> 6f5edf31be038b6702842f649c833700be49515a
       } else {
         console.error(error);
         toast.error("An error has occurred");
