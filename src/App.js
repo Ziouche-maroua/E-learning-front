@@ -23,6 +23,12 @@ import Elementary from './pages/Elementary';
 import MatrixQuiz from './pages/MatrixQuiz';
 import MatrixInverse from './pages/MatInverse';
 import Matrixoperation from './pages/Matrixoperation'
+import DefVS from './pages/DefVS';
+import Lesfamilles from './pages/Lesfamilles';
+import Base from './pages/BaseDim';
+import VSQuiz from './pages/VSQuiz';
+import Subspace from './pages/Subspace';
+import FamilleG from './pages/FamilleG';
 
 
 const App = () => {
@@ -46,12 +52,20 @@ const App = () => {
       <Route path="/chapter2/Morphisme" element={<Morphisme/>} />
       <Route path="/chapter2/Quiz" element={<AppQuiz/>} />
 
-<Route path="/chapter3/Matdefinition" element={<Matrixdef />} />
+      <Route path="/chapter3/Matdefinition" element={<Matrixdef />} />
       <Route path="/chapter3/Elementary" element={<Elementary/>} />
       <Route path="/chapter3/MatrixInverse" element={<MatrixInverse/>} />
       <Route path="/chapter3/operations" element={<Matrixoperation/>} />
-      
       <Route path="/chapter3/Quiz3" element={<MatrixQuiz/>} />
+
+      <Route path="/chapter1/definition" element={<DefVS />} />
+      <Route path="/chapter1/Subspace" element={<Subspace/>} />
+      <Route path="/chapter1/Lesfamilles" element={<Lesfamilles/>} />
+      <Route path="/chapter1/FamilleG" element={<FamilleG/>} />
+      <Route path="/chapter1/BaseDim" element={<Base/>} />
+      <Route path="/chapter1/VSQuiz" element={<VSQuiz/>} />
+
+
 
       </Routes>
     </Router>

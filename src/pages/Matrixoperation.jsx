@@ -1,9 +1,9 @@
 import React from 'react';
-import MultMat from '../components/MultMat';
+
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import MatrixAddition from '../components/ADDmat'
-
+import  MatrixAnimation from '../components/MultMat2';
 const Matrixoperation = () => {
   return (
     <div className="h-screen flex flex-col">
@@ -38,7 +38,8 @@ const Matrixoperation = () => {
       <h2>Operation</h2>
       
 
-      <MultMat/>
+      
+      <MatrixAnimation/>
 
       <MatrixAddition/>
       

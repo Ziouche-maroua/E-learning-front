@@ -8,7 +8,7 @@ import gps from '../assets/images/gps.webp';
 
 const MotivationPage = () => {
   return (
-    <div className="bg-blue-100 min-h-screen">
+    <div className="bg-blue-50 min-h-screen">
       <TopBar />
       <div className="pt-16 mx-12 text-center">
         <p className="text-4xl font-medium text-blue-500">Motivation</p>

@@ -99,7 +99,7 @@ const MatrixVisualizations = () => {
                                     onChange={(e) => setNullMatrixRows(parseInt(e.target.value))}
                                     className="p-2 border border-gray-300 rounded"
                                 >
-                                    {[2, 3, 4, 5].map(size => (
+                                    {[1,2, 3, 4].map(size => (
                                         <option key={size} value={size}>{size}</option>
                                     ))}
                                 </select>
@@ -111,7 +111,7 @@ const MatrixVisualizations = () => {
                                     onChange={(e) => setNullMatrixCols(parseInt(e.target.value))}
                                     className="p-2 border border-gray-300 rounded"
                                 >
-                                    {[2, 3, 4, 5].map(size => (
+                                    {[1,2, 3, 4].map(size => (
                                         <option key={size} value={size}>{size}</option>
                                     ))}
                                 </select>
