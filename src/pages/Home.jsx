@@ -47,8 +47,6 @@ const Home = () => {
   return (
     <div>
       <TopBar />
-
-
       <div className="container mx-auto px-2 pt-16">
         <span className="text-4xl font-bold mt-20 text-blue-300 ">
           A New Way To Learn <br /> & Get Knowledge
@@ -62,7 +60,10 @@ const Home = () => {
         ) : (
           <div className="grid grid-cols-4 gap-8">
             {modules.map((module) => (
-              <div className="h-87 bg-gray-100 p-8 rounded-lg shadow-md border">
+              <Link
+                to={`/MotivationPage?id=${module.id}`}
+                className="h-87 bg-gray-100 p-8 rounded-lg shadow-md border"
+              >
                 <img
                   src={`${module.imgLink}.webp`}
                   onError={(e) => (e.target.src = `${module.imgLink}.png`)}
@@ -78,17 +79,10 @@ const Home = () => {
                       linear mappings between these spaces, used to solve
                       systems of linear equations ...
                     </p>
-                    <Link
-                      to="/MotivationPage"
-                      className="text-sm font-semibold text-blue-500 underline cursor-pointer"
-                    >
-                      Learn More
-                    </Link>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
-
           </div>
         )}
       </div>
