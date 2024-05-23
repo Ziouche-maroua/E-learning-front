@@ -10,8 +10,8 @@ const Quiz = () => {
 
     <TopBar />
       <div className="flex flex-1 pt-16">   
-      <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
-    <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-purple-900 ">  ALGEBRA
+      <div className="w-1/3 bg-white shadow-lg border border-blue-200 rounded-lg p-4 mx-4 my-5 ">
+    <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-yellow-900 ">  LINEAR TRANSFORMATION
             <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span></h2>
     <ul className="space-y-9">
       <li className="  bg-gray-300  p-2   rounded-md">
@@ -35,9 +35,8 @@ const Quiz = () => {
       
     </ul>
     </div> 
-    <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5">
-      <h1>Linear Transformation</h1>
-      <h2>Quiz about linear transformation</h2>
+    <div className="w-2/3 bg-white shadow-lg border border-blue-200 rounded-lg p-4 mx-4 my-5">
+     
       <Chap2quiz/>
       
   </div>

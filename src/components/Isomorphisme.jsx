@@ -1,18 +1,26 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mafs, Circle, Transform, Vector } from 'mafs';
 
 export default function Isomorphisme() {
+  const [position, setPosition] = useState(-2);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition((prev) => (prev >= 2 ? -2 : prev + 0.05));
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      {/* Domain and Codomain Circles */}
       <div style={{ width: '45%', padding: '10px' }}>
         <h3 style={{ textAlign: 'center' }}>Isomorphism</h3>
-        <Mafs background={null}>
+        <Mafs height={200} background={null}>
           <Transform>
-            <Circle center={[-2, 0]} radius={1.5} color="blue" opacity={1} /> {/* Blue circle for domain */}
-            <Circle center={[2, 0]} radius={1.5} color="orange" opacity={1} /> {/* Blue circle for codomain */}
-            <Vector tail={[-2, 0]} tip={[2, 0]} color="PINK" opacity={1} /> {/* Pink vector */}
+            <Circle center={[-2, 0]} radius={1.5} color="blue" opacity={1} />
+            <Circle center={[2, 0]} radius={1.5} color="orange" opacity={1} />
+            <Vector tail={[-2, 0]} tip={[position, 0]} color="pink" />
           </Transform>
         </Mafs>
       </div>

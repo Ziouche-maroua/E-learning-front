@@ -12,7 +12,7 @@ function GeneralAlgebra() {
       <TopBar className="fixed top-0 left-0 right-0 z-10" />
       <div className="container mx-auto px-4 pt-12 lg:pt-16">
         <h1 className="text-4xl font-bold my-4 text-center lg:text-left text-blue-300">Explore Linear Algebra Visually</h1>
-        <p className="text-lg mb-4 text-center lg:text-left text-green-700">There are 3 chapters in Linear Algebra</p>
+        <p className="text-lg mb-4 text-center lg:text-left text-black">There are 3 chapters in Linear Algebra</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-gray-100 p-6 rounded-lg shadow-md border w-full h-96 flex flex-col items-center justify-between">
             <div className="flex flex-col items-center">

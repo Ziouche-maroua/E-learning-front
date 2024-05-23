@@ -87,15 +87,32 @@ const Chap2quiz = () => {
         <div>
             {questions.map((question, index) => (
                 <div key={index} style={{ marginBottom: '20px' }}>
-                    <div style={{ marginBottom: '10px' }}>{question.question}</div>
+                    <div style={{ marginBottom: '10px', fontSize: '18px', fontWeight: 'bold' }}>{question.question}</div>
                     {question.options.map((option, optionIndex) => (
-                        <div key={optionIndex} style={{ marginBottom: '5px' }}>
+                        <div 
+                            key={optionIndex} 
+                            style={{ 
+                                marginBottom: '5px', 
+                                padding: '5px', 
+                                borderRadius: '5px',
+                                backgroundColor: showAnswers 
+                                    ? (answers[index] === option 
+                                        ? (answers[index] === question.correctAnswer 
+                                            ? 'rgba(144, 238, 144, 0.3)' 
+                                            : 'rgba(255, 182, 193, 0.3)')
+                                        : (option === question.correctAnswer 
+                                            ? 'rgba(144, 238, 144, 0.3)' 
+                                            : ''))
+                                    : '' 
+                            }}
+                        >
                             <input
                                 type="radio"
                                 name={`option-${index}`}
                                 value={option}
                                 checked={answers[index] === option}
                                 onChange={() => handleAnswerChange(index, option)}
+                                disabled={showAnswers}
                             />
                             <label style={{ marginLeft: '5px' }}>{option}</label>
                             {showAnswers && answers[index] === question.correctAnswer && (
@@ -116,8 +133,3 @@ const Chap2quiz = () => {
 };
 
 export default Chap2quiz;
-
-
-
-
-
