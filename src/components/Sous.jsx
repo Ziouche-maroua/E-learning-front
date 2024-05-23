@@ -72,7 +72,7 @@ const AnimatedSubspaceVisualization = () => {
         <animated.div
           style={{
             position: 'absolute',
-            top: '100px',
+            top: '120px',
             left: '100px',
             width: smallRectProps.width,
             height: smallRectProps.height,
@@ -151,8 +151,8 @@ const SubspaceVisualization = () => {
 
   return (
     <div>
-      <h2>Choose a Visualization Type</h2>
-      <button onClick={() => setVisualizationType('animated')}>Animated</button>
+      
+      
 
       {visualizationType === 'animated' && <AnimatedSubspaceVisualization />}
     </div>
