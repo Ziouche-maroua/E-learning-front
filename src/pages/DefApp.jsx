@@ -45,13 +45,13 @@ const DefApp = () => {
   </div>
         <div className="w-full lg:w-2/3 border p-4 mx-4 my-5 border-blue-800 shadow-blue-800">
          
-          <p>
+          <p className="text-2xl font-bold text-gray-800 mb-4">
             A linear transformation is a mathematical function between two vector spaces that respects vector addition
             and scalar multiplication. It describes how vectors in one space are transformed into vectors in another
             while preserving the structure of the spaces involved.
           </p>
           <Def />
-          <p>Try it yourself!</p>
+          <p className="text-yellow-950">Try it yourself!</p>
           <DefDynamic />
         </div>
       </div>
