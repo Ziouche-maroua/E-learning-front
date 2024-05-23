@@ -70,15 +70,14 @@ const Home = () => {
                   alt={`${module.imgLink} module`}
                   className="w-24 h-24 mx-auto"
                 />
+                 <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
+                      {module.description}
+                    </p>
 
                 <div className="h-full flex flex-col justify-between">
                   <div>
                     <p className="text-xl font-semibold my-4">{module.name}</p>
-                    <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
-                      The branch of mathematics dealing with vector spaces and
-                      linear mappings between these spaces, used to solve
-                      systems of linear equations ...
-                    </p>
+                   
                   </div>
                 </div>
               </Link>
