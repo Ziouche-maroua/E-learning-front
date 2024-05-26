@@ -1,17 +1,10 @@
-
+import React from 'react';
 import TopBar from '../components/TopBar'; 
-
-
-
-
-import DefApp from './DefApp'; 
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import Chatbox from '../components/ChatBox'; 
+import DefApp from './DefApp';
 
 
 const Chapter2 = () => {
-
   
   return (
     <div className="h-screen flex flex-col">
@@ -19,7 +12,7 @@ const Chapter2 = () => {
 
      
         <DefApp/>
-
+    <Chatbox/>
     </div>
   );
 };

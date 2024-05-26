@@ -7,14 +7,16 @@ export default function Bijective() {
       {/* Bijective Linear Transformation */} 
       <div style={{ width: '45%', padding: '10px' }}> 
         <h3 style={{ textAlign: 'center' }}>Bijective Linear Transformation</h3> 
-        <Mafs background={null}> 
+        <Mafs height={200} background={null}> 
           <Transform> 
             <Circle center={[-2, 0]} radius={1.5} color="#60a5fa" opacity={1} /> {/* Blue circle */} 
             <Circle center={[2, 0]} radius={1.5}color="#ff7f0e" opacity={1} /> {/* Orange circle */} 
             <Vector tail={[-2, 0]} tip={[2, 0]} color="#F28585" opacity={1} /> {/* Pink vector */} 
-            <Vector tail={[-1, 0.5]} tip={[1, 0.5]} color="#F28585" opacity={1} /> {/* Pink vector */} 
-            <Vector tail={[-2.8, -0.5]} tip={[2.6, -1.05]} color="#F28585" opacity={1} /> {/* Pink vector */} 
-            <Vector tail={[-2.6, -0.7]} tip={[2.8, 1]} color="#F28585" opacity={1} /> {/* Pink vector */} 
+            <Vector tail={[-2, 1]} tip={[2, 0.5]} color="#F28585" opacity={1} /> {/* Pink vector */} 
+            <Vector tail={[-2, -0.5]} tip={[2, -1.05]} color="#F28585" opacity={1} /> {/* Pink vector */} 
+            <Vector tail={[-2, -0.7]} tip={[2, 1]} color="#F28585" opacity={1} /> {/* Pink vector */} 
+            <text x="110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
+            <text x="-110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
           </Transform> 
         </Mafs> 
       </div> 
@@ -22,7 +24,7 @@ export default function Bijective() {
       {/* Bijective Linear Transformation (Inverse) */} 
       <div style={{ width: '45%', padding: '10px' }}> 
         <h3 style={{ textAlign: 'center' }}>Bijective Linear Transformation (Inverse)</h3> 
-        <Mafs background="white" > 
+        <Mafs height={200} background="white" > 
           <Transform> 
             <Circle center={[2, 0]} radius={1.5} color="#60a5fa" opacity={1} /> {/* Blue circle */} 
             <Circle center={[-2, 0]} radius={1.5} color="#ff7f0e" opacity={1} /> {/* Orange circle */} 
@@ -31,10 +33,11 @@ export default function Bijective() {
 
             <Vector tail={[2, 0]} tip={[-2.5, -0.5]} color="#F28585" opacity={1} /> {/* Pink vector */} 
             <Vector tail={[2, -1]} tip={[-1.5, -1]} color="#F28585" opacity={1} /> {/* Pink vector */} 
+            <text x="110" y="-30"  textAnchor="left" alignmentBaseline="middle" style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>F</text>
+            <text x="-110" y="-30"  textAnchor="middle" alignmentBaseline="middle"style={{ fontSize: 17, fontWeight: 'bold', fill: 'white' }}>E</text>
           </Transform> 
         </Mafs>
       </div> 
     </div> 
   ); 
-}
-
+}     

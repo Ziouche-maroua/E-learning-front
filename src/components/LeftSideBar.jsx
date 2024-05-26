@@ -38,6 +38,10 @@ const LeftSideBar = ({ showSidebar, setShowSidebar, toggleOnHomeClick }) => {
           { route.pathname !== "/" && <Link to="/">
             <li className="cursor-pointer mb-2">Home</li>
           </Link>}
+
+          { route.pathname !== "/GeneralAlgebra" && <Link to="/GeneralAlgebra">
+            <li className="cursor-pointer mb-2">Chapters</li>
+          </Link>}
           
           <Link to="/LogoutPage">
             <li className="cursor-pointer mb-2 ">Log out</li>
