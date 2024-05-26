@@ -42,59 +42,65 @@ const Home = () => {
             </div>
           </Link>
 
-          <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
-            <img
-              src={algorithm}
-              alt="algo module"
-              className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
-            />
-            <div className="flex-1">
-              <p className="text-xl font-semibold my-2 sm:my-4">
-                Algorithm
-              </p>
-              <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
-                A step-by-step procedure or set of rules for solving a problem
-                or accomplishing a task, often used in computer science and
-                mathematics.
-              </p>
+          <Link to="/FuturModules">
+            <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
+              <img
+                src={algorithm}
+                alt="algo module"
+                className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
+              />
+              <div className="flex-1">
+                <p className="text-xl font-semibold my-2 sm:my-4">
+                  Algorithm
+                </p>
+                <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
+                  A step-by-step procedure or set of rules for solving a problem
+                  or accomplishing a task, often used in computer science and
+                  mathematics.
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
-            <img
-              src={probability}
-              alt="probability module"
-              className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
-            />
-            <div className="flex-1">
-              <p className="text-xl font-semibold my-2 sm:my-4">
-                Probability
-              </p>
-              <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
-                The branch of mathematics concerned with the likelihood of
-                events occurring, based on the analysis of random variables
-                and uncertainty.
-              </p>
+          <Link to="/FuturModules">
+            <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
+              <img
+                src={probability}
+                alt="probability module"
+                className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
+              />
+              <div className="flex-1">
+                <p className="text-xl font-semibold my-2 sm:my-4">
+                  Probability
+                </p>
+                <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
+                  The branch of mathematics concerned with the likelihood of
+                  events occurring, based on the analysis of random variables
+                  and uncertainty.
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
-            <img
-              src={sfsd}
-              alt="sfsd module"
-              className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
-            />
-            <div className="flex-1">
-              <p className="text-xl font-semibold my-2 sm:my-4">
-                File structure and data structure
-              </p>
-              <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
-                File structure refers to the organization and layout of data
-                within a file, while data structure refers to the organization
-                and storage of data.
-              </p>
+          <Link to="/FuturModules">
+            <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
+              <img
+                src={sfsd}
+                alt="sfsd module"
+                className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
+              />
+              <div className="flex-1">
+                <p className="text-xl font-semibold my-2 sm:my-4">
+                  File structure and data structure
+                </p>
+                <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">
+                  File structure refers to the organization and layout of data
+                  within a file, while data structure refers to the organization
+                  and storage of data.
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
 
