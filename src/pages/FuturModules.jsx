@@ -6,7 +6,7 @@ const FuturModules = () => {
   return (
     <div>
       <TopBar />
-      <div className="bg-blue-100 pt-16  min-h-screen"> {/* Set minimum height to screen height */}
+      <div className="pt-16  min-h-screen"> {/* Set minimum height to screen height */}
         <div className="container pt-16 mx-auto px-4 py-12"> 
           <div className="flex items-center justify-start"> {/* Align items to the start */}
             <img
@@ -15,7 +15,7 @@ const FuturModules = () => {
               className="w-96 h-80 rounded-lg mr-8"  // Adjusted image size
             />
             <div>
-              <p className="text-2xl font-bold text-gray-800">We will provide this module as soon as possible.</p>
+              <p className="text-4xl font-bold text-gray-800">We will provide this module as soon as possible.</p>
             </div>
           </div>
         </div>

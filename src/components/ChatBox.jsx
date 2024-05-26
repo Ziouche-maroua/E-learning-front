@@ -67,12 +67,12 @@ const Chatbox = () => {
         <div className="fixed bottom-4 right-4 w-96 flex flex-col items-end">
             {state && (
                 <div className="flex flex-col bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden max-h-[32rem] w-full mb-4">
-                    <div className="flex items-center p-2 bg-yellow-500 text-white">
-                        <span className="text-lg font-bold">FikrSight</span>
+                    <div className="flex items-center p-2 bg-yellow-200 text-white">
+                        <span className="text-lg text-gray-700  font-semibold">FikrSight</span>
                     </div>
                     <div className="flex-1 p-2 overflow-y-auto">
                         {messages.map((msg, index) => (
-                            <div key={index} className={`mb-2 p-2 rounded-xl ${msg.name === "User" ? 'bg-yellow-400 text-white self-end' : 'bg-gray-200 text-black self-start'}`}>
+                            <div key={index} className={`mb-2 p-2 rounded-xl ${msg.name === "User" ? 'bg-yellow-200 text-semibold text-gray-900 self-end' : 'bg-gray-200 text-black self-start'}`}>
                                 {msg.message}
                             </div>
                         ))}
@@ -93,7 +93,7 @@ const Chatbox = () => {
                             className="flex-1 p-2 border border-gray-300 rounded"
                             placeholder="Type a message..."
                         />
-                        <button onClick={onSendButton} className="ml-2 bg-yellow-500 text-white p-2 cursor-pointer rounded-lg">Send</button>
+                        <button onClick={onSendButton} className="ml-2 bg-yellow-200 text-gray-700 p-2 cursor-pointer rounded-lg">Send</button>
                     </div>
                     <div className="flex-1 overflow-y-auto">
                         <div className="p-2 border-t border-gray-300">
@@ -111,7 +111,7 @@ const Chatbox = () => {
             )}
             <button 
                 onClick={toggleState} 
-                className="bg-yellow-500 text-white py-1 px-2 rounded w-20 h-8 text-xs flex justify-center items-center"
+                className="bg-yellow-200 text-gray-700 py-1 px-2 rounded w-20 h-8 text-xs flex justify-center items-center"
             >
                 {state ? 'Close Chat' : 'Open Chat'}
             </button>
