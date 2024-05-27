@@ -30,7 +30,7 @@ export default function Surjectif() {
       <div className="p-4 w-1/2">
         <h3 className="text-center">ONTO Linear Transformation</h3>
         <div>
-          <Mafs>
+          <Mafs height={200}>
             <Transform>
               <Circle center={[-2.1, 0]} radius={1.5} color="yellow" opacity={1} />
               <Vector
@@ -50,7 +50,7 @@ export default function Surjectif() {
       <div className="p-4 w-1/2">
         <h3 className="text-center">NOT an ONTO Linear Transformation</h3>
         <div>
-          <Mafs>
+          <Mafs height={200}>
             <Transform>
               <Circle center={[-2.1, 0]} radius={1.5} color="#60a5fa" opacity={1} />
               <Vector
@@ -72,4 +72,4 @@ export default function Surjectif() {
     </div>
   
   );
-}
+}   

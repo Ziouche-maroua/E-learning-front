@@ -108,6 +108,7 @@ function GeneralAlgebra() {
           </div>
         </div>
       </div>
+      <Chatbox />
     </div>
   );
 }

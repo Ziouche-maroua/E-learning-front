@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logImage from "../assets/images/log-image.jpg";
 import emailIcon from "../assets/images/email.png";
 import { useForm } from "react-hook-form";
@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 
-const SignUp = () => {
+const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -17,6 +17,7 @@ const SignUp = () => {
     register,
     formState: { errors },
   } = useForm();
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -44,9 +45,14 @@ const SignUp = () => {
         console.log(response.data);
         toast.success("Successful registration");
         await Cookies.set("token", response.data.token); // Token will expire in 7 days
+        const route = Cookies.get("redirectAfterSignup");
+        if (route) {
+          navigate(route);
+          Cookies.remove("redirectAfterSignup");
+        } else navigate("/");
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+      if ( error.response.status === 400) {
         toast.error("User already exists");
 
         console.log(Cookies.get("token"));
@@ -114,8 +120,11 @@ const SignUp = () => {
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("last_name", {
                     required: "Please enter your last name",
-                    
-                    minLength: { value: 3, message: "Last name must be at least 3 characters" }
+
+                    minLength: {
+                      value: 3,
+                      message: "Last name must be at least 3 characters",
+                    },
                   })}
                 />
                 {errors.last_name && <span>{errors.last_name.message}</span>}
@@ -242,4 +251,6 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
+
+

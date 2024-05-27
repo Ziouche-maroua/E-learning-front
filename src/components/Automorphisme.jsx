@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mafs, Circle, Transform, Vector } from 'mafs';
 
-export default function AutomorphismVisualization() {
+export default function Automorphisme() {
+  const [position, setPosition] = useState(-2);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPosition((prev) => (prev >= 2 ? -2 : prev + 0.05));
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-      {/* Domain and Codomain Circles */}
       <div style={{ width: '45%', padding: '10px' }}>
         <h3 style={{ textAlign: 'center' }}>Automorphism</h3>
-        <Mafs background={null}>
+        <Mafs height={200} background={null}>
           <Transform>
-            <Circle center={[-2, 0]} radius={1.5} color="#60a5fa" opacity={1} /> {/* Blue circle for domain */}
-            <Circle center={[2, 0]} radius={1.5} color="#60a5fa" opacity={1} /> {/* Blue circle for codomain */}
-            <Vector tail={[-2, 0]} tip={[2, 0]} color="ORANGE" opacity={1} /> {/* Pink vector */}
-            <Vector tail={[-2, 1]} tip={[1.5, 1]} color="ORANGE" opacity={1} /> {/* Additional vector */}
-            <Vector tail={[-1.2, -1]} tip={[2, -1]} color="ORANGE" opacity={1} /> {/* Additional vector */}
-          
+            <Circle center={[-2, 0]} radius={1.5} color="#60a5fa" opacity={1} />
+            <Circle center={[2, 0]} radius={1.5} color="#60a5fa" opacity={1} />
+            <Vector tail={[-2, 0]} tip={[position, 0]} color="orange" />
+            <Vector tail={[-2, 1]} tip={[position / 1.33, 1]} color="orange" />
+            <Vector tail={[-1.2, -1]} tip={[position, -1]} color="orange" />
           </Transform>
         </Mafs>
       </div>

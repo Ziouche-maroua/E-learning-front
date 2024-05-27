@@ -1,6 +1,8 @@
-
+import React from 'react';
 import TopBar from '../components/TopBar'; 
 
+import Chatbox from '../components/ChatBox'; 
+import DefApp from './DefApp';
 
 
 
@@ -11,7 +13,6 @@ import { useEffect } from 'react';
 
 
 const Chapter2 = () => {
-
   
   return (
     <div className="h-screen flex flex-col">
@@ -19,7 +20,7 @@ const Chapter2 = () => {
 
      
         <DefApp/>
-
+    <Chatbox/>
     </div>
   );
 };
