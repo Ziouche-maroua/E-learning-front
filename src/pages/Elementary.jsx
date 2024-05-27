@@ -44,6 +44,7 @@ const Elementary = () => {
      
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };

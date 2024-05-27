@@ -1,5 +1,5 @@
 
-
+import Chatbox from '../components/ChatBox';
 import React from 'react';
 import SousE from '../components/Sous';
 import { Link } from 'react-router-dom';
@@ -42,6 +42,7 @@ const SE = () => {
       <SousE/>
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };

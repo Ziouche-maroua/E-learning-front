@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import FamLib  from '../components/FML';
+import Chatbox from '../components/ChatBox';
+
 const Lesfamilles = () => {
   return (
     <div className="h-screen flex flex-col">
@@ -41,6 +43,7 @@ const Lesfamilles = () => {
       
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };

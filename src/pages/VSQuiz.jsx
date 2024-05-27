@@ -1,8 +1,11 @@
 import React from 'react';
 import Chap1quiz from '../components/Chap1quiz';
-
+import Chatbox from '../components/ChatBox';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+
+
+
 const VSQuiz = () => {
   return (
     <div className="h-screen flex flex-col">
@@ -42,6 +45,7 @@ const VSQuiz = () => {
       
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };

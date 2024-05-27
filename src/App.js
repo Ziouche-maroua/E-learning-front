@@ -42,6 +42,7 @@ import Morphisme from './pages/Morphisme'
 
 
 import Login from './pages/Login';
+import FuturModules from './pages/FuturModules'
 
 
 
@@ -81,7 +82,7 @@ const App = () => {
     <Route path="/chapter1/VSQuiz" element={<VSQuiz/>} />
     <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-
+      <Route path="/FuturModules"  element={<FuturModules/>}  />
 
 
     </Routes>

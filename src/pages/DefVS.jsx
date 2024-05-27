@@ -41,6 +41,7 @@ const DefVS = () => {
       
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };
