@@ -49,17 +49,21 @@ const Signup = () => {
         if (route) {
           navigate(route);
           Cookies.remove("redirectAfterSignup");
-        } else navigate("/");
+        } else {
+          navigate("/");
+        }
       }
     } catch (error) {
-      if ( error.response.status === 400) {
-        toast.error("User already exists");
-
-        console.log(Cookies.get("token"));
+      if (error.response) {
+        if (error.response.status === 400) {
+          toast.error("User already exists");
+        } else {
+          toast.error("An error has occurred");
+        }
       } else {
-        console.error(error);
-        toast.error("An error has occurred");
+        toast.error("Network error or server is not responding");
       }
+      console.error(error);
     }
   };
 
@@ -120,7 +124,6 @@ const Signup = () => {
                   className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
                   {...register("last_name", {
                     required: "Please enter your last name",
-
                     minLength: {
                       value: 3,
                       message: "Last name must be at least 3 characters",
