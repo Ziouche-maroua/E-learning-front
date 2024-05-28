@@ -6,6 +6,7 @@ import algebra from '../assets/images/algebra.webp';
 import algorithm from '../assets/images/algorithm.png';
 import sfsd from '../assets/images/sfsd.webp';
 import probability from '../assets/images/probability.webp';
+import '../index.css'
 
 const Home = () => {
   return (
@@ -13,13 +14,13 @@ const Home = () => {
       <TopBar />
 
       <div className="container mx-auto px-2 pt-8 lg:pt-12"> {/* Reduced padding-top */}
-        <span className="block text-center lg:text-left text-3xl sm:text-4xl font-bold mt-4 sm:mt-6 text-blue-300">
+        <span className="block text-center lg:text-left text-3xl sm:text-4xl poetsen-font mt-4 sm:mt-6 text-blue-300">
           A New Way To Learn <br className="lg:hidden" /> & Get Knowledge
         </span>
-        <p className="text-base sm:text-lg my-4 text-center lg:text-left text-[rgba(0,0,0,0.35)]">
+        <p className="text-base sm:text-lg kanit-font my-4 text-center lg:text-left text-[rgba(0,0,0,0.35)]">
           Learn new skills from the comfort of your home anywhere, anytime.
         </p>
-        <p className="text-3xl mt-8 mb-3 text-black">Explore our courses:</p> {/* Adjusted margin-top */}
+        <p className="text-3xl mt-8 mb-3 poetsen-font text-black">Explore our courses </p> {/* Adjusted margin-top */}
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
