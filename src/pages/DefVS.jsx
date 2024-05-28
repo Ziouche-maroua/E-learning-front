@@ -2,6 +2,7 @@ import React from 'react';
 import VS from '../components/Vectorspace';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import Chatbox from '../components/ChatBox';
 const DefVS = () => {
   return (
     <div className="h-screen flex flex-col">
