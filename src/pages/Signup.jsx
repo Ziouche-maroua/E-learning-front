@@ -8,7 +8,7 @@ import microsoftIcon from "../assets/images/microsoft.png";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
-
+import Chatbox from "../components/ChatBox";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
