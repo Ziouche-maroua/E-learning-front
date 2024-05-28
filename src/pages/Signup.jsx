@@ -130,11 +130,8 @@ const SignUp = () => {
                     minLength: {
                       value: 4,
                       message: "Matricule must be at least 4 characters",
-                    },
-                    maxLength: {
-                      value: 4,
-                      message: "Matricule must be at most 4 characters",
-                    },
+                    }
+    
                   })}
                 />
                 {errors.matricule_student && (
