@@ -1,56 +1,64 @@
+
+
 import React, { useState } from 'react';
 
-const Chap3quiz = () => {
+const Chap2quiz = () => {
     const questions = [
         {
-            question: "What is the determinant of the identity matrix?",
-            options: ["0", "1", "-1", "Identity matrix has no determinant"],
-            correctAnswer: "1"
+            question: "Which of the following transformations is linear?",
+            options: ["Scaling", "Rotation", "Reflection", "Shearing"],
+            correctAnswer: "Scaling"
         },
         {
-            question: "Which of the following is NOT a square matrix?",
-            options: ["[L1(12)//L2(34)]", "[L1(123)//L2(456)]", "[L1(10)//L2(01)]", "[L1(12)//L2(34)//L3(56)]"],
-            correctAnswer: "[L1(123)//L2(456)]"
+            question: "What is the kernel of the linear transformation f(x) = 3x?",
+            options: ["{0}", "{x | x ≠ 0}", "{x | x ≠ 3}", "{x | x ≠ 1}"],
+            correctAnswer: "{0}"
         },
         {
-            question: "Which property does NOT hold for matrix multiplication?",
-            options: ["Commutativity", "Associativity", "Distributivity", "Scalar multiplication"],
-            correctAnswer: "Commutativity"
+            question: "What is the image of the linear transformation f(x) = 3x?",
+            options: ["{0}", "R", "R^2", "R^3"],
+            correctAnswer: "R"
         },
         {
-            question: "What is the rank of a zero matrix?",
-            options: ["0", "1", "Depends on the size of the matrix", "Infinity"],
+            question: "Which property does a linear transformation satisfy?",
+            options: ["Additivity", "Associativity", "Commutativity", "Distributivity"],
+            correctAnswer: "Additivity"
+        },
+        {
+            question: "What type of linear transformation is an isomorphism?",
+            options: ["Surjective", "Injective", "Bijective", "Endomorphism"],
+            correctAnswer: "Bijective"
+        },
+        {
+            question: "What is the dimension of the kernel of an injective linear transformation?",
+            options: ["0", "1", "2", "Depends on the transformation"],
             correctAnswer: "0"
         },
         {
-            question: "Which of the following matrices is orthogonal?",
-            options: ["[L1(10) //L2(01)]", "[L1(11)// L2(01)]", "[L1(1−1)//L2( 11)]", "[L1(100)//L2(010)// L3(001)]"],
-            correctAnswer: "[L1(100)//L2(010)// L3(001)]"
+            question: "What is the dimension of the image of a surjective linear transformation?",
+            options: ["0", "1", "2", "Depends on the transformation"],
+            correctAnswer: "2"
         },
         {
-            question: "Which of the following is NOT a property of the identity matrix?",
-            options: ["It is square", "It has 1s on the diagonal", "It has 0s everywhere except on the diagonal", "Its determinant is always 1"],
-            correctAnswer: "Its determinant is always 1"
+            question: "What is the characteristic property of an endomorphism?",
+            options: ["Maps a vector space to itself", "Is invertible", "Is surjective", "Is injective"],
+            correctAnswer: "Maps a vector space to itself"
+        },
+        // New questions
+        {
+            question: "Which of the following transformations preserves angles?",
+            options: ["Scaling", "Shearing", "Rotation", "Reflection"],
+            correctAnswer: "Rotation"
         },
         {
-            question: "What is the inverse of a non-square matrix?",
-            options: ["It doesn't have an inverse", "It is always the zero matrix", "It is equal to the original matrix", "It is undefined"],
-            correctAnswer: "It doesn't have an inverse"
+            question: "What is the kernel of the linear transformation f(x, y) = (2x - y, x + y)?",
+            options: ["{(0, 0)}", "{(x, y) | x = y}", "{(x, y) | x = 2y}", "{(x, y) | y = 2x}"],
+            correctAnswer: "{(x, y) | x = 2y}"
         },
         {
-            question: "What does the transpose of a matrix do?",
-            options: ["Interchanges rows and columns", "Negates all elements", "Multiplies each element by its row number", "It has no defined operation"],
-            correctAnswer: "Interchanges rows and columns"
-        },
-        {
-            question: "Which of the following is true about eigenvalues and eigenvectors?",
-            options: ["Eigenvectors can be zero vectors", "Eigenvalues can be complex numbers", "Every matrix has exactly one eigenvector", "Eigenvalues are always positive"],
-            correctAnswer: "Eigenvalues can be complex numbers"
-        },
-        {
-            question: "Which property holds for all diagonal matrices?",
-            options: ["Their determinant is always 1", "They are always singular", "Their inverse is always the identity matrix", "Their rank is equal to the number of non-zero entries on the diagonal"],
-            correctAnswer: "Their rank is equal to the number of non-zero entries on the diagonal"
+            question: "What is the image of the linear transformation f(x, y) = (x + y, y)?",
+            options: ["{(0, 0)}", "{(x, y) | x = y}", "{(x, y) | y = 0}", "{(x, y) | x = 0}"],
+            correctAnswer: "{(x, y) | y = 0}"
         }
     ];
 
@@ -81,12 +89,13 @@ const Chap3quiz = () => {
         <div>
             {questions.map((question, index) => (
                 <div key={index} style={{ marginBottom: '20px' }}>
-                    <div style={{ marginBottom: '10px', fontSize: '18px', fontWeight: 'bold' }}>{question.question}</div>
+                    <div style={{ marginBottom: '10px' }}>{question.question}</div>
                     {question.options.map((option, optionIndex) => (
                         <div 
                             key={optionIndex} 
                             style={{ 
                                 marginBottom: '5px', 
+                                border: '1px solid #ccc', 
                                 padding: '5px', 
                                 borderRadius: '5px', 
                                 backgroundColor: showAnswers 
@@ -130,4 +139,4 @@ const Chap3quiz = () => {
     );
 };
 
-export default Chap3quiz;
+export default Chap2quiz;

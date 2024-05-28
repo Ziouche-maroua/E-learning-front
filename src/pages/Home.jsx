@@ -21,6 +21,7 @@ const Home = () => {
         </p>
         <p className="text-3xl mt-8 mb-3 text-black">Explore our courses:</p> {/* Adjusted margin-top */}
 
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
           <Link to="/MotivationPage">
             <div className="min-h-[24rem] bg-gray-100 p-8 rounded-lg shadow-md border flex flex-col justify-between items-center text-center"> {/* Added min-height */}
@@ -102,6 +103,7 @@ const Home = () => {
             </div>
           </Link>
         </div>
+
       </div>
 
       <Chatbox />  {/* Add the Chatbox component */}

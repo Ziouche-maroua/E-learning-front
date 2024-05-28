@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Chap3quiz from '../components/Chap3quiz';
+import Chatbox from '../components/ChatBox';
 
 const MatrixQuiz = () => {
   return (
@@ -41,6 +42,7 @@ const MatrixQuiz = () => {
      
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };

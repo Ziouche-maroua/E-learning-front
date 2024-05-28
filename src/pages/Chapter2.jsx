@@ -1,7 +1,15 @@
 import React from 'react';
 import TopBar from '../components/TopBar'; 
+
 import Chatbox from '../components/ChatBox'; 
 import DefApp from './DefApp';
+
+
+
+import DefApp from './DefApp'; 
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 
 const Chapter2 = () => {

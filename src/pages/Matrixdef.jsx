@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import MatrixDef from '../components/Matrixdefinition'; // Import the new component
+import Chatbox from '../components/ChatBox';
 
 const DefinitionMatrixPage = () => {
   return (
@@ -42,6 +43,7 @@ const DefinitionMatrixPage = () => {
           <MatrixDef />
         </div>
       </div>
+      <Chatbox />
     </div>
   );
 };

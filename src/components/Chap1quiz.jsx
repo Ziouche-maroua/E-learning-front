@@ -1,64 +1,46 @@
-
-
 import React, { useState } from 'react';
 
-const Chap2quiz = () => {
+const Chap1quiz = () => {
     const questions = [
         {
-            question: "Which of the following transformations is linear?",
-            options: ["Scaling", "Rotation", "Reflection", "Shearing"],
-            correctAnswer: "Scaling"
+            question: "What is a linear combination of vectors?",
+            options: ["A sum of vectors", "A product of vectors", "A scalar multiple of a vector", "An inverse of a vector"],
+            correctAnswer: "A sum of vectors"
         },
         {
-            question: "What is the kernel of the linear transformation f(x) = 3x?",
-            options: ["{0}", "{x | x ≠ 0}", "{x | x ≠ 3}", "{x | x ≠ 1}"],
-            correctAnswer: "{0}"
+            question: "What does it mean for vectors to be linearly independent?",
+            options: ["They are orthogonal to each other", "They cannot be scaled by a scalar", "They cannot be written as a linear combination of each other", "Their magnitudes are equal"],
+            correctAnswer: "They cannot be written as a linear combination of each other"
         },
         {
-            question: "What is the image of the linear transformation f(x) = 3x?",
-            options: ["{0}", "R", "R^2", "R^3"],
-            correctAnswer: "R"
+            question: "What is the dimension of a vector space?",
+            options: ["The size of the basis", "The number of vectors in the space", "The number of dimensions in the space", "The number of elements in the space"],
+            correctAnswer: "The size of the basis"
         },
         {
-            question: "Which property does a linear transformation satisfy?",
-            options: ["Additivity", "Associativity", "Commutativity", "Distributivity"],
-            correctAnswer: "Additivity"
+            question: "What is a basis of a vector space?",
+            options: ["A set of vectors that span the space", "A set of linearly dependent vectors", "A set of zero vectors", "A set of orthogonal vectors"],
+            correctAnswer: "A set of vectors that span the space"
         },
         {
-            question: "What type of linear transformation is an isomorphism?",
-            options: ["Surjective", "Injective", "Bijective", "Endomorphism"],
-            correctAnswer: "Bijective"
+            question: "What is the kernel of a linear transformation?",
+            options: ["The image of the transformation", "The set of vectors mapped to the zero vector", "The inverse of the transformation", "The dimension of the transformation"],
+            correctAnswer: "The set of vectors mapped to the zero vector"
         },
         {
-            question: "What is the dimension of the kernel of an injective linear transformation?",
-            options: ["0", "1", "2", "Depends on the transformation"],
-            correctAnswer: "0"
+            question: "What does it mean for a set of vectors to span a vector space?",
+            options: ["They are linearly independent", "They are orthogonal to each other", "They can be used to represent any vector in the space", "They have the same magnitude"],
+            correctAnswer: "They can be used to represent any vector in the space"
         },
         {
-            question: "What is the dimension of the image of a surjective linear transformation?",
-            options: ["0", "1", "2", "Depends on the transformation"],
-            correctAnswer: "2"
+            question: "What is a subspace of a vector space?",
+            options: ["A space with fewer dimensions", "A space contained within another space", "A space with more dimensions", "A space orthogonal to the original space"],
+            correctAnswer: "A space contained within another space"
         },
         {
-            question: "What is the characteristic property of an endomorphism?",
-            options: ["Maps a vector space to itself", "Is invertible", "Is surjective", "Is injective"],
-            correctAnswer: "Maps a vector space to itself"
-        },
-        // New questions
-        {
-            question: "Which of the following transformations preserves angles?",
-            options: ["Scaling", "Shearing", "Rotation", "Reflection"],
-            correctAnswer: "Rotation"
-        },
-        {
-            question: "What is the kernel of the linear transformation f(x, y) = (2x - y, x + y)?",
-            options: ["{(0, 0)}", "{(x, y) | x = y}", "{(x, y) | x = 2y}", "{(x, y) | y = 2x}"],
-            correctAnswer: "{(x, y) | x = 2y}"
-        },
-        {
-            question: "What is the image of the linear transformation f(x, y) = (x + y, y)?",
-            options: ["{(0, 0)}", "{(x, y) | x = y}", "{(x, y) | y = 0}", "{(x, y) | x = 0}"],
-            correctAnswer: "{(x, y) | y = 0}"
+            question: "What is the characteristic property of a subspace?",
+            options: ["It contains the zero vector", "It spans the entire space", "It is linearly independent", "It contains only non-zero vectors"],
+            correctAnswer: "It contains the zero vector"
         }
     ];
 
@@ -89,17 +71,15 @@ const Chap2quiz = () => {
         <div>
             {questions.map((question, index) => (
                 <div key={index} style={{ marginBottom: '20px' }}>
-                    <div style={{ marginBottom: '10px', fontSize: '18px', fontWeight: 'bold' }}>{question.question}</div>
+                    <div style={{ marginBottom: '10px' }}>{question.question}</div>
                     {question.options.map((option, optionIndex) => (
                         <div 
                             key={optionIndex} 
                             style={{ 
                                 marginBottom: '5px', 
-
                                 border: '1px solid #ccc', 
                                 padding: '5px', 
                                 borderRadius: '5px', 
-
                                 backgroundColor: showAnswers 
                                     ? (answers[index] === option 
                                         ? (answers[index] === question.correctAnswer 
@@ -141,5 +121,4 @@ const Chap2quiz = () => {
     );
 };
 
-
-export default Chap2quiz;
+export default Chap1quiz;

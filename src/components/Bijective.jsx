@@ -40,4 +40,5 @@ export default function Bijective() {
       </div> 
     </div> 
   ); 
+  ); 
 }     

@@ -2,6 +2,7 @@ import React from 'react';
 import MatInverse from '../components/MatInverse';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
+import Chatbox from '../components/ChatBox';
 
 
 const MatrixInverse = () => {
@@ -59,6 +60,7 @@ const MatrixInverse = () => {
      <MatInverse/>
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };

@@ -1,9 +1,10 @@
+
 import React from 'react';
-import MultMat from '../components/MultMat';
+import MultMat from '../components/MultMat2';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import MatrixAddition from '../components/ADDmat'
-
+import Chatbox from '../components/ChatBox';
 const Matrixoperation = () => {
   return (
     <div className="h-screen flex flex-col">
@@ -44,6 +45,7 @@ const Matrixoperation = () => {
      
     </div>
     </div>
+    <Chatbox />
     </div>
   );
 };
