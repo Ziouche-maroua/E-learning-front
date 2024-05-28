@@ -8,7 +8,7 @@ import microsoftIcon from "../assets/images/microsoft.png";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
-import Chatbox from "../components/ChatBox";
+
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
@@ -139,11 +139,8 @@ const Signup = () => {
                     minLength: {
                       value: 4,
                       message: "Matricule must be at least 4 characters",
-                    },
-                    maxLength: {
-                      value: 4,
-                      message: "Matricule must be at most 4 characters",
-                    },
+                    }
+    
                   })}
                 />
                 {errors.matricule_student && (
@@ -247,11 +244,8 @@ const Signup = () => {
           </div>
         </div>
       </div>
-      <Chatbox/>
     </div>
   );
 };
 
 export default Signup;
-
-
