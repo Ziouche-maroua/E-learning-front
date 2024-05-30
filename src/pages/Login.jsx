@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
-
+import TopBar from "../components/TopBar";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -67,7 +67,9 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
+    <div>
+    <TopBar/>
+    <div className="bg-[#e5f5fa]  pt-24 w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
         <div className="md:w-1/3 flex justify-center items-center p-4">
           <img
@@ -164,6 +166,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

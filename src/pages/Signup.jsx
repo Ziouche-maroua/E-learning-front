@@ -8,7 +8,7 @@ import microsoftIcon from "../assets/images/microsoft.png";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
-
+import TopBar from "../components/TopBar";
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
@@ -74,7 +74,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-[#e5f5fa] pt-11  w-full h-screen flex justify-center items-center overflow-auto">
+    <div>
+      <TopBar/>
+    <div className="bg-[#e5f5fa] pt-20  w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
         <div className="hidden lg:flex lg:w-1/2 justify-center items-center p-4">
           <img
@@ -85,8 +87,8 @@ const Signup = () => {
         </div>
         <div className="w-full lg:w-1/2 p-8 md:p-16 flex flex-col justify-center">
         <div className="mb-6 pt-24 md:pt-16 lg:pt-20"> {/* Adjusted padding here */}
-  <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
-  <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
+  
+  <h3 className="pt-24 text-4xl font-bold">Welcome to <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3></h3>
 </div>
 
 
@@ -246,6 +248,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
