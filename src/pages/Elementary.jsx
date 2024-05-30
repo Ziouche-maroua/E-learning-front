@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import MatrixTranspose from '../components/TransposeMat.jsx'
 import ElemMat from '../components/ElemMat';
-
+import Chatbox from "../components/ChatBox";
 const Elementary = () => {
   return (
     <div className="h-screen flex flex-col">
