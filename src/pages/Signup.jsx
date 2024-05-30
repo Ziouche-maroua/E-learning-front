@@ -52,7 +52,7 @@ const Signup = () => {
         } else navigate("/");
       }
     } catch (error) {
-      if ( error.response.status === 400) {
+      if (error.response.status === 400) {
         toast.error("User already exists");
 
         console.log(Cookies.get("token"));
@@ -74,20 +74,22 @@ const Signup = () => {
   };
 
   return (
-    <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
+    <div className="bg-[#e5f5fa] pt-11  w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
-        <div className="md:w-1/2 flex justify-center items-center p-4">
+        <div className="hidden lg:flex lg:w-1/2 justify-center items-center p-4">
           <img
             src={logImage}
             alt="LogImage"
             className="w-full max-h-[500px] object-contain rounded-lg shadow-lg"
           />
         </div>
-        <div className="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
-          <div className="mb-6">
-            <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
-            <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
-          </div>
+        <div className="w-full lg:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+        <div className="mb-6 pt-24 md:pt-16 lg:pt-20"> {/* Adjusted padding here */}
+  <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
+  <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
+</div>
+
+
           <p className="text-lg font-light mb-6">
             Create your account and unlock a world of knowledge at your
             fingertips
@@ -139,7 +141,7 @@ const Signup = () => {
                     minLength: {
                       value: 4,
                       message: "Matricule must be at least 4 characters",
-                    }
+                    },
     
                   })}
                 />
