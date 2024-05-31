@@ -28,7 +28,7 @@ export default function Surjectif() {
   return (
     <div style={{ backgroundColor: 'transparent', display: 'flex', justifyContent: 'space-around' }}>
       <div className="p-4 w-1/2">
-        <h3 className="text-center">ONTO Linear Transformation</h3>
+        <h3 className="text-center font-semibold mb-4">ONTO Linear Transformation</h3>
         <div>
           <Mafs height={200}>
             <Transform>
@@ -48,7 +48,7 @@ export default function Surjectif() {
       </div>
 
       <div className="p-4 w-1/2">
-        <h3 className="text-center">NOT an ONTO Linear Transformation</h3>
+        <h3 className="text-center font-semibold mb-4">NOT an ONTO Linear Transformation</h3>
         <div>
           <Mafs height={200}>
             <Transform>

@@ -13,13 +13,13 @@ const Home = () => {
       <TopBar />
 
       <div className="container mx-auto px-2 pt-8 lg:pt-12"> {/* Reduced padding-top */}
-        <span className="block text-center lg:text-left text-3xl sm:text-4xl font-bold mt-4 sm:mt-6 text-blue-300">
+        <span className="block text-center lg:text-left text-3xl sm:text-4xl poetsen-font mt-4 sm:mt-6 text-blue-300">
           A New Way To Learn <br className="lg:hidden" /> & Get Knowledge
         </span>
-        <p className="text-base sm:text-lg my-4 text-center lg:text-left text-[rgba(0,0,0,0.35)]">
+        <p className="text-base sm:text-lg my-4 text-center lg:text-left font-semibold text-[rgba(0,0,0,0.35)]">
           Learn new skills from the comfort of your home anywhere, anytime.
         </p>
-        <p className="text-3xl mt-8 mb-3 text-black">Explore our courses:</p> {/* Adjusted margin-top */}
+        <p className="text-3xl mt-8 mb-8 poetsen-font text-black">Explore our courses</p> {/* Adjusted margin-top */}
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
@@ -51,7 +51,7 @@ const Home = () => {
                 className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4"
               />
               <div className="flex-1">
-                <p className="text-xl font-semibold my-2 sm:my-4">
+                <p className="text-xl font-semibold  my-2 sm:my-4">
                   Algorithm
                 </p>
                 <p className="text-sm font-semibold text-[rgba(103,117,183,0.55)]">

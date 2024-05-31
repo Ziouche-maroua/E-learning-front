@@ -3,10 +3,10 @@ import { Mafs, Circle, Transform, Vector } from 'mafs';
  
 export default function Bijective() { 
   return ( 
-    <div style={{ display: 'flex', justifyContent: 'space-around' }}> 
+    <div style={{ display: 'flex', justifyContent: 'space-around' }} > 
       {/* Bijective Linear Transformation */} 
       <div style={{ width: '45%', padding: '10px' }}> 
-        <h3 style={{ textAlign: 'center' }}>Bijective Linear Transformation</h3> 
+        <h3 style={{ textAlign: 'center' }} className=' font-semibold mb-4'>Bijective Linear Transformation</h3> 
         <Mafs height={200} background={null}> 
           <Transform> 
             <Circle center={[-2, 0]} radius={1.5} color="#60a5fa" opacity={1} /> {/* Blue circle */} 
@@ -22,8 +22,8 @@ export default function Bijective() {
       </div> 
       
       {/* Bijective Linear Transformation (Inverse) */} 
-      <div style={{ width: '45%', padding: '10px' }}> 
-        <h3 style={{ textAlign: 'center' }}>Bijective Linear Transformation (Inverse)</h3> 
+      <div style={{ width: '45%', padding: '10px' }}  className=' font-semibold mb-8'> 
+        <h3 style={{ textAlign: 'center' }} className=' font-semibold mb-4'>Bijective Linear Transformation (Inverse)</h3> 
         <Mafs height={200} background="white" > 
           <Transform> 
             <Circle center={[2, 0]} radius={1.5} color="#60a5fa" opacity={1} /> {/* Blue circle */} 

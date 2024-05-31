@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useLocation } from "react-router-dom";
+import Chatbox from "../components/ChatBox";
 
 function GeneralAlgebra() {
   const [chapters, setChapters] = useState([]);

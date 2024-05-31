@@ -15,7 +15,7 @@ export default function Endomorphisme() {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       <div style={{ width: '50%', padding: '10px' }}>
-        <h3 style={{ textAlign: 'center' }}>Endomorphism</h3>
+        <h3 style={{ textAlign: 'center' }}></h3>
         <Mafs height={200} background="white">
           <Transform>
             <Circle center={[-2, 0]} radius={1.5} color="pink" opacity={1} />

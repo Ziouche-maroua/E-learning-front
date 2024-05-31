@@ -77,14 +77,11 @@ const Login = () => {
           />
         </div>
         <div className="md:w-2/3 p-8 md:p-16 flex flex-col justify-center">
-          <div className="mb-6">
-            <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
-            <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
+          <div className="mb-12">
+            <h2 className="text-4xl poetsen-font mb-2">Welcome to</h2>
+            <h3 className="text-4xl poetsen-font text-[#67adee]">FikrSight</h3>
           </div>
-          <p className="text-lg font-light mb-6">
-            Create your account and unlock a world of knowledge at your
-            fingertips
-          </p>
+         
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-4">
               <div className="relative w-full">
@@ -121,15 +118,15 @@ const Login = () => {
                 )}
               </div>
             </div>
-            <div className="flex space-x-4 mt-6">
-              <button
+            <div className="flex space-x-4 mt-12">
+            <button
                 type="submit"
                 className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
               >
                 Log in
               </button>
-              <div className="flex items-center">
-                <span className="ml-2">Don't have an account?</span>
+              <div className="mt-2">
+                <span className="mr-2">Don't have an account ?</span>
                 <Link to="/signup" className="ml-2 text-[#79bffb] font-bold">
                   Go to Sign up
                 </Link>

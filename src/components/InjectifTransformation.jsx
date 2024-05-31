@@ -6,7 +6,7 @@ export default function Injectif() {
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       {/* One-to-One Linear Transformation */}
       <div style={{ width: '45%', padding: '10px' }}>
-        <h3 style={{ textAlign: 'center' }}>One-to-One Linear Transformation</h3>
+        <h3 style={{ textAlign: 'center' }} className=' font-semibold mb-4'>One-to-One Linear Transformation</h3>
         <Mafs height={200} background={null}>
           <Transform>
             <Circle center={[-2.1, 0]} radius={1.5} color="yellow" opacity={1} /> {/* Blue circle */}
@@ -21,7 +21,7 @@ export default function Injectif() {
 
       {/* Not One-to-One Linear Transformation */}
       <div style={{ width: '45%', padding: '10px' }}>
-        <h3 style={{ textAlign: 'center' }}>Not One-to-One Linear Transformation</h3>
+        <h3 style={{ textAlign: 'center' }}  className=' font-semibold mb-4'>Not One-to-One Linear Transformation</h3>
         <Mafs height={200} background={null}>
           <Transform>
             <Circle center={[-2.1, 0]} radius={1.5} color="yellow" opacity={1} /> {/* Blue circle */}

@@ -85,10 +85,10 @@ const Signup = () => {
         </div>
         <div className="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
           <div className="mb-6">
-            <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
-            <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
+            <h2 className="text-4xl poetsen-font mb-2">Welcome to</h2>
+            <h3 className="text-4xl poetsen-font text-[#67adee]">FikrSight</h3>
           </div>
-          <p className="text-lg font-light mb-6">
+          <p className="text-lg kanit-font mb-6">
             Create your account and unlock a world of knowledge at your
             fingertips
           </p>
@@ -207,7 +207,7 @@ const Signup = () => {
             <div className="mt-6">
               <button
                 type="submit"
-                className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-full text-white font-bold shadow-md  hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 "
               >
                 Sign up
               </button>
@@ -225,14 +225,14 @@ const Signup = () => {
           <div className="flex gap-6 mt-4">
             <button
               onClick={handleGoogleSignUp}
-              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-full shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2" />
               Sign up with
             </button>
             <button
               onClick={handleMicrosoftSignUp}
-              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb]  text-white font-semibold rounded-full shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               <img
                 src={microsoftIcon}
