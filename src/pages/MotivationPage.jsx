@@ -43,7 +43,7 @@ const MotivationPage = () => {
       <TopBar />
 
       <div className="pt-16 mx-12 flex flex-col items-center">
-        <p className="text-4xl poetsen-font text-yellow-500 mb-4">Motivation</p>
+        <p className="text-4xl poetsen-font text-blue-300 mb-4">Motivation</p>
         
         <span className="text-2xl poetsen-font text-blue-700 mt-4 mb-6">
           Real-world Use Cases

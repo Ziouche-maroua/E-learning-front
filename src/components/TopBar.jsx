@@ -11,14 +11,14 @@ const TopBar = () => {
   };
 
   return (
-    <div className="absolute top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4 z-20">
+    <div className="fixed top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4 z-20">
       <div className="flex items-center">
         <Link to="/" className="text-white text-2xl font-bold flex items-center">
           <span className="text-white courgette-font">FikrSight</span>
         </Link>
       </div>
 
-      <div className="flex items-center relative">
+      <div className="hidden md:flex items-center relative">
         <div style={{ position: 'relative' }}>
           <input
             type="text"
