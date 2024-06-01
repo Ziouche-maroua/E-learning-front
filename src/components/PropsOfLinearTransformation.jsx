@@ -14,7 +14,7 @@ const LinearTransformationVisualization = () => {
 
   return (
     <div style={{ padding: '20px', width: '100%', margin: '0 auto' }}>
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '20px' }} className='text 2xl font-bold'>
         <h3>Additivity Property: L(u + v) = L(u) + L(v)</h3>
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <div style={{ width: '45%' }}>
@@ -23,8 +23,8 @@ const LinearTransformationVisualization = () => {
               <br />
               <span style={{ color: 'green' }}>v</span>: {v.join(', ')}
             </p>
-            <p style={{ color: 'red' }}>The red vector represents the transformed vector L(u + v).</p>
-            <p style={{ color: 'purple' }}>The purple vector represents the sum of transformed vectors L(u) + L(v).</p>
+            <p style={{ color: 'red' }} className='text 2xl font-semibold'>The red vector represents the transformed vector L(u + v).</p>
+            <p style={{ color: 'purple' }} className='text 2xl font-semibold'>The purple vector represents the sum of transformed vectors L(u) + L(v).</p>
             <Mafs height={300} width={350}>
               <Coordinates.Cartesian />
               {/* Input vectors u and v */}
@@ -41,7 +41,7 @@ const LinearTransformationVisualization = () => {
           </div>
         </div>
       </div>
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '20px' }} className='text 2xl font-bold'>
         <h3>Homogeneity Property: L(2u) = 2L(u)</h3>
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <div style={{ width: '45%' }}>

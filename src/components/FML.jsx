@@ -45,29 +45,30 @@ const FamLib = () => {
   };
 
   return (
-    <div style={{ padding: '20px', width: '60vw', margin: '0 auto', fontFamily: 'Arial, sans-serif', backgroundColor: 'white' }}>
-      <h2>Visualization of a Linearly Independent Family of Vectors</h2>
+    <div className="flex flex-col items-center mt-4 mb-8"  >
+      <h2 className="text-3xl font-bold text-gray-800 mb-12 mt-4">Visualization of a Linearly Independent Family of Vectors</h2>
       
-      <div style={{ marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Definition:</h3>
-        <p style={{ backgroundColor: 'lavender', padding: '10px', borderRadius: '5px' }}>
-          A family of vectors {`{v₁, v₂, ..., vₙ}`} in a vector space E is said to be linearly independent if the only solution to the equation c₁v₁ + c₂v₂ + ... + cₙvₙ = 0 is c₁ = c₂ = ... = cₙ = 0, where 0 represents the zero vector.
+      <div className="max-w-3xl text-left mt-5 font-sans" >
+        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Definition</h3>
+        <p className="text-gray-800  font-bold mt-2 mb-4">
+        &nbsp; A family of vectors {`{v₁, v₂, ..., vₙ}`} in a vector space E is said to be linearly independent if the only solution to the equation c₁v₁ + c₂v₂ + ... + cₙvₙ = 0 is c₁ = c₂ = ... = cₙ = 0, where 0 represents the zero vector.
         </p>
       </div>
 
-      <div style={{ marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Example:</h3>
-        <p style={{ backgroundColor: 'honeydew', padding: '10px', borderRadius: '5px' }}>
-          Consider the vectors v₁ = [1, 0] and v₂ = [0, 1] in ℝ². This family of vectors is linearly independent because the only solution to the equation c₁v₁ + c₂v₂ = [0, 0] is c₁ = c₂ = 0. Each vector is necessary to span the entire vector space ℝ², and neither vector can be expressed as a scalar multiple of the other.
+      <div className=" max-w-3xl text-left mt-5 font-sans bg-blue-200 p-4 rounded mt-8 mb-12" >
+       
+        <p  className="text-gray-800 font-bold"><b>Example :</b> &nbsp;
+             Consider the vectors v₁ = [1, 0] and v₂ = [0, 1] in ℝ². This family of vectors is linearly independent because the only solution to the equation c₁v₁ + c₂v₂ = [0, 0] is c₁ = c₂ = 0. Each vector is necessary to span the entire vector space ℝ², and neither vector can be expressed as a scalar multiple of the other.
         </p>
       </div>
 
-      <div style={{ marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Explanation:</h3>
-        <p style={{ backgroundColor: 'mintcream', padding: '10px', borderRadius: '5px' }}>
-          In this visualization, each vector is represented by an arrow. Notice that none of the vectors can be expressed as a combination of the others. They form a basis for ℝ². This property is crucial in many areas of mathematics and physics, as it allows us to uniquely describe points and transformations in vector spaces.
+      
+      <div className=" max-w-3xl text-left mt-5 font-sans mb-8" >
+         <p className="text-gray-800  text 2xl font-bold" >
+         &nbsp; In this visualization, each vector is linearly independent of the others, meaning none can be written as a combination of the rest. They form a basis for ℝ².
         </p>
       </div>
+
 
       <Mafs>
         <Coordinates.Cartesian />
@@ -76,19 +77,13 @@ const FamLib = () => {
         <Vector color="lightcoral" tail={[0, 0]} tip={[3, 1]} label="v₃" />
       </Mafs>
 
-      <div style={{ marginTop: '20px', marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Additional Explanation:</h3>
-        <p style={{ backgroundColor: 'aliceblue', padding: '10px', borderRadius: '5px' }}>
-          In this visualization, each vector is linearly independent of the others, meaning none can be written as a combination of the rest. They form a basis for ℝ².
-        </p>
-      </div>
 
-      <div style={{ marginTop: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Check Your Own Vectors:</h3>
-        <p style={{ backgroundColor: 'lavenderblush', padding: '10px', borderRadius: '5px' }}>Choose the number of vectors and enter their components to verify if they are linearly independent:</p>
+      <div className=" max-w-3xl text-left mt-5 font-sans mt-8">
+        <h3 className="font-bold  mb-4" > Check Your Own Vectors :</h3>
+        <p className="font-bold mt-4"> Choose the number of vectors and enter their components to verify if they are linearly independent:</p>
         
-        <div style={{ marginBottom: '20px' }}>
-          <label style={{ marginRight: '10px' }}>Number of Vectors:</label>
+        <div className="mt-8" >
+          <label className="font-bold" >  &nbsp; &nbsp; Number of Vectors :</label>
           <select onChange={(e) => setNumVectors(parseInt(e.target.value))} value={numVectors} style={{ padding: '5px', borderRadius: '5px', border: '1px solid lightgray' }}>
             <option value={2}>2</option>
             <option value={3}>3</option>
@@ -116,17 +111,18 @@ const FamLib = () => {
           ))}
         </div>
 
-        <button onClick={handleSubmit} style={{ padding: '10px', backgroundColor: 'lightcyan', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Check Independence</button>
+        <button onClick={handleSubmit} className= "mt-4 mb-4 font-bold  px-4 py-2 bg-yellow-200 rounded cursor-pointer border-none transition-all hover:border-2 hover:border-black">Check Independence</button>
+
         
         {isIndependent !== null && (
-          <div style={{ marginTop: '20px', padding: '10px', borderRadius: '5px', backgroundColor: isIndependent ? 'lightgreen' : 'lightcoral' }}>
-            {isIndependent ? 'The vectors are linearly independent.' : 'The vectors are not linearly independent.'}
+          <div style={{ marginTop: '20px', padding: '10px', borderRadius: '5px', backgroundColor: isIndependent ? 'lightgreen' : 'lightcoral' }} >
+            {isIndependent ? 'The vectors are linearly independent' : 'The vectors are not linearly independent'}
           </div>
         )}
 
         {vectors.length > 0 && (
-          <div style={{ marginTop: '20px' }}>
-            <h4>Entered Vectors:</h4>
+          <div className=" mt-4 mb-4">
+            <h4 className="font-bold text 2xl mb-4"> &nbsp; &nbsp;Entered Vectors :</h4>
             <Mafs>
               <Coordinates.Cartesian />
               {vectors.map((vec, index) => (
@@ -138,21 +134,21 @@ const FamLib = () => {
 
         {isIndependent !== null && (
           <div style={{ marginTop: '20px', padding: '10px', borderRadius: '5px', backgroundColor: 'lightyellow' }}>
-            <h4>Explanation:</h4>
-            <p>
+            <h4 className="font-bold text 2xl mb-4">Explanation :</h4>
+            <p style= {{backgroundColor: '#f6fff6' }} className="text-gray-800 font-bold">
               To determine if the vectors are linearly independent, we set up the equation c₁v₁ + c₂v₂ + ... + cₙvₙ =              0. For the vectors to be linearly independent, the only solution to this equation should be c₁ = c₂ = ... = cₙ = 0.
             </p>
             {numVectors === 2 && (
-              <p>
+              <p  style= {{backgroundColor: '#f6fff6' }} className="text-gray-800 font-bold">
                 For the two vectors you entered, we calculate the determinant of the matrix formed by these vectors. If the determinant is non-zero, the vectors are linearly independent.
               </p>
             )}
             {numVectors === 3 && (
-              <p>
+              <p style= {{backgroundColor: '#f6fff6' }} className="text-gray-800 font-bold">
                 For the three vectors you entered, we calculate the determinant of the matrix formed by these vectors. If the determinant is non-zero, the vectors are linearly independent.
               </p>
             )}
-            <p>
+            <p style= {{backgroundColor: '#f6fff6' }} className="text-gray-800 font-bold">
               In this case, the calculation shows that {isIndependent ? 'the determinant is non-zero, confirming that the vectors are linearly independent.' : 'the determinant is zero, indicating that the vectors are not linearly independent.'}
             </p>
           </div>

@@ -9,7 +9,9 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 
-const SignUp = () => {
+import TopBar from "../components/TopBar";
+const Signup = () => {
+
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -46,7 +48,9 @@ const SignUp = () => {
         await Cookies.set("token", response.data.token); // Token will expire in 7 days
       }
     } catch (error) {
-      if (error.response && error.response.status === 400) {
+
+      if (error.response.status === 400) {
+
         toast.error("User already exists");
 
         console.log(Cookies.get("token"));
@@ -68,21 +72,25 @@ const SignUp = () => {
   };
 
   return (
-    <div className="bg-[#e5f5fa] w-full h-screen flex justify-center items-center overflow-auto">
+    <div>
+      <TopBar/>
+    <div className="bg-[#e5f5fa] pt-20  w-full h-screen flex justify-center items-center overflow-auto">
       <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
-        <div className="md:w-1/2 flex justify-center items-center p-4">
+        <div className="hidden lg:flex lg:w-1/2 justify-center items-center p-4">
           <img
             src={logImage}
             alt="LogImage"
             className="w-full max-h-[500px] object-contain rounded-lg shadow-lg"
           />
         </div>
-        <div className="md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
-          <div className="mb-6">
-            <h2 className="text-4xl font-bold mb-2">Welcome to</h2>
-            <h3 className="text-4xl font-bold text-[#67adee]">FikrSight</h3>
-          </div>
-          <p className="text-lg font-light mb-6">
+        <div className="w-full lg:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+        <div className="mb-6 pt-24 md:pt-16 lg:pt-20"> {/* Adjusted padding here */}
+  
+  <h3 className="pt-24 text-4xl poetsen-font mb-2">Welcome to <h3 className="text-4xl poetsen-font  mt-2 text-[#67adee]"> FikrSight</h3></h3>
+</div>
+
+
+          <p className="text-lg font-semibold mb-6">
             Create your account and unlock a world of knowledge at your
             fingertips
           </p>
@@ -130,7 +138,7 @@ const SignUp = () => {
                     minLength: {
                       value: 4,
                       message: "Matricule must be at least 4 characters",
-                    }
+                    },
     
                   })}
                 />
@@ -198,7 +206,7 @@ const SignUp = () => {
             <div className="mt-6">
               <button
                 type="submit"
-                className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-full text-white font-bold shadow-md  hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 "
               >
                 Sign up
               </button>
@@ -216,14 +224,14 @@ const SignUp = () => {
           <div className="flex gap-6 mt-4">
             <button
               onClick={handleGoogleSignUp}
-              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-full shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2" />
               Sign up with
             </button>
             <button
               onClick={handleMicrosoftSignUp}
-              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb]  text-white font-semibold rounded-full shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
             >
               <img
                 src={microsoftIcon}
@@ -236,7 +244,10 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
-export default SignUp;
+
+export default Signup;
+

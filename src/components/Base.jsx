@@ -5,13 +5,13 @@ import 'mafs/font.css';
 
 const VectorSpaceBasisVisualization = () => {
   return (
-    <div style={{ padding: '20px', width: '60vw', margin: '0 auto', fontFamily: 'Arial, sans-serif', backgroundColor: '#f0f0f0' }}>
-      <h2 style={{ color: '#333333' }}>Visualization of a Basis of a Vector Space</h2>
+    <div className="flex flex-col items-center mt-4 mb-8" >
+      <h2 className="text-3xl font-bold text-gray-800 mb-12 mt-4" >Visualization of a Basis of a Vector Space</h2>
       
-      <div style={{ marginBottom: '20px', color: '#333333' }}>
-        <h3 style={{ color: '#4e6bff' }}>Definition:</h3>
-        <p style={{ backgroundColor: '#e0eaff', padding: '10px', borderRadius: '5px' }}>
-          In linear algebra, a <strong>basis</strong> of a vector space is a set of vectors that are linearly independent and span the vector space. The <strong>dimension</strong> of a vector space is the cardinality of its basis.
+      <div className="max-w-3xl text-left mt-5 font-sans" >
+        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Definition:</h3>
+        <p className="text-gray-800  font-bold mt-2 mb-8" >
+        &nbsp;  In linear algebra, a <strong>basis</strong> of a vector space is a set of vectors that are linearly independent and span the vector space. The <strong>dimension</strong> of a vector space is the cardinality of its basis.
         </p>
       </div>
 
@@ -23,9 +23,9 @@ const VectorSpaceBasisVisualization = () => {
         <Vector color="#c0ffbc" tail={[0, 0]} tip={[0, 1]} label="v₂" />
       </Mafs>
 
-      <div style={{ marginTop: '20px', marginBottom: '20px', color: '#333333' }}>
-        <h3 style={{ color: '#4e6bff' }}>Explanation:</h3>
-        <p style={{ backgroundColor: '#f6fff6', padding: '10px', borderRadius: '5px' }}>
+      <div style={{ marginTop: '20px', marginBottom: '20px', color: '#333333' }} className="max-w-3xl text-left mt-5 font-sans">
+        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Explanation:</h3>
+        <p style={{ backgroundColor: '#f6fff6', padding: '10px', borderRadius: '5px' }} className="text-gray-800 font-bold">
           In this visualization, the vectors v₁ and v₂ form a basis for ℝ². Any vector in ℝ² can be expressed as a linear combination of these basis vectors. To determine the basis and dimension of a vector space, you can follow these steps:
           <ol>
             <li>Start with a set of vectors.</li>

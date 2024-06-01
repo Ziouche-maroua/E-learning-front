@@ -1,4 +1,4 @@
-/*import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 const AnimatedSubspaceVisualization = () => {
@@ -42,16 +42,16 @@ const AnimatedSubspaceVisualization = () => {
   return (
     <div style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
       <h2 style={{ color: '#3d3d3d' }}>Animated Visualization of a Vector Subspace</h2>
-      <div className="bg-orange-200 p-4 rounded mt-2">
-        <p className="text-gray-800">
+      <div style={{ backgroundColor: '#ffcc66', padding: '16px', borderRadius: '8px', marginTop: '8px' }}>
+        <p style={{ color: '#3d3d3d' }}>
           <b>Definition:</b> A subspace is a subset of a vector space that is also a vector space.
         </p>
       </div>
-      <div className="bg-white-100 p-4 rounded mt-2">
-        <p className="text-gray-800">
+      <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', marginTop: '8px' }}>
+        <p style={{ color: '#3d3d3d' }}>
           <b>Example:</b> Consider the set of all vectors of the form (x, 0) in R².
         </p>
-        <ul className="text-gray-700 leading-relaxed mt-2">
+        <ul style={{ color: '#3d3d3d', lineHeight: '1.5', marginTop: '8px' }}>
           <li>The zero vector (0, 0) is in the set.</li>
           <li>If (x1, 0) and (x2, 0) are in the set, then their sum (x1 + x2, 0) is also in the set.</li>
           <li>If (x, 0) is in the set and c is a scalar, then c * (x, 0) = (cx, 0) is also in the set.</li>
@@ -83,8 +83,8 @@ const AnimatedSubspaceVisualization = () => {
         <animated.div
           style={{
             position: 'absolute',
-            top: arrowProps.y,
-            left: arrowProps.x,
+            top: arrowProps.y.to(v => `${v}px`),
+            left: arrowProps.x.to(v => `${v}px`),
             opacity: arrowProps.opacity,
             width: '0',
             height: '0',
@@ -97,8 +97,8 @@ const AnimatedSubspaceVisualization = () => {
         <animated.div
           style={{
             position: 'absolute',
-            top: arrowProps2.y,
-            left: arrowProps2.x,
+            top: arrowProps2.y.to(v => `${v}px`),
+            left: arrowProps2.x.to(v => `${v}px`),
             opacity: arrowProps2.opacity,
             width: '0',
             height: '0',
@@ -137,26 +137,24 @@ const AnimatedSubspaceVisualization = () => {
           padding: '10px 20px',
           backgroundColor: '#ffb366',
           color: '#fff',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          marginTop: '16px',
         }}
-        >
-          Reanimate
-        </button>
-      </div>
-    
-  );
-};
-
-const SubspaceVisualization = () => {
-  const [visualizationType, setVisualizationType] = useState('animated');
-
-  return (
-    <div>
-      
-      
-
-      {visualizationType === 'animated' && <AnimatedSubspaceVisualization />}
+      >
+        Reanimate
+      </button>
     </div>
   );
 };
 
-export default SubspaceVisualization;*/
+const SubspaceVisualization = () => {
+  return (
+    <div>
+      <AnimatedSubspaceVisualization />
+    </div>
+  );
+};
+
+export default SubspaceVisualization;

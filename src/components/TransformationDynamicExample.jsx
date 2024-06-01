@@ -85,7 +85,7 @@ const DefDynamic = () => {
 
   return (
     <div style={styles.container}>
-      <div>
+      <div className='kanit-font' >
         <label>
           Choose dimension:
           <select value={dimension} onChange={handleDimensionChange}>
@@ -96,14 +96,14 @@ const DefDynamic = () => {
         </label>
       </div>
       {dimension && (
-        <div>
+        <div className='kanit-font'>
           <div>
             <label>
               Initial endpoint:
               <input type="text" value={initialEnd.join(',')} onChange={handleInitialEndChange} />
             </label>
           </div>
-          <div>
+          <div className='kanit-font'>
             <label>
               Final endpoint:
               <input type="text" value={finalEnd.join(',')} onChange={handleFinalEndChange} />

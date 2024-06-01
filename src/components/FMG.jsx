@@ -45,29 +45,30 @@ const FamilleGeneratrice = () => {
   };
 
   return (
-    <div style={{ padding: '20px', width: '60vw', margin: '0 auto', fontFamily: 'Arial, sans-serif', backgroundColor: 'white' }}>
-      <h2>Visualization of a Spanning Set of Vectors</h2>
+    <div className="flex flex-col items-center mt-4 mb-8">
+      <h2 className="text-3xl font-bold text-gray-800 mb-12 mt-4">Visualization of a Spanning Set of Vectors</h2>
       
-      <div style={{ marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Definition:</h3>
-        <p style={{ backgroundColor: 'lavender', padding: '10px', borderRadius: '5px' }}>
-          A set of vectors {`{v₁, v₂, ..., vₙ}`} in a vector space E is said to span the space if every vector in the space can be written as a linear combination of these vectors. This means that for any vector v in E, there exist scalars c₁, c₂, ..., cₙ such that v = c₁v₁ + c₂v₂ + ... + cₙvₙ.
+      <div className="max-w-3xl text-left mt-5 font-sans">
+        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Definition:</h3>
+        <p className="text-gray-800  font-bold mt-2 mb-4">
+        &nbsp;  A set of vectors {`{v₁, v₂, ..., vₙ}`} in a vector space E is said to span the space if every vector in the space can be written as a linear combination of these vectors. This means that for any vector v in E, there exist scalars c₁, c₂, ..., cₙ such that v = c₁v₁ + c₂v₂ + ... + cₙvₙ.
         </p>
       </div>
 
-      <div style={{ marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Example:</h3>
-        <p style={{ backgroundColor: 'honeydew', padding: '10px', borderRadius: '5px' }}>
+      <div className=" max-w-3xl text-left mt-5 font-sans bg-blue-200 p-4 rounded mt-8 mb-12">
+       
+        <p  className="text-gray-800 font-bold"> <b>Example :</b> &nbsp;
           Consider the vectors v₁ = [1, 0] and v₂ = [0, 1] in ℝ². This set of vectors spans ℝ² because any vector in ℝ² can be expressed as a linear combination of these vectors. For example, the vector [a, b] can be written as a * [1, 0] + b * [0, 1].
         </p>
       </div>
-
-      <div style={{ marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Explanation:</h3>
-        <p style={{ backgroundColor: 'mintcream', padding: '10px', borderRadius: '5px' }}>
-          In this visualization, each vector is represented by an arrow. If the vectors span ℝ², it means that we can reach any point in the plane by combining these vectors appropriately. This property is crucial in many areas of mathematics and physics, as it allows us to describe the entire vector space with a limited set of vectors.
+      
+      <div className=" max-w-3xl text-left mt-5 font-sans mb-8" >
+         <p className="text-gray-800 text 2xl font-bold" >
+         &nbsp;   In this visualization, the vectors provided span the entire ℝ² space, meaning any point in the plane can be reached using a combination of these vectors.
         </p>
       </div>
+
+    
 
       <Mafs>
         <Coordinates.Cartesian />
@@ -76,16 +77,10 @@ const FamilleGeneratrice = () => {
         <Vector color="lightcoral" tail={[0, 0]} tip={[3, 1]} label="v₃" />
       </Mafs>
 
-      <div style={{ marginTop: '20px', marginBottom: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Additional Explanation:</h3>
-        <p style={{ backgroundColor: 'aliceblue', padding: '10px', borderRadius: '5px' }}>
-          In this visualization, the vectors provided span the entire ℝ² space, meaning any point in the plane can be reached using a combination of these vectors.
-        </p>
-      </div>
 
-      <div style={{ marginTop: '20px', color: 'darkslategray' }}>
-        <h3 style={{ color: 'darkcyan' }}>Check Your Own Vectors:</h3>
-        <p style={{ backgroundColor: 'lavenderblush', padding: '10px', borderRadius: '5px' }}>Choose the number of vectors and enter their components to verify if they form a spanning set:</p>
+      <div className=" max-w-3xl text-left mt-5 font-sans mt-8">
+        <h3 className="font-bold  mb-4" > Check Your Own Vectors :</h3>
+        <p className="font-bold mt-4"> Choose the number of vectors and enter their components to verify if they form a spanning set :</p>
         
         <div style={{ marginBottom: '20px' }}>
           <label style={{ marginRight: '10px' }}>Number of Vectors:</label>
@@ -116,7 +111,8 @@ const FamilleGeneratrice = () => {
           ))}
         </div>
 
-        <button onClick={handleSubmit} style={{ padding: '10px', backgroundColor: 'lightcyan', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Check Spanning Set</button>
+        <button onClick={handleSubmit} className= "mt-4 mb-4 font-bold  px-4 py-2 bg-yellow-200 rounded cursor-pointer border-none transition-all hover:border-2 hover:border-black">Check Spanning Set </button>
+
         
         {isSpanning !== null && (
           <div style={{ marginTop: '20px', padding: '10px', borderRadius: '5px', backgroundColor: isSpanning ? 'lightgreen' : 'lightcoral' }}>
@@ -125,8 +121,8 @@ const FamilleGeneratrice = () => {
         )}
 
         {vectors.length > 0 && (
-          <div style={{ marginTop: '20px' }}>
-            <h4>Entered Vectors:</h4>
+          <div className=" mt-4 mb-4">
+          <h4 className="font-bold text 2xl mb-4"> &nbsp; &nbsp;Entered Vectors :</h4>
             <Mafs>
               <Coordinates.Cartesian />
               {vectors.map((vec, index) => (
@@ -138,21 +134,21 @@ const FamilleGeneratrice = () => {
 
         {isSpanning !== null && (
           <div style={{ marginTop: '20px', padding: '10px', borderRadius: '5px', backgroundColor: 'lightyellow' }}>
-            <h4>Explanation:</h4>
-            <p>
+            <h4 className="font-bold text 2xl mb-4">Explanation:</h4>
+            <p style= {{backgroundColor: '#f6fff6' }}  className="text-gray-800 font-bold">
               To determine if the vectors form a spanning set, we check if any vector in ℝ² can be written as a linear combination of the given vectors. This involves setting up the equation c₁v₁ + c₂v₂ + ... + cₙvₙ = v for an arbitrary vector v in ℝ². If we can solve this equation for any v, then the vectors span ℝ².
             </p>
             {numVectors === 2 && (
-              <p>
+              <p style= {{backgroundColor: '#f6fff6' }}  className="text-gray-800 font-bold">
                 For the two vectors you entered, we calculate the determinant of the matrix formed by these vectors. If the determinant is non-zero, the vectors span ℝ².
               </p>
             )}
             {numVectors === 3 && (
-              <p>
+              <p style= {{backgroundColor: '#f6fff6' }} className="text-gray-800 font-bold">
                 For the three vectors you entered, we calculate the determinant of the matrix formed by these vectors. If the determinant is non-zero, the vectors span ℝ².
               </p>
             )}
-            <p>
+            <p style= {{backgroundColor: '#f6fff6' }}  className="text-gray-800 font-bold">
               In this case, the calculation shows that {isSpanning ? 'the determinant is non-zero, confirming that the vectors form a spanning set.' : 'the determinant is zero, indicating that the vectors do not form a spanning set.'}
             </p>
           </div>

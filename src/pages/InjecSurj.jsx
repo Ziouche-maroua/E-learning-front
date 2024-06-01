@@ -16,22 +16,22 @@ const InjecSurj = () => {
     <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-yellow-900 ">  LINEAR TRANSFORMATION
             <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span></h2>
     <ul className="space-y-9">
-      <li className="  bg-gray-300  p-2   rounded-md">
+      <li className="  bg-gray-300  p-2   rounded-md flex items-center justify-center text-center">
         <Link to="/chapter2/definition">Definition</Link>
       </li>
-      <li className=" bg-gray-300 p-2  rounded-md">
+      <li className=" bg-gray-300 p-2  rounded-md flex items-center justify-center text-center">
         <Link to="/chapter2/properties">Properties</Link>
       </li>
-      <li className="bg-gray-300 p-2 rounded-md">
+      <li className="bg-gray-300 p-2 rounded-md flex items-center justify-center text-center">
         <Link to="/chapter2/KernalImg">Image and Kernel</Link>
       </li>
-      <li className="bg-blue-200  text-blue-600 p-2 rounded-md">
+      <li className="bg-blue-200  text-blue-600 p-2 rounded-md flex items-center justify-center text-center">
         <Link to="/chapter2/InjectifSurjectif">Bijectif, Surjectif, Injectif</Link>
       </li>
-      <li className="bg-gray-300  p-2 rounded-md">
+      <li className="bg-gray-300  p-2 rounded-md flex items-center justify-center text-center">
         <Link to="/chapter2/Morphisme">Endomorphism and Isomorphism</Link>
       </li>
-      <li className="bg-yellow-200 text-gray-800 p-2 rounded-md">
+      <li className="bg-yellow-200 text-gray-800 p-2 rounded-md flex items-center justify-center text-center">
         <Link to="/chapter2/Quiz">Take a quiz about linear transformation</Link>
       </li>
       
@@ -39,13 +39,13 @@ const InjecSurj = () => {
     </div> 
     <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5">
       
-    <div className="text-2xl font-bold text-blue-300 mb-4">
-            Understanding injective, surjective, and bijective linear transformations is key to grasping the relationships between different vector spaces and how these spaces can be mapped onto each other.
+    <div className="text-2xl kanit-font text-gray-700  mt-4 mb-8">
+            Understanding injective, surjective, and bijective linear transformations is key to grasping the relationships between different vector spaces and how these spaces can be mapped onto each other
     </div>
 
     <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-2">Injective Transformation</h3>
-            <p className="text-justify text-gray-700 leading-relaxed mb-4">
+            <h3 className="text-2xl poetsen-font mb-4">Injective Transformation</h3>
+            <p className="text-justify text-gray-700 leading-relaxed mb-8 font-semibold">
               An injective (or one-to-one) linear transformation maps distinct vectors in the domain to distinct vectors in the codomain. This means that no two different vectors in the domain are mapped to the same vector in the codomain. 
               In the visualization below, the vectors from the domain are uniquely mapped to the codomain, ensuring a one-to-one relationship.
             </p>
@@ -53,8 +53,8 @@ const InjecSurj = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-2">Surjective Transformation</h3>
-            <p className="text-justify text-gray-700 leading-relaxed mb-4">
+            <h3 className="text-2xl poetsen-font mb-4">Surjective Transformation</h3>
+            <p className="text-justify text-gray-700 leading-relaxed mb-8 font-semibold">
               A surjective (or onto) linear transformation maps the domain onto the entire codomain, meaning every vector in the codomain is an image of at least one vector in the domain. 
               This ensures that the transformation covers the entire codomain. 
               In the visualization below, you can see how the transformation ensures that every vector in the codomain is reached.
@@ -63,8 +63,8 @@ const InjecSurj = () => {
           </div>
 
           <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-2">Bijective Transformation</h3>
-            <p className="text-justify text-gray-700 leading-relaxed mb-4">
+            <h3 className="text-2xl poetsen-font mb-4">Bijective Transformation</h3>
+            <p className="text-justify text-gray-700 leading-relaxed mb-8 font-semibold">
               A bijective linear transformation is both injective and surjective, meaning it is a one-to-one correspondence between the domain and the codomain. 
               Every vector in the domain maps to a unique vector in the codomain, and every vector in the codomain is mapped from a unique vector in the domain. 
               This makes the transformation invertible. In the visualization below, observe how the bijective transformation maintains this one-to-one and onto relationship.

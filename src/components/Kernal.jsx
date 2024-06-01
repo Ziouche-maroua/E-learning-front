@@ -11,11 +11,15 @@ export default function Kernel() {
   ]); // Array of vectors for animation
 
   const [steps, setSteps] = useState([
-    "Step 1: Define the linear transformation T: ℝ² → ℝ² as T(x, y) = (x, -x)",
-    "Step 2: Determine the transformation's null space by solving the equation T(v) = 0",
-    "Step 3: Find vectors v = (x, y) such that T(v) = (x, -x) = (0, 0)",
-    "Step 4: Solve the equation x = 0 and y = 0 to find the null space vectors",
-    "Step 5: The kernel of T consists of all vectors of the form (0, y), where y is any real number"
+    "-Step 1: Define the linear transformation T: ℝ² → ℝ² as T(x, y) = (x, -x)",
+
+    "-Step 2: Determine the transformation's null space by solving the equation T(v) = 0",
+
+    "-Step 3: Find vectors v = (x, y) such that T(v) = (x, -x) = (0, 0)",
+
+    "-Step 4: Solve the equation x = 0 and y = 0 to find the null space vectors",
+
+    "-Step 5: The kernel of T consists of all vectors of the form (0, y), where y is any real number"
   ]); // Steps of the kernel calculation
 
   // Effect to animate the vectors
@@ -37,9 +41,9 @@ export default function Kernel() {
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       {/* Example of Linear Transformation and Steps */}
-      <div style={{ width: '30%', padding: '10px' }}>
-        <h3 style={{ textAlign: 'center' }}>Example of Linear Transformation</h3>
-        <div style={{ textAlign: 'left', marginTop: '20px' }}>
+      <div style={{ width: '30%', padding: '10px' }}className='font-semibold'>
+        <h3 style={{ textAlign: 'center' }}className='mb-2'>Example of Linear Transformation</h3>
+        <div style={{ textAlign: 'left', marginTop: '20px', marginBottom: '10px' }}>
           <h3>Steps to Calculate Kernel:</h3>
           <ol>
             {steps.map((step, index) => (
@@ -51,7 +55,7 @@ export default function Kernel() {
 
       {/* Kernel of Linear Transformation */}
       <div style={{ width: '60%', padding: '10px' }}>
-        <h3 style={{ textAlign: 'center' }}>Kernel of Linear Transformation</h3>
+        <h3 style={{ textAlign: 'center' }}></h3>
         <Mafs background={null}>
           <Transform>
             {vectors.map((vector, index) => (
