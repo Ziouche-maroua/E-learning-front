@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Base from  '../components/Base';
+import ChatBox from '../components/ChatBox'
 const BaseDim = () => {
   return (
     <div className="h-screen flex flex-col">
@@ -43,6 +43,7 @@ const BaseDim = () => {
       
     </div>
     </div>
+    <ChatBox/>
     </div>
   );
 };
