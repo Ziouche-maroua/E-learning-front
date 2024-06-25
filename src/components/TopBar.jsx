@@ -11,7 +11,7 @@ const TopBar = () => {
   };
 
   return (
-    <div className="fixed top-0 w-full h-16 bg-blue-500 flex justify-between items-center px-4 z-20">
+    <div className="fixed top-0 w-full h-16 bg-[#ffb300] flex justify-between items-center px-4 z-20">
       <div className="flex items-center">
         <Link to="/" className="text-white text-2xl font-bold flex items-center">
           <span className="text-white courgette-font">FikrSight</span>
@@ -33,7 +33,8 @@ const TopBar = () => {
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
-      </button>
+      </button
+      >
       <LeftSideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} toggleOnHomeClick={toggleSidebarOnHomeClick} />
     </div>
   );

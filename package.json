@@ -14,7 +14,7 @@
     "axios": "^1.6.8",
     "d3": "^7.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-canary-33a32441e9-20240418",
-    "framer-motion": "^11.1.9",
+    "framer-motion": "^11.2.10",
     "js-cookie": "^3.0.5",
     "json-server": "^1.0.0-beta.0",
     "konva": "^9.3.9",
