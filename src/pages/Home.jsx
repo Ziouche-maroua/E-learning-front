@@ -20,16 +20,13 @@ const Home = () => {
           <div className='flex flex-col justify-center flex-1'>
             <AnimatedText
               text="A New Way To Learn & Get Knowledge"
-              className="font-['Inter'] text-[58px] font-semibold leading-[77.455px] text-[#283593] mb-4"
+              className=" varblue-text font-['Inter'] text-[40px] font-semibold leading-[77.455px] mb-4"
             />
-            <p className="font-['Inter'] text-[24px] font-semibold leading-[29.045px] text-[rgba(40,53,147,0.72)] mb-4">
+            <p className="font-['Inter'] text-[24px] font-semibold leading-[29.045px] mb-4" style={{ color: 'var(--primary-font-color)' }}>
               Learn new skills from the comfort of your home or anywhere anytime
             </p>
-            <span className="font-['Inter'] text-[30px] font-semibold leading-[36.307px] text-[#ffc107] capitalize">
-              Explore our courses
-            </span>
           </div>
-          <div className='flex-1 flex justify-end'>
+          <div className='ml-9 flex-1 flex justify-end'>
             <FloatingImage
               src={homeImage}
               alt="Home"
@@ -37,7 +34,12 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10 mt-10">
+
+        <span className="block mt-10 mb-6 font-['Inter'] text-[30px] font-semibold leading-[36.307px] capitalize text-left" style={{ color: 'var(--secondary-color)' }}>
+          Explore our courses
+        </span>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
           <Link to="/MotivationPage">
             <div className="card gradient-border">
               <img

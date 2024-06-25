@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../assets/images/search_icon.png';
 import LeftSideBar from './LeftSideBar';
+import DarkMode from '../DarkMode/DarkMode.js';
 
 const TopBar = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -17,8 +18,7 @@ const TopBar = () => {
           <span className="text-white courgette-font">FikrSight</span>
         </Link>
       </div>
-
-      <div className="hidden md:flex items-center relative">
+           {/* <div className="hidden md:flex items-center relative">
         <div style={{ position: 'relative' }}>
           <input
             type="text"
@@ -27,14 +27,19 @@ const TopBar = () => {
           />
           <img src={searchIcon} alt="Search" className="w-6 h-6 absolute top-2 left-3" />
         </div>
+      </div> */}
+
+      {/* Adjusted placement of DarkMode component */}
+      <div className="flex items-center mb-3 ml-auto"> {/* Use ml-auto to push DarkMode to the right */}
+        <DarkMode />
       </div>
 
-      <button onClick={toggleSidebarOnHomeClick} className="text-white">
+      <button onClick={toggleSidebarOnHomeClick} className="text-white ml-4"> {/* Adjusted margin for the button */}
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
-      </button
-      >
+      </button>
+
       <LeftSideBar showSidebar={showSidebar} setShowSidebar={setShowSidebar} toggleOnHomeClick={toggleSidebarOnHomeClick} />
     </div>
   );

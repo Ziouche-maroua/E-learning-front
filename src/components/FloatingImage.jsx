@@ -8,12 +8,12 @@ const FloatingImage = ({ src, alt, className }) => {
       alt={alt}
       className={className}
       animate={{
-        y: [0, -10, 0], // Move up and down
+        y: [-30, 30, -30], // Move up and down 
       }}
       transition={{
         repeat: Infinity,
         repeatType: 'mirror',
-        duration: 3,
+        duration: 2.5 , // lower value means faster)
       }}
     />
   );
