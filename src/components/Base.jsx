@@ -2,15 +2,15 @@ import React from 'react';
 import { Mafs, Vector, Coordinates } from 'mafs';
 import 'mafs/core.css';
 import 'mafs/font.css';
-
+import "../assets/styles/custom.css"
 const VectorSpaceBasisVisualization = () => {
   return (
     <div className="flex flex-col items-center mt-4 mb-8" >
-      <h2 className="text-3xl font-bold text-gray-800 mb-12 mt-4" >Visualization of a Basis of a Vector Space</h2>
+      <h2 className="text-3xl font-bold  mb-12 mt-4" >Visualization of a Basis of a Vector Space</h2>
       
       <div className="max-w-3xl text-left mt-5 font-sans" >
-        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Definition:</h3>
-        <p className="text-gray-800  font-bold mt-2 mb-8" >
+        <h3 className=" text-2xl poetsen-font  mt-8 mb-2">Definition:</h3>
+        <p className="  font-bold mt-2 mb-8" >
         &nbsp;  In linear algebra, a <strong>basis</strong> of a vector space is a set of vectors that are linearly independent and span the vector space. The <strong>dimension</strong> of a vector space is the cardinality of its basis.
         </p>
       </div>
@@ -24,7 +24,7 @@ const VectorSpaceBasisVisualization = () => {
       </Mafs>
 
       <div style={{ marginTop: '20px', marginBottom: '20px', color: '#333333' }} className="max-w-3xl text-left mt-5 font-sans">
-        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Explanation:</h3>
+        <h3 className=" text-2xl poetsen-font varwhite-text mt-8 mb-2">Explanation:</h3>
         <p style={{ backgroundColor: '#f6fff6', padding: '10px', borderRadius: '5px' }} className="text-gray-800 font-bold">
           In this visualization, the vectors v₁ and v₂ form a basis for ℝ². Any vector in ℝ² can be expressed as a linear combination of these basis vectors. To determine the basis and dimension of a vector space, you can follow these steps:
           <ol>

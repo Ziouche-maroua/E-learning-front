@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../assets/styles/custom.css"
 
 const MatrixVisualizations = () => {
     const [nullMatrixRows, setNullMatrixRows] = useState(3);
@@ -98,7 +99,7 @@ const MatrixVisualizations = () => {
                                 <select
                                     value={nullMatrixRows}
                                     onChange={(e) => setNullMatrixRows(parseInt(e.target.value))}
-                                    className="p-2 border border-gray-300 rounded"
+                                    className="p-2  varback-color border border-gray-300 rounded"
                                 >
                                     {[2, 3, 4, 5].map(size => (
                                         <option key={size} value={size}>{size}</option>
@@ -110,7 +111,7 @@ const MatrixVisualizations = () => {
                                 <select
                                     value={nullMatrixCols}
                                     onChange={(e) => setNullMatrixCols(parseInt(e.target.value))}
-                                    className="p-2 border border-gray-300 rounded"
+                                    className="p-2 varback-color  border border-gray-300 rounded"
                                 >
                                     {[2, 3, 4, 5].map(size => (
                                         <option key={size} value={size}>{size}</option>

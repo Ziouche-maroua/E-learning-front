@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-
+import "../assets/styles/custom.css"
 const MatrixCalculator = () => {
   const [matrix, setMatrix] = useState([
     [0, 0, 0],
@@ -160,7 +160,7 @@ const MatrixCalculator = () => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-4xl mx-auto mt-8 border border-blue-200">
+    <div className=" shadow-lg rounded-lg p-8 w-full max-w-4xl mx-auto mt-8 border border-blue-200">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-center mb-6 text-blue-600">Fill the Matrix</h1>
         <div className="flex justify-center">
@@ -176,7 +176,7 @@ const MatrixCalculator = () => {
                           type="text"
                           value={value}
                           onChange={(e) => handleChange(rowIndex, colIndex, e.target.value)}
-                          className="border border-gray-300 w-12 h-10 text-center p-2 m-1"
+                          className="border varback-color border-gray-300 w-12 h-10 text-center p-2 m-1"
                         />
                       </td>
                     ))}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mafs, Vector, Coordinates } from 'mafs';
 import 'mafs/core.css';
 import 'mafs/font.css';
+import "../assets/styles/custom.css"
 
 const checkLinearIndependence = (vectors) => {
   const [v1, v2, v3] = vectors;
@@ -46,25 +47,25 @@ const FamLib = () => {
 
   return (
     <div className="flex flex-col items-center mt-4 mb-8"  >
-      <h2 className="text-3xl font-bold text-gray-800 mb-12 mt-4">Visualization of a Linearly Independent Family of Vectors</h2>
+      <h2 className="text-3xl font-bold mb-12 mt-4">Visualization of a Linearly Independent Family of Vectors</h2>
       
       <div className="max-w-3xl text-left mt-5 font-sans" >
-        <h3 className=" text-2xl poetsen-font text-gray-800 mt-8 mb-2">Definition</h3>
-        <p className="text-gray-800  font-bold mt-2 mb-4">
+        <h3 className=" text-2xl poetsen-font mt-8 mb-2">Definition</h3>
+        <p className="  font-bold mt-2 mb-4">
         &nbsp; A family of vectors {`{v₁, v₂, ..., vₙ}`} in a vector space E is said to be linearly independent if the only solution to the equation c₁v₁ + c₂v₂ + ... + cₙvₙ = 0 is c₁ = c₂ = ... = cₙ = 0, where 0 represents the zero vector.
         </p>
       </div>
 
       <div className=" max-w-3xl text-left mt-5 font-sans bg-blue-200 p-4 rounded mt-8 mb-12" >
        
-        <p  className="text-gray-800 font-bold"><b>Example :</b> &nbsp;
+        <p  className="text-black font-bold"><b>Example :</b> &nbsp;
              Consider the vectors v₁ = [1, 0] and v₂ = [0, 1] in ℝ². This family of vectors is linearly independent because the only solution to the equation c₁v₁ + c₂v₂ = [0, 0] is c₁ = c₂ = 0. Each vector is necessary to span the entire vector space ℝ², and neither vector can be expressed as a scalar multiple of the other.
         </p>
       </div>
 
       
       <div className=" max-w-3xl text-left mt-5 font-sans mb-8" >
-         <p className="text-gray-800  text 2xl font-bold" >
+         <p className="  text 2xl font-bold" >
          &nbsp; In this visualization, each vector is linearly independent of the others, meaning none can be written as a combination of the rest. They form a basis for ℝ².
         </p>
       </div>
@@ -84,7 +85,7 @@ const FamLib = () => {
         
         <div className="mt-8" >
           <label className="font-bold" >  &nbsp; &nbsp; Number of Vectors :</label>
-          <select onChange={(e) => setNumVectors(parseInt(e.target.value))} value={numVectors} style={{ padding: '5px', borderRadius: '5px', border: '1px solid lightgray' }}>
+          <select  className="varback-color mb-3 " onChange={(e) => setNumVectors(parseInt(e.target.value))} value={numVectors} style={{ padding: '5px', borderRadius: '5px', border: '1px solid lightgray' }}>
             <option value={2}>2</option>
             <option value={3}>3</option>
           </select>
@@ -98,6 +99,7 @@ const FamLib = () => {
                 placeholder={`v${index + 1} x`}
                 value={vec.x}
                 onChange={(e) => handleInputChange(index, 'x', e.target.value)}
+                className="varback-color"
                 style={{ padding: '5px', borderRadius: '5px', border: '1px solid lightgray' }}
               />
               <input
@@ -105,13 +107,14 @@ const FamLib = () => {
                 placeholder={`v${index + 1} y`}
                 value={vec.y}
                 onChange={(e) => handleInputChange(index, 'y', e.target.value)}
+                className="varback-color"
                 style={{ padding: '5px', borderRadius: '5px', border: '1px solid lightgray' }}
               />
             </div>
           ))}
         </div>
 
-        <button onClick={handleSubmit} className= "mt-4 mb-4 font-bold  px-4 py-2 bg-yellow-200 rounded cursor-pointer border-none transition-all hover:border-2 hover:border-black">Check Independence</button>
+        <button onClick={handleSubmit} className= "mt-4 mb-4 font-bold  px-4 py-2 bg-yellow-200 text-black  rounded cursor-pointer border-none transition-all hover:border-2 hover:border-black">Check Independence</button>
 
         
         {isIndependent !== null && (

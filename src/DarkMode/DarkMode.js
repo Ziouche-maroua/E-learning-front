@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { ReactComponent as Sun } from "./Sun.svg";
 import { ReactComponent as Moon } from "./Moon.svg";
 import "./DarkMode.css";
@@ -20,6 +20,15 @@ const toggleTheme =(event) => {
     if(event.target.checked) setDarkMode()
         else setLightMode()
 }
+useEffect(() => {
+  if (selectedTheme === "dark") {
+    setDarkMode();
+    document.getElementById("darkmode-toggle").checked = true;
+  } else {
+    setLightMode();
+    document.getElementById("darkmode-toggle").checked = false;
+  }
+}, [selectedTheme]);
 
   return (
     <div className="dark_mode">
