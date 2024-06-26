@@ -107,6 +107,7 @@ const MotivationPage = () => {
           </button>
         </div>
       </div>
+     
     </div>
   );
 };

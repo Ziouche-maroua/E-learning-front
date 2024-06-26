@@ -2,21 +2,19 @@
   text-align: center;
 }
 
-
-
 .App-header {
-  background-color: #282c34;
+  background-color: var(--background-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--primary-font-color); /* Remove fallback value */
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--secondary-color);
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +32,5 @@
 }
 
 svg {
-  border: 1px solid #000;
+  border: none;
 }

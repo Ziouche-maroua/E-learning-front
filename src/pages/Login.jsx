@@ -8,7 +8,9 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
+
 import TopBar from "../components/TopBar";
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -57,12 +59,12 @@ const Login = () => {
   };
 
   const handleGoogleSignUp = () => {
-    console.log("Google sign up clicked");
+    console.log('Google sign up clicked');
     // Handle Google sign up logic here
   };
 
   const handleMicrosoftSignUp = () => {
-    console.log("Microsoft sign up clicked");
+    console.log('Microsoft sign up clicked');
     // Handle Microsoft sign up logic here
   };
 
@@ -163,6 +165,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    
     </div>
     </div>
   );

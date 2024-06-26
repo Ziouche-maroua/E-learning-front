@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Mafs, Coordinates, Vector } from "mafs";
 import "mafs/core.css";
 import "mafs/font.css";
-
+import "../assets/styles/custom.css"
 const start = [0, 0]; // Start point
 
 const styles = {
@@ -85,28 +85,28 @@ const DefDynamic = () => {
 
   return (
     <div style={styles.container}>
-      <div className='kanit-font' >
+      <div >
         <label>
           Choose dimension:
-          <select value={dimension} onChange={handleDimensionChange}>
-            <option value="">Select dimension</option>
-            <option value="R1-R2">R1-R2</option>
-            <option value="R2-R2">R2-R2</option>
+          <select className=' varback-color varwhite-text mb-2'   value={dimension} onChange={handleDimensionChange}>
+            <option  className=' varback-color varwhite-text'  value="">Select dimension</option>
+            <option className=' varback-color varwhite-text  ' value="R1-R2">R1-R2</option>
+            <option className=' varback-color varwhite-text'  value="R2-R2">R2-R2</option>
           </select>
         </label>
       </div>
       {dimension && (
-        <div className='kanit-font'>
-          <div>
+        <div className='kanit-font' >
+          <div className='kanit-font' >
             <label>
               Initial endpoint:
-              <input type="text" value={initialEnd.join(',')} onChange={handleInitialEndChange} />
+              <input type="text" className='varwhite-text varback-color mb-2'  value={initialEnd.join(',')} onChange={handleInitialEndChange} />
             </label>
           </div>
           <div className='kanit-font'>
             <label>
               Final endpoint:
-              <input type="text" value={finalEnd.join(',')} onChange={handleFinalEndChange} />
+              <input type="text" className=' varback-color varwhite-text  '  value={finalEnd.join(',')} onChange={handleFinalEndChange} />
             </label>
           </div>
           <div style={styles.buttonContainer}>

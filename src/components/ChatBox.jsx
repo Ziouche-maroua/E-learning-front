@@ -64,13 +64,13 @@ const Chatbox = () => {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 w-96 flex flex-col items-end">
+        <div className="fixed bottom-4 right-4 w-96 max-w-full sm:w-80 md:w-96 flex flex-col items-end z-30">
             {state && (
-                <div className="flex flex-col bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden max-h-[32rem] w-full mb-4">
-                    <div className="flex items-center p-2 bg-yellow-200 text-white">
-                        <span className="text-lg text-gray-700  font-semibold">FikrSight</span>
+                <div className="flex flex-col bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden w-full mb-4 z-30">
+                    <div className="flex items-center p-2 bg-[#ffc107] text-white z-30">
+                        <span className="text-lg text-white courgette-font font-semibold">FikrSight</span>
                     </div>
-                    <div className="flex-1 p-2 overflow-y-auto">
+                    <div className="flex-1 p-2 overflow-y-auto max-h-64">
                         {messages.map((msg, index) => (
                             <div key={index} className={`mb-2 p-2 rounded-xl ${msg.name === "User" ? 'bg-yellow-200 text-semibold text-gray-900 self-end' : 'bg-gray-200 text-black self-start'}`}>
                                 {msg.message}
@@ -93,27 +93,27 @@ const Chatbox = () => {
                             className="flex-1 p-2 border border-gray-300 rounded"
                             placeholder="Type a message..."
                         />
-                        <button onClick={onSendButton} className="ml-2 bg-yellow-200 text-gray-700 p-2 cursor-pointer rounded-lg">Send</button>
+                        <button onClick={onSendButton} className="ml-2 bg-[#ffc107] text-gray-700 p-2 cursor-pointer rounded-lg">Send</button>
                     </div>
-                    <div className="flex-1 overflow-y-auto">
-                        <div className="p-2 border-t border-gray-300">
-                            <span className="font-semibold">Suggested Questions:</span>
-                            <div className="mt-2">
-                                {matrixQuestions.map((question, index) => (
-                                    <div key={index} className="cursor-pointer hover:underline" onClick={() => handleQuestionClick(question.question)}>
-                                        {question.question}
-                                    </div>
-                                ))}
-                            </div>
+                    <div className="p-2 border-t border-gray-300 bg-yellow-100">
+                        <span className="font-semibold">Suggested Questions:</span>
+                        <div className="mt-2 max-h-32 overflow-y-auto">
+                            {matrixQuestions.map((question, index) => (
+                                <div key={index} className="cursor-pointer hover:underline" onClick={() => handleQuestionClick(question.question)}>
+                                    {question.question}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
             )}
             <button 
                 onClick={toggleState} 
-                className="bg-yellow-200 text-gray-700 py-1 px-2 rounded w-20 h-8 text-xs flex justify-center items-center"
+                className="bg-[#ffc107] text-gray-700 p-2 rounded-full w-10 h-10 flex justify-center items-center"
             >
-                {state ? 'Close Chat' : 'Open Chat'}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+                </svg>
             </button>
             <style>
                 {`

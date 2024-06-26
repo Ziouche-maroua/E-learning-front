@@ -1,0 +1,81 @@
+/* custom.css */
+.gradient-border {
+    position: relative;
+    z-index: 0;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(to bottom, lightblue, green, #ffc107);
+    z-index: -2; /* Adjusted z-index */
+    border-radius: inherit; /* Ensures the border respects the parent's border-radius */
+}
+
+.gradient-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--background-color); /* Use the CSS variable here */
+    z-index: -1; /* Adjusted z-index */
+    border-radius: inherit; /* Ensures the border respects the parent's border-radius */
+    padding: 2px;  /*the width of the border */
+}
+
+.card {
+    min-height: 24rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: var(--background-color);
+    padding: 2rem; /* Tailwind's p-8 */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+    border: 1px solid #e5e7eb; /* Tailwind's border */
+}
+
+.card img {
+    width: 6rem; /* Tailwind's w-24 */
+    height: 6rem; /* Tailwind's h-24 */
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.25rem; /* Tailwind's text-xl */
+    color: var(--primary-font-color);
+    font-weight: 600;
+    margin: 0.5rem 0; /* Tailwind's my-2 */
+}
+
+.card-description {
+    font-size: 0.875rem; /* Tailwind's text-sm */
+    font-weight: 600;
+    color: var(--second-text-color);
+}
+
+.varwhite-text {
+    color: var(--second-text-color);
+}
+
+.varblue-text {
+    color: var(--primary-font-color);
+}
+
+.varback-color {
+    background-color: var(--background-color);
+}

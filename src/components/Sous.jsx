@@ -41,7 +41,7 @@ const AnimatedSubspaceVisualization = () => {
 
   return (
     <div style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
-      <h2 style={{ color: '#3d3d3d' }}>Animated Visualization of a Vector Subspace</h2>
+      <h2 className='font-bold text-lg'>Animated Visualization of a Vector Subspace</h2>
       <div style={{ backgroundColor: '#ffcc66', padding: '16px', borderRadius: '8px', marginTop: '8px' }}>
         <p style={{ color: '#3d3d3d' }}>
           <b>Definition:</b> A subspace is a subset of a vector space that is also a vector space.
