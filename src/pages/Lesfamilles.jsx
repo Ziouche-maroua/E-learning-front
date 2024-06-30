@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import FamLib  from '../components/FML';
+import FamLib  from '../components/VectorSpace/FML';
 import Chatbox from '../components/ChatBox';
 
 const Lesfamilles = () => {

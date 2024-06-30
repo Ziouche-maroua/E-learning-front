@@ -2,7 +2,7 @@ import React from 'react';
 import { Mafs, Vector, Coordinates } from 'mafs';
 import 'mafs/core.css';
 import 'mafs/font.css';
-import "../assets/styles/custom.css"
+import "../../assets/styles/custom.css"
 const VectorSpaceBasisVisualization = () => {
   return (
     <div className="flex flex-col items-center mt-4 mb-8" >

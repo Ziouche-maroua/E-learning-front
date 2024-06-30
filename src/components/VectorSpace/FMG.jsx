@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mafs, Vector, Coordinates } from 'mafs';
 import 'mafs/core.css';
 import 'mafs/font.css';
-import "../assets/styles/custom.css"
+import "../../assets/styles/custom.css"
 
 const checkSpanningSet = (vectors) => {
   const [v1, v2, v3] = vectors;

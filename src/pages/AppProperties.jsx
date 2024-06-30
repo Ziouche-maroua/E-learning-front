@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AppProps from '../components/PropsOfLinearTransformation';
+import AppProps from '../components/LinearTransformation/PropsOfLinearTransformation';
 import Chatbox from '../components/ChatBox'; 
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';

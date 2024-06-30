@@ -1,5 +1,5 @@
 import React from 'react';
-import MatInverse from '../components/MatInverse';
+import MatInverse from '../components/Matrices/MatInverse';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Chatbox from '../components/ChatBox';

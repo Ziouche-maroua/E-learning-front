@@ -1,9 +1,9 @@
 
 import React from 'react';
-import MultMat from '../components/MultMat2';
+import MultMat from '../components/Matrices/MultMat2';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import MatrixAddition from '../components/ADDmat'
+import MatrixAddition from '../components/Matrices/ADDmat'
 import Chatbox from '../components/ChatBox';
 const Matrixoperation = () => {
   return (

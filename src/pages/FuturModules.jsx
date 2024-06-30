@@ -1,7 +1,7 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
 import futureModuleImage from '../assets/images/futurModule.jpg';
-import FloatingImage from '../components/FloatingImage';
+import FloatingImage from '../components/Animations/FloatingImage';
 import '../assets/styles/custom.css'; // Import the custom CSS file
 
 const FuturModules = () => {

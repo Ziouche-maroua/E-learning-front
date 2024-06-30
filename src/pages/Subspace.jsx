@@ -1,7 +1,7 @@
 
 import Chatbox from '../components/ChatBox';
 import React from 'react';
-import SousE from '../components/Sous';
+import SousE from '../components/VectorSpace/Sous';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 const SE = () => {

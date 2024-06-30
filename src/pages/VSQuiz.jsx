@@ -1,5 +1,5 @@
 import React from 'react';
-import Chap1quiz from '../components/Chap1quiz';
+import Chap1quiz from '../components/VectorSpace/Chap1quiz';
 import Chatbox from '../components/ChatBox';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import FMG  from '../components/FMG';
+import FMG  from '../components/VectorSpace/FMG';
 import Chatbox from '../components/ChatBox';
 const FamilleG= () => {
   return (
