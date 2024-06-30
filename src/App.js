@@ -4,7 +4,9 @@ import Home from './pages/Home';
 import Chapter1 from './pages/Chapter1';
 import Chapter2 from './pages/Chapter2';
 import Chapter3 from './pages/Chapter3';
-import MotivationPage from './pages/MotivationPage';
+import ComputerVision from './pages/Motivation/ComputerVision';
+import Chemistry from './pages/Motivation/Chemistry';
+import GPS from './pages/Motivation/GPS';
 import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import LogoutPage from './pages/LogoutPage';
@@ -47,7 +49,9 @@ const App = () => {
           <Route exact path="/chapter1" element={<Chapter1 />} />
           <Route exact path="/chapter2" element={<Chapter2 />} />
           <Route exact path="/chapter3" element={<Chapter3 />} />
-          <Route path="/MotivationPage" element={<MotivationPage />} />
+          <Route path="/computervision" element={<ComputerVision/>} />
+          <Route path="/chemistry" element={<Chemistry/>} />
+          <Route path="/gps" element={<GPS/>} />
           <Route path="/SettingsPage" element={<SettingsPage />} />
           <Route path="/ProfilePage" element={<ProfilePage />} />
           <Route path="/LogoutPage" element={<LogoutPage />} />

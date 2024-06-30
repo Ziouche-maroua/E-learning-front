@@ -40,7 +40,7 @@ const Home = () => {
         </span>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
-          <Link to="/MotivationPage">
+          <Link to="/computervision">
             <div className="card gradient-border">
               <img
                 src={algebra}

@@ -13,7 +13,7 @@ const FuturModules = () => {
           <div className="flex flex-col sm:flex-row items-center justify-start"> {/* Adjust flex direction for small screens */}
           <FloatingImage
               src={futureModuleImage}
-              alt="Home"
+              alt="futur modules"
               className='w-[563.701px] h-[350px] rounded-md'
             />
             <div>

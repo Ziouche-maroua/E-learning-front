@@ -76,6 +76,10 @@
     color: var(--primary-font-color);
 }
 
+.vargray-text {
+    color: var( --cards-description);
+}
+
 .varback-color {
     background-color: var(--background-color);
 }
