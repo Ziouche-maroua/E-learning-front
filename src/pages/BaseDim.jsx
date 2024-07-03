@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import Base from  '../components/Base';
+import Base from  '../components/VectorSpace/Base';
 import ChatBox from '../components/ChatBox'
 const BaseDim = () => {
   return (

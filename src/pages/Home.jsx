@@ -7,8 +7,8 @@ import algebra from '../assets/images/algebra.webp';
 import algorithm from '../assets/images/algorithm.png';
 import sfsd from '../assets/images/sfsd.webp';
 import probability from '../assets/images/probability.webp';
-import AnimatedText from '../components/AnimatedText';
-import FloatingImage from '../components/FloatingImage';
+import AnimatedText from '../components/Animations/AnimatedText';
+import FloatingImage from '../components/Animations/FloatingImage';
 import '../assets/styles/custom.css'; // Import the custom CSS file
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
         </span>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
-          <Link to="/MotivationPage">
+          <Link to="/computervision">
             <div className="card gradient-border">
               <img
                 src={algebra}

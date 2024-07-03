@@ -4,6 +4,7 @@
     --secondary-color: #ffc107; /* Yellow always */
     --second-text-color: #000000; /* Black in light mode */
     --section-title:#78350F;
+    --cards-description:#00000080;
   }
   
   [data-theme="dark"] {
@@ -12,6 +13,7 @@
     --secondary-color: #ffc107; /* Yellow always */
     --second-text-color: #e0e0e0;
     --section-title:#FCD34D;
+    --cards-description:white;
   }
   
   * {

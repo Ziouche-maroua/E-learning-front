@@ -1,7 +1,7 @@
 import React from 'react';
 import  { useState } from 'react';
-import Kernel from '../components/Kernal';
-import Image from '../components/Image';
+import Kernel from '../components/LinearTransformation/Kernal';
+import Image from '../components/LinearTransformation/Image';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Chatbox from '../components/ChatBox';

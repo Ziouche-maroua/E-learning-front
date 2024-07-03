@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Mafs, Coordinates, Vector } from "mafs";
 import "mafs/core.css";
 import "mafs/font.css";
-import "../assets/styles/custom.css"
+import "../../assets/styles/custom.css"
 const start = [0, 0]; // Start point
 
 const styles = {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../assets/styles/custom.css"
+import "../../assets/styles/custom.css"
 
 const MatrixVisualizations = () => {
     const [nullMatrixRows, setNullMatrixRows] = useState(3);

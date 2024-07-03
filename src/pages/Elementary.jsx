@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import MatrixTranspose from '../components/TransposeMat.jsx'
-import ElemMat from '../components/ElemMat';
+import MatrixTranspose from '../components/Matrices/TransposeMat.jsx'
+import ElemMat from '../components/Matrices/ElemMat.jsx';
 
 import Chatbox from '../components/ChatBox.jsx';
 

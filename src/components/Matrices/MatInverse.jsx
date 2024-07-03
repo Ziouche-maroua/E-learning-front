@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import "../assets/styles/custom.css"
+import "../../assets/styles/custom.css"
 const MatrixCalculator = () => {
   const [matrix, setMatrix] = useState([
     [0, 0, 0],

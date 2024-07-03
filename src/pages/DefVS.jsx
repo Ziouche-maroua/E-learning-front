@@ -1,5 +1,5 @@
 import React from 'react';
-import VS from '../components/Vectorspace';
+import VS from '../components/VectorSpace/Vectorspace';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 

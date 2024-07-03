@@ -1,8 +1,8 @@
 import React from 'react';
 import  { useState } from 'react';
-import Automorphisme from '../components/Automorphisme';
-import Isomorphisme from '../components/Isomorphisme';
-import Endomorphisme from '../components/Endomorphisme';
+import Automorphisme from '../components/LinearTransformation/Automorphisme';
+import Isomorphisme from '../components/LinearTransformation/Isomorphisme';
+import Endomorphisme from '../components/LinearTransformation/Endomorphisme';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import Chatbox from '../components/ChatBox';

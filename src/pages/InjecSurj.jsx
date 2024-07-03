@@ -2,9 +2,9 @@ import React from 'react';
 import  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-import Bijective from '../components/Bijective';
-import Injectif from '../components/InjectifTransformation';
-import Surjectif from '../components/SurjectifTransformation';
+import Bijective from '../components/LinearTransformation/Bijective';
+import Injectif from '../components/LinearTransformation/InjectifTransformation';
+import Surjectif from '../components/LinearTransformation/SurjectifTransformation';
 import Chatbox from '../components/ChatBox'; 
 
 const InjecSurj = () => {

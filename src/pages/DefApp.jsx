@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Chatbox from '../components/ChatBox';
-import Def from '../components/DefOfLinearTransformation';
-import DefDynamic from '../components/TransformationDynamicExample';
+import Def from '../components/LinearTransformation/DefOfLinearTransformation';
+import DefDynamic from '../components/LinearTransformation/TransformationDynamicExample';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import { color } from 'd3';

@@ -1,7 +1,7 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
 import futureModuleImage from '../assets/images/futurModule.jpg';
-import FloatingImage from '../components/FloatingImage';
+import FloatingImage from '../components/Animations/FloatingImage';
 import '../assets/styles/custom.css'; // Import the custom CSS file
 
 const FuturModules = () => {
@@ -13,7 +13,7 @@ const FuturModules = () => {
           <div className="flex flex-col sm:flex-row items-center justify-start"> {/* Adjust flex direction for small screens */}
           <FloatingImage
               src={futureModuleImage}
-              alt="Home"
+              alt="futur modules"
               className='w-[563.701px] h-[350px] rounded-md'
             />
             <div>
