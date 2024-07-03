@@ -18,16 +18,7 @@ const TopBar = () => {
           <span className="text-white courgette-font">FikrSight</span>
         </Link>
       </div>
-           {/* <div className="hidden md:flex items-center relative">
-        <div style={{ position: 'relative' }}>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="border border-gray-300 rounded-md pl-10 pr-4 py-2 w-96"
-          />
-          <img src={searchIcon} alt="Search" className="w-6 h-6 absolute top-2 left-3" />
-        </div>
-      </div> */}
+        
 
       {/* Adjusted placement of DarkMode component */}
       <div className="flex items-center mb-3 ml-auto"> {/* Use ml-auto to push DarkMode to the right */}
