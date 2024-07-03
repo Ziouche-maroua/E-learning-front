@@ -37,48 +37,44 @@ const Chemistry = () => {
     <div>
       <TopBar />
       <div className="pt-16 mx-4 flex flex-col items-center">
-        <span className="flex w-full justify-center font-['Inter'] text-[48px] font-medium leading-[56px] varblue-text mt-2">
+        <span className="flex w-full justify-center font-['Inter'] text-[32px] sm:text-[40px] md:text-[48px] font-medium leading-[38px] sm:leading-[44px] md:leading-[56px] varblue-text mt-2">
           Motivation
         </span>
-        <span className="flex w-full justify-center font-['Inter'] text-[28px] font-medium leading-[32px] text-[#ffc107] mt-3">
+        <span className="flex w-full justify-center font-['Inter'] text-[20px] sm:text-[24px] md:text-[28px] font-medium leading-[24px] sm:leading-[28px] md:leading-[32px] text-[#ffc107] mt-3">
           Real-world Use Cases
         </span>
         <FloatingImage
           src={computerVision}
-          alt="Computer Vision"
-          className="w-[300px] h-[173px] bg-cover bg-no-repeat mt-6 rounded "
+          alt="Chemistry"
+          className="w-[200px] sm:w-[250px] md:w-[300px] h-[115px] sm:h-[144px] md:h-[173px] bg-cover bg-no-repeat mt-6 rounded"
         />
-        <span className="flex w-full justify-center font-['Inter'] text-[24px] font-medium leading-[28px] varblue-text mt-2">
-          Chemsitry
+        <span className="flex w-full justify-center font-['Inter'] text-[16px] sm:text-[20px] md:text-[24px] font-medium leading-[20px] sm:leading-[24px] md:leading-[28px] varblue-text mt-4">
+          Chemistry
         </span>
-        <div className="w-full max-w-[400px] flex justify-center mt-4">
-          <span className="w-full text-center font-['Istok_Web'] text-[20px]  leading-[30px] vargray-text ">
-          it utilizes matrices to organize chemical data and linear transformations to analyze how properties change, enabling chemists to model reactions and understand complex systems more effectively.
-            
+        <div className="w-full max-w-[500px] flex justify-center mt-4">
+          <span className="w-full text-center font-['Istok_Web'] text-[14px] sm:text-[16px] md:text-[20px] leading-[22px] sm:leading-[26px] md:leading-[30px] vargray-text">
+            It utilizes matrices to organize chemical data and linear transformations to analyze how properties change, enabling chemists to model reactions and understand complex systems more effectively.
           </span>
         </div>
         <div className="w-full max-w-[512px] flex justify-between items-center mt-6">
-         
-          <span  onClick={handleGoToChapters} className="font-['Istok_Web'] text-[20px] font-normal leading-[28px] vargray-text cursor-pointer">
+          <span onClick={handleGoToChapters} className="font-['Istok_Web'] text-[14px] sm:text-[16px] md:text-[20px] font-normal leading-[22px] sm:leading-[26px] md:leading-[28px] vargray-text cursor-pointer">
             SKIP
           </span>
           <div className="flex space-x-2">
             <Link to="/computervision">
-            <div className="w-4 h-4 bg-gray-400 rounded-full cursor-pointer"></div>
+              <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-gray-400 rounded-full cursor-pointer"></div>
             </Link>
-            <Link to ="/chemistry">
-            <div className="w-4 h-4 bg-[#ffc107] rounded-full cursor-pointer"></div>
+            <Link to="/chemistry">
+              <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-[#ffc107] rounded-full cursor-pointer"></div>
             </Link>
             <Link to="/gps">
-            <div className="w-4 h-4 bg-gray-400 rounded-full cursor-pointer"></div>
+              <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 bg-gray-400 rounded-full cursor-pointer"></div>
             </Link>
-            
           </div>
-          <span onClick={handleGoToChapters}  className="font-['Istok_Web'] text-[20px] font-normal leading-[28px] text-[#ffc107] cursor-pointer">
+          <span onClick={handleGoToChapters} className="font-['Istok_Web'] text-[14px] sm:text-[16px] md:text-[20px] font-normal leading-[22px] sm:leading-[26px] md:leading-[28px] text-[#ffc107] cursor-pointer">
             NEXT
           </span>
         </div>
-        
       </div>
     </div>
   );

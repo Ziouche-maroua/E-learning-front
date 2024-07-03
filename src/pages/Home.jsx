@@ -16,26 +16,26 @@ const Home = () => {
     <div>
       <TopBar />
       <div className="container mx-auto px-2 pt-8 lg:pt-12">
-        <div className='flex w-full h-[374px] relative z-5 mt-16 px-4'>
-          <div className='flex flex-col justify-center flex-1'>
+        <div className='flex flex-col md:flex-row w-full h-auto md:h-[374px] relative z-5 mt-16 px-4'>
+          <div className='flex flex-col justify-center flex-1 md:w-full'>
             <AnimatedText
               text="A New Way To Learn & Get Knowledge"
-              className=" varblue-text font-['Inter'] text-[40px] font-semibold leading-[77.455px] mb-4"
+              className="varblue-text font-['Inter'] text-[32px] md:text-[40px] font-semibold leading-[40px] md:leading-[77.455px] mb-4"
             />
-            <p className="font-['Inter'] text-[24px] font-semibold leading-[29.045px] mb-4" style={{ color: 'var(--primary-font-color)' }}>
+            <p className="font-['Inter'] text-[20px] md:text-[20px] font-semibold leading-[20px] md:leading-[29.045px] mb-4" style={{ color: 'var(--primary-font-color)' }}>
               Learn new skills from the comfort of your home or anywhere anytime
             </p>
           </div>
-          <div className='ml-9 flex-1 flex justify-end'>
+          <div className='flex-1 flex justify-center md:justify-center items-center'>
             <FloatingImage
               src={homeImage}
               alt="Home"
-              className='w-[563.701px] h-[350px]'
+              className='hidden sm:hidden  md:block w-[250px] md:w-[350px] lg:w-[563.701px] h-[200px] md:h-[250px] lg:h-[350px]'
             />
           </div>
         </div>
 
-        <span className="block mt-10 mb-6 font-['Inter'] text-[30px] font-semibold leading-[36.307px] capitalize text-left" style={{ color: 'var(--secondary-color)' }}>
+        <span className="block mt-10 mb-6 font-['Inter'] text-[24px] md:text-[30px] font-semibold leading-[30px] md:leading-[36.307px] capitalize text-left" style={{ color: 'var(--secondary-color)' }}>
           Explore our courses
         </span>
 
