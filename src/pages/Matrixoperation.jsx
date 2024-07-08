@@ -5,36 +5,22 @@ import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
 import MatrixAddition from '../components/Matrices/ADDmat'
 import Chatbox from '../components/ChatBox';
+import SectionMenu from '../components/SectionMenu';
 const Matrixoperation = () => {
+  const sections = [
+    { name: 'Definition', link: '/chapter3/Matdefinition' },
+    { name: 'Elementary matrices', link: '/chapter3/Elementary' },
+    { name: 'Operations on matrices', link: '/chapter3/operations' },
+    { name: 'Matrix inverse', link: '/chapter3/MatrixInverse' },
+    { name: 'Take a quiz about matrix', link: '/chapter3/Quiz3' },
+  ];
   return (
     <div className="h-screen flex flex-col">
 
     <TopBar />
-      <div className="flex flex-1 pt-16">   
-    <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
-    <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-yellow-900 " style={{color:'var(--section-title)'}}> MATRIX
-            <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span></h2>
-    <ul className="space-y-9">
-      <li className="bg-gray-300 text-black p-2 rounded-md flex items-center justify-center text-center">
-        <Link to="/chapter3/Matdefinition">Definition</Link>
-      </li>
-      <li className="bg-gray-300 text-black  p-2 rounded-md flex items-center justify-center text-center">
-        <Link to="/chapter3/Elementary">Elementary matrices</Link>
-      </li>
-      <li className="bg-blue-200  p-2 text-blue-600 rounded-md flex items-center justify-center text-center">
-        <Link to="/chapter3/Operations">Operations on matrices</Link>
-      </li>
-      <li className="bg-gray-300  text-black p-2  rounded-md flex items-center justify-center text-center">
-        <Link to="/chapter3/MatrixInverse">matrix inverse</Link>
-      </li>
-      
-      <li className="bg-yellow-200 text-black p-2 rounded-md flex items-center justify-center text-center">
-        <Link to="/chapter3/Quiz3">Take a quiz about matrix</Link>
-      </li>
-      
-    </ul>
-  </div>
-    <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
+    <div className="flex flex-1 pt-16">   
+      <SectionMenu chapter="matrices" sections={sections} />
+        <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 border border-blue-800 shadow-blue-800 rounded-md mx-4 my-5">
    
       
 
