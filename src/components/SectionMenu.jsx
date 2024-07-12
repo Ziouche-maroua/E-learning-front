@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import QuizIcon from "../assets/images/QuizIcon.png"
+import SectionsIcon from "../assets/images/SectionsIcon.png"
 
 const SectionMenu = ({ chapter, sections }) => {
   const [showSections, setShowSections] = useState(false);
@@ -16,17 +18,24 @@ const SectionMenu = ({ chapter, sections }) => {
           {chapter.toUpperCase()}
           <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span>
         </h2>
+       
         <ul className="space-y-8">
           {sections.map((section, index) => (
-            <li
-              key={index}
-              className={`
-                ${location.pathname === section.link ? 'bg-blue-200 text-blue-600' : index === sections.length - 1 ? 'bg-yellow-200 text-black' : 'bg-gray-300 text-black'}
-                p-2 rounded-md flex items-center justify-center text-center
-              `}
-            >
-              <Link to={section.link}>{section.name}</Link>
-            </li>
+          <li
+          key={index}
+          className={`
+            ${location.pathname === section.link ? 'bg-blue-200 text-blue-600' : index === sections.length - 1 ? 'bg-yellow-200 text-black' : 'bg-gray-300 text-black'}
+            p-2 rounded-md flex items-center
+          `}
+        >
+          <img 
+            src={index === sections.length - 1 ? QuizIcon : SectionsIcon} 
+            alt="icon" 
+            className="mr-2"
+            style={{ width: '20px', height: '20px' }} // Adjust size as needed
+          />
+          <Link to={section.link} className="flex-grow text-center">{section.name}</Link>
+        </li>
           ))}
         </ul>
       </div>
