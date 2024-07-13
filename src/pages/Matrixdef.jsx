@@ -15,9 +15,9 @@ const DefinitionMatrixPage = () => {
   return (
     <div>
       <TopBar className="fixed top-0 left-0 right-0 z-10" />
-      <div className="flex flex-1 pt-16">   
+      <div className="flex flex-1 pt-16  overflow-x-hidden"> {/* Added overflow-x-hidden to avoid horizontal scrolling */}    
       <SectionMenu chapter="matrices" sections={sections} />
-        <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 border border-blue-800 shadow-blue-800 rounded-md mx-4 my-5">
+      <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ">
           <h1 className="text-4xl font-bold font-serif my-3 text-center ">Definition</h1>
           <div className="border border-blue-800 border-solid p-2 mx-auto rounded-md w-full">
             <p className="text-base mb-3 text-center"> {/* Adjusted font size to text-base */}
