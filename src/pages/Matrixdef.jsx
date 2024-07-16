@@ -13,9 +13,9 @@ const DefinitionMatrixPage = () => {
     { name: 'Take a quiz about matrix', link: '/chapter3/Quiz3' },
   ];
   return (
-    <div>
+    <div className="h-screen flex flex-col  overflow-x-hidden">{/* Added overflow-x-hidden to avoid horizontal scrolling */}
       <TopBar className="fixed top-0 left-0 right-0 z-10" />
-      <div className="flex flex-1 pt-16  overflow-x-hidden"> {/* Added overflow-x-hidden to avoid horizontal scrolling */}    
+      <div className="flex flex-1 pt-16  ">    
       <SectionMenu chapter="matrices" sections={sections} />
       <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ">
           <h1 className="text-4xl font-bold font-serif my-3 text-center ">Definition</h1>

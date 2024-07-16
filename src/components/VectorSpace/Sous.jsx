@@ -1,36 +1,33 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
+import "../../assets/styles/custom.css";
 
 const AnimatedSubspaceVisualization = () => {
   const [toggle, setToggle] = useState(false);
 
   const bigRectProps = useSpring({
-    from: { width: 0, height: 0 },
-    to: { width: 400, height: 400 },
-    reset: toggle,
+    from: { width: '0px', height: '0px' },
+    to: { width: toggle ? '100%' : '0px', height: toggle ? '100%' : '0px' },
     config: { duration: 1000 },
   });
 
   const smallRectProps = useSpring({
-    from: { width: 0, height: 0 },
-    to: { width: 200, height: 200 },
-    reset: toggle,
+    from: { width: '0px', height: '0px' },
+    to: { width: toggle ? '50%' : '0px', height: toggle ? '50%' : '0px' },
     config: { duration: 1000 },
     delay: 1000,
   });
 
   const arrowProps = useSpring({
-    from: { x: 50, y: 50, opacity: 0 },
-    to: { x: 150, y: 150, opacity: 1 },
-    reset: toggle,
+    from: { x: '12.5%', y: '12.5%', opacity: 0 },
+    to: { x: toggle ? '37.5%' : '12.5%', y: toggle ? '37.5%' : '12.5%', opacity: toggle ? 1 : 0 },
     config: { duration: 1000 },
     delay: 2000,
   });
 
   const arrowProps2 = useSpring({
-    from: { x: 200, y: 200, opacity: 0 },
-    to: { x: 300, y: 300, opacity: 1 },
-    reset: toggle,
+    from: { x: '50%', y: '50%', opacity: 0 },
+    to: { x: toggle ? '75%' : '50%', y: toggle ? '75%' : '50%', opacity: toggle ? 1 : 0 },
     config: { duration: 1000 },
     delay: 2000,
   });
@@ -41,13 +38,13 @@ const AnimatedSubspaceVisualization = () => {
 
   return (
     <div style={{ textAlign: 'center', fontFamily: 'Arial, sans-serif' }}>
-      <h2 className='font-bold text-lg'>Animated Visualization of a Vector Subspace</h2>
-      <div style={{ backgroundColor: '#ffcc66', padding: '16px', borderRadius: '8px', marginTop: '8px' }}>
+      <h2 className='text-3xl md:text-3xl lg:text-4xl text-[#ffc107] font-bold mb-8 mt-4'>Animated Visualization of a Vector Subspace</h2>
+      <div style={{ backgroundColor: '#bfdbfe', padding: '10px', borderRadius: '8px', marginTop: '8px' }}>
         <p style={{ color: '#3d3d3d' }}>
-          <b>Definition:</b> A subspace is a subset of a vector space that is also a vector space.
+          <b className='text-black '>Definition:</b> A subspace is a subset of a vector space that is also a vector space.
         </p>
       </div>
-      <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '8px', marginTop: '8px' }}>
+      <div style={{ backgroundColor: '#9cc6ad', padding: '8px', borderRadius: '8px', marginTop: '8px', marginBottom: '8px' }}>
         <p style={{ color: '#3d3d3d' }}>
           <b>Example:</b> Consider the set of all vectors of the form (x, 0) in R².
         </p>
@@ -57,7 +54,7 @@ const AnimatedSubspaceVisualization = () => {
           <li>If (x, 0) is in the set and c is a scalar, then c * (x, 0) = (cx, 0) is also in the set.</li>
         </ul>
       </div>
-      <div style={{ position: 'relative', width: '400px', height: '400px', margin: '0 auto' }}>
+      <div style={{ position: 'relative', width: '100%', height: '400px', margin: '0 auto' }}>
         <animated.div
           style={{
             position: 'absolute',
@@ -67,24 +64,26 @@ const AnimatedSubspaceVisualization = () => {
             height: bigRectProps.height,
             backgroundColor: '#ffcc66',
             border: '2px solid #ffb366',
+            zIndex: '-5', // Adjust zIndex here
           }}
         />
         <animated.div
           style={{
             position: 'absolute',
-            top: '120px',
-            left: '100px',
+            top: '30%',
+            left: '25%',
             width: smallRectProps.width,
             height: smallRectProps.height,
             backgroundColor: '#ccffcc',
             border: '2px solid #66cc99',
+            zIndex: '-5', // Adjust zIndex here
           }}
         />
         <animated.div
           style={{
             position: 'absolute',
-            top: arrowProps.y.to(v => `${v}px`),
-            left: arrowProps.x.to(v => `${v}px`),
+            top: arrowProps.y,
+            left: arrowProps.x,
             opacity: arrowProps.opacity,
             width: '0',
             height: '0',
@@ -92,13 +91,14 @@ const AnimatedSubspaceVisualization = () => {
             borderRight: '10px solid transparent',
             borderBottom: '20px solid #ff3333',
             transform: 'rotate(45deg)',
+            zIndex: '-5', // Adjust zIndex here
           }}
         />
         <animated.div
           style={{
             position: 'absolute',
-            top: arrowProps2.y.to(v => `${v}px`),
-            left: arrowProps2.x.to(v => `${v}px`),
+            top: arrowProps2.y,
+            left: arrowProps2.x,
             opacity: arrowProps2.opacity,
             width: '0',
             height: '0',
@@ -106,15 +106,17 @@ const AnimatedSubspaceVisualization = () => {
             borderRight: '10px solid transparent',
             borderBottom: '20px solid #3399ff',
             transform: 'rotate(45deg)',
+            zIndex: '-5', // Adjust zIndex here
           }}
         />
         <div
           style={{
             position: 'absolute',
-            top: '180px',
-            left: '230px',
+            top: '45%',
+            left: '57.5%',
             fontWeight: 'bold',
-            color: '#3d3d3d',
+            color: 'varwhite-text',
+             zIndex: '-5'
           }}
         >
           Subspace
@@ -122,10 +124,11 @@ const AnimatedSubspaceVisualization = () => {
         <div
           style={{
             position: 'absolute',
-            top: '50px',
-            left: '50px',
+            top: '12.5%',
+            left: '12.5%',
             fontWeight: 'bold',
-            color: '#3d3d3d',
+            color: 'varwhite-text',
+             zIndex: '-5'
           }}
         >
           Espace Vectoriel
@@ -134,6 +137,7 @@ const AnimatedSubspaceVisualization = () => {
       <button
         onClick={handleReanimate}
         style={{
+         
           padding: '10px 20px',
           backgroundColor: '#ffb366',
           color: '#fff',
@@ -141,6 +145,8 @@ const AnimatedSubspaceVisualization = () => {
           borderRadius: '4px',
           cursor: 'pointer',
           marginTop: '16px',
+         
+          
         }}
       >
         Reanimate
