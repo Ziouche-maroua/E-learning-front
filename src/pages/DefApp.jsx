@@ -18,9 +18,9 @@ const DefApp = () => {
   ];
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col  overflow-x-hidden">{/* Added overflow-x-hidden to avoid horizontal scrolling */} 
       <TopBar />
-      <div className="flex flex-1 pt-16  overflow-x-hidden"> {/* Added overflow-x-hidden to avoid horizontal scrolling */} 
+      <div className="flex flex-1 pt-16 "> 
       
       <SectionMenu chapter="Linear transformation" sections={sections} />
       

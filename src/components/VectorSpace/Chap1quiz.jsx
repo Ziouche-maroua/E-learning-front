@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "../../assets/styles/custom.css";
 
 const Chap1quiz = () => {
     const questions = [

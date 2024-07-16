@@ -17,10 +17,10 @@ const Quiz = () => {
   ];
   
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col  overflow-x-hidden">{/* Added overflow-x-hidden to avoid horizontal scrolling */} 
 
     <TopBar />
-      <div className="flex flex-1 pt-16  overflow-x-hidden"> {/* Added overflow-x-hidden to avoid horizontal scrolling */} 
+      <div className="flex flex-1 pt-16  "> 
       <SectionMenu chapter="Linear Transformation" sections={sections} />
       <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ">
      

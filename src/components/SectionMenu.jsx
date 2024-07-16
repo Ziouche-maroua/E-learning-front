@@ -4,6 +4,14 @@ import QuizIcon from "../assets/images/QuizIcon.png";
 import SectionsIcon from "../assets/images/SectionsIcon.png";
 
 const SectionMenu = ({ chapter, sections }) => {
+
+
+  const chapterPaths = {
+    "LINEAR TRANSFORMATION": "/chapter2",
+    "VECTORS": "/chapter1",
+    "MATRICES": "/chapter3"
+    
+  };
   const [showSections, setShowSections] = useState(false);
   const location = useLocation();
 
@@ -14,10 +22,12 @@ const SectionMenu = ({ chapter, sections }) => {
   return (
     <div>
       <div className={`fixed top-16 left-0 w-full lg:w-1/3 p-4 lg:ml-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ${showSections ? 'block bg-white h-screen' : 'hidden lg:block'}`}>
-        <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative" style={{ color: 'var(--section-title)' }}>
+       <Link to={chapterPaths[chapter.toUpperCase()] }>
+        <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative cursor-pointer" style={{ color: 'var(--primary-font-color)' }}>
           {chapter.toUpperCase()}
           <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span>
         </h2>
+        </Link>
        
         <ul className="space-y-8">
           {sections.map((section, index) => (
