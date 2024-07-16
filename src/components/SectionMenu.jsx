@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import QuizIcon from "../assets/images/QuizIcon.png";
 import SectionsIcon from "../assets/images/SectionsIcon.png";
+import "../assets/styles/custom.css";
 
 const SectionMenu = ({ chapter, sections }) => {
-
-
   const chapterPaths = {
     "LINEAR TRANSFORMATION": "/chapter2",
     "VECTORS": "/chapter1",
     "MATRICES": "/chapter3"
-    
   };
+
   const [showSections, setShowSections] = useState(false);
   const location = useLocation();
 
@@ -21,14 +20,14 @@ const SectionMenu = ({ chapter, sections }) => {
 
   return (
     <div>
-      <div className={`fixed top-16 left-0 w-full lg:w-1/3 p-4 lg:ml-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ${showSections ? 'block bg-white h-screen' : 'hidden lg:block'}`}>
-       <Link to={chapterPaths[chapter.toUpperCase()] }>
-        <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative cursor-pointer" style={{ color: 'var(--primary-font-color)' }}>
-          {chapter.toUpperCase()}
-          <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span>
-        </h2>
+      <div className={`fixed top-16 left-0 w-full lg:w-1/3 p-4 lg:ml-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ${showSections ? 'block varback-color h-screen' : 'hidden lg:block'}`}>
+        <Link to={chapterPaths[chapter.toUpperCase()]}>
+          <h2 className="text-2xl lg:text-3xl font-serif font-extrabold text-center mb-4 relative cursor-pointer" style={{ color: 'var(--primary-font-color)' }}>
+            {chapter.toUpperCase()}
+            <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span>
+          </h2>
         </Link>
-       
+
         <ul className="space-y-8">
           {sections.map((section, index) => (
             <li
@@ -38,9 +37,9 @@ const SectionMenu = ({ chapter, sections }) => {
                 p-2 rounded-md flex items-center
               `}
             >
-              <img 
-                src={index === sections.length - 1 ? QuizIcon : SectionsIcon} 
-                alt="icon" 
+              <img
+                src={index === sections.length - 1 ? QuizIcon : SectionsIcon}
+                alt="icon"
                 className="mr-2"
                 style={{ width: '20px', height: '20px' }} // Adjust size as needed
               />
