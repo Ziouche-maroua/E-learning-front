@@ -71,28 +71,56 @@ const Login = () => {
   return (
     <div>
     <TopBar/>
-    <div className="bg-[#e5f5fa]  pt-24 w-full h-screen flex justify-center items-center overflow-auto">
-      <div className="flex flex-col md:flex-row bg-[#e5f5fa] rounded-lg overflow-hidden max-w-6xl w-full">
-        <div className="md:w-1/3 flex justify-center items-center p-4">
-          <img
-            src={logImage}
-            alt="LogImage"
-            className="w-full max-h-96 object-contain rounded-lg shadow-lg hidden md:block"
-          />
-        </div>
-        <div className="md:w-2/3 p-8 md:p-16 flex flex-col justify-center">
-          <div className="mb-12">
-            <h2 className="text-4xl poetsen-font mb-2">Welcome to</h2>
-            <h3 className="text-4xl poetsen-font text-[#67adee]">FikrSight</h3>
+    <div className="pt-24 w-full h-screen flex justify-center items-center overflow-auto">
+      <div className="flex flex-col md:flex-row rounded-lg overflow-hidden max-w-6xl w-full justify-center items-center">
+        
+        <div className="md:w-2/3 p-8 md:p-16 flex flex-col justify-center items-center">
+          
+          <div className="mb-8 text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl poetsen-font text-[#ffc107]">
+              Welcome Back!
+            </h2>
           </div>
-         
+          
+          <div>
+            <span className="mr-2">Don't have an account?</span>
+            <Link to="/signup" className="ml-2 text-[#ffc107] font-bold">
+              Sign up
+            </Link>
+          </div>
+          {/* google and microsoft login */}
+          <div className="flex justify-between w-full mt-4 gap-2"> {/* Adjusted gap */}
+  <button
+    onClick={handleGoogleSignUp}
+    className="flex items-center justify-center w-[140px] md:w-[160px] h-[40px] bg-[#283593] text-white font-semibold rounded-md shadow-md hover:bg-[#3f51b5] focus:outline-none focus:ring-2 focus:ring-[#3f51b5] focus:ring-offset-2"
+  >
+    <img src={googleIcon} alt="Google" className="w-5 h-5 mr-2" /> {/* Adjusted icon size */}
+    <span className="hidden md:inline">Log in with</span>
+  </button>
+  <button
+    onClick={handleMicrosoftSignUp}
+    className="flex items-center justify-center w-[140px] md:w-[160px] h-[40px] bg-[#283593] text-white font-semibold rounded-md shadow-md hover:bg-[#3f51b5] focus:outline-none focus:ring-2 focus:ring-[#3f51b5] focus:ring-offset-2"
+  >
+    <img src={microsoftIcon} alt="Microsoft" className="w-5 h-5 mr-2" /> {/* Adjusted icon size */}
+    <span className="hidden md:inline">Log in with</span>
+  </button>
+</div>
+          
+          {/* Divider line with "or" */}
+          <div className="flex items-center my-6 w-full">
+            <hr className="flex-1 border-t border-gray-300" />
+            <span className="px-2">or</span>
+            <hr className="flex-1 border-t border-gray-300" />
+          </div>
+          
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="space-y-4">
+              {/* Email Input */}
               <div className="relative w-full">
                 <input
                   type="email"
                   placeholder="Email"
-                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  className="pl-10 pr-4 py-3 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee] text-lg"
                   {...register("email", {
                     required: "Please enter your email",
                   })}
@@ -106,11 +134,13 @@ const Login = () => {
                   className="absolute left-2 top-1/2 transform -translate-y-1/2 w-6 h-6"
                 />
               </div>
+  
+              {/* Password Input */}
               <div className="relative w-full">
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
-                  className="pl-10 pr-4 py-2 w-full bg-[#ffffff] rounded-md focus:outline-none focus:ring-2 focus:ring-[#67adee]"
+                  className="pl-10 pr-4 py-3 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee] text-lg"
                   {...register("password", {
                     required: "Please enter your password",
                   })}
@@ -122,52 +152,21 @@ const Login = () => {
                 )}
               </div>
             </div>
-            <div className="flex space-x-4 mt-12">
-            <button
+            <div className="flex justify-center mt-6">
+              <button
                 type="submit"
-                className="w-[113px] h-[40px] bg-[#5fa1f0] rounded-[10px] text-white font-bold shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+                className="w-full sm:w-[140px] md:w-[160px] lg:w-[180px] h-[48px] bg-[#283593] rounded-full text-white font-bold shadow-md hover:bg-[#3f51b5] focus:outline-none focus:ring-2 focus:ring-[#3f51b5] focus:ring-offset-2"
               >
                 Log in
               </button>
             </div>
           </form>
-          <div className="mt-6 text-lg font-extralight text-[#000] flex  justify-start">
-            <span>Don't have an account?</span>
-            <Link to="/signup" className="ml-2 text-[#79bffb] font-bold">
-              Go to Sign up
-            </Link>
-          </div>
-          <span className="block text-lg font-extralight text-[#000] mt-6">
-            Or you can join with
-          </span>
-          <div className="flex gap-6 mt-4">
-            <button
-              onClick={handleGoogleSignUp}
-              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-            >
-             
-
-
-              <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2" />
-              Sign up with
-            </button>
-            <button
-              onClick={handleMicrosoftSignUp}
-              className="flex items-center justify-center w-[160px] h-[45px] bg-[#79bffb] text-white font-semibold rounded-md shadow-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
-            >
-              <img
-                src={microsoftIcon}
-                alt="Microsoft"
-                className="w-6 h-6 mr-2"
-              />
-              Sign up with
-            </button>
-          </div>
+          
         </div>
       </div>
-    
     </div>
-    </div>
+  </div>
+  
   );
 };
 
