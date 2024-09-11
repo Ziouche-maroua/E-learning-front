@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logImage from "../assets/images/log-image.jpg";
 import emailIcon from "../assets/images/email.png";
 import googleIcon from "../assets/images/google.png";
 import microsoftIcon from "../assets/images/microsoft.png";
@@ -12,6 +11,7 @@ import Cookies from "js-cookie";
 import TopBar from "../components/TopBar";
 
 const Login = () => {
+  const apiUrl =  process.env.REACT_APP_API_URL; 
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -29,7 +29,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       const loginResponse = await axios.post(
-        "http://localhost:3001/api/student/login",
+        `${apiUrl}/student/login`,
         data
       );
       console.log(loginResponse.data);
