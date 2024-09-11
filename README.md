@@ -1,4 +1,4 @@
-# E-Learning Platform: Linear Algebra Visualization
+# E-Learning Platform
 
 
 
@@ -7,10 +7,10 @@
 
 
 <h1>About</h1>
-This project is the front-end repository of an e-learning platform focused on visualizing linear algebra concepts. The platform aims to provide an interactive learning experience for students studying linear algebra.
+This project is the front-end repository of an e-learning platform focused on visualizing linear algebra concepts. The platform aims to provide an interactive learning experience for students.
 
 <h1>Features</h1>
-Interactive Visualizations: Visualize linear algebra concepts to aid understanding.
+Interactive Visualizations: Visualize  concepts to aid understanding.
 User-friendly Interface: Intuitive design for seamless navigation and understanding.
 Responsive Design: Accessible across different devices and screen sizes.
 
