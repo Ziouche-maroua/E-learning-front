@@ -10,6 +10,7 @@ import Cookies from "js-cookie";
 import { useLocation } from "react-router-dom";
 
 function GeneralAlgebra() {
+  const apiUrl =  process.env.REACT_APP_API_URL; 
   const [chapters, setChapters] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function GeneralAlgebra() {
         setLoading(true);
         // Send HTTP GET request to the backend to retrieve modules information
         const response = await axios.get(
-          `http://localhost:3001/api/modules/${id}/chapters`,
+          `${apiUrl}/modules/${id}/chapters`,
           {
             headers: {
               Authorization: `Bearer ${Cookies.get("token")}`, // Replace with your actual token

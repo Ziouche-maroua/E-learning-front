@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 
 const Login = () => {
+  const apiUrl =  process.env.REACT_APP_API_URL; 
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -27,7 +28,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       const loginResponse = await axios.post(
-        "http://localhost:3001/api/student/login",
+        `${apiUrl}/student/login`,
         data
       );
       console.log(loginResponse.data);
