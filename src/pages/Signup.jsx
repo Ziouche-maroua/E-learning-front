@@ -10,6 +10,7 @@ import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 
 const Signup = () => {
+    const apiUrl =  process.env.REACT_APP_API_URL; 
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -37,7 +38,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/student/register",
+         `${apiUrl}/student/register`,
         data
       );
 
