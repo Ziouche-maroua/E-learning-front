@@ -20,7 +20,7 @@ const AppProperties = () => {
       <TopBar />
       <div className="flex flex-1 pt-16">
         <SectionMenu chapter="Linear Transformation" sections={sections} />
-        <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5 bg-white lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md">
+        <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5  lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md">
           <p className="text-2xl kanit-font mt-4 mb-8">
             A linear transformation between two vector spaces is a mapping that preserves vector addition and scalar multiplication.
           </p>
