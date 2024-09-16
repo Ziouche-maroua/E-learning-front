@@ -120,7 +120,7 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="pl-10 pr-4 py-3 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee] text-lg"
+                  className="pl-10 pr-4 py-3 w-full text-black bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee] text-lg"
                   {...register("email", {
                     required: "Please enter your email",
                   })}
@@ -140,7 +140,7 @@ const Login = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
-                  className="pl-10 pr-4 py-3 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee] text-lg"
+                  className="pl-10 pr-4 py-3 w-full text-black  bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee] text-lg"
                   {...register("password", {
                     required: "Please enter your password",
                   })}

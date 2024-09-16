@@ -1,8 +1,6 @@
-
 import React, { useState } from 'react';
 
 const MatrixAnimation = () => {
-
     const [matrixA, setMatrixA] = useState([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
     const [matrixB, setMatrixB] = useState([[9, 8, 7], [6, 5, 4], [3, 2, 1]]);
     const [step, setStep] = useState(0);
@@ -89,10 +87,12 @@ const MatrixAnimation = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-10 space-y-5">
-           <h1 className="text-2xl font-bold mb-4">Matrix Multiplication</h1>
-            <p className="mb-4">Matrix multiplication is a binary operation that produces a matrix from two matrices. For two matrices A and B, the number of columns in A must be equal to the number of rows in B. The resulting matrix will have the dimensions of rows of A by columns of B.</p>
-            <div className="flex justify-center items-center space-x-10">
-                <div className="text-center">
+            <h1 className="text-2xl font-bold mb-4">Matrix Multiplication</h1>
+            <p className="mb-4">
+                Matrix multiplication is a binary operation that produces a matrix from two matrices. For two matrices A and B, the number of columns in A must be equal to the number of rows in B. The resulting matrix will have the dimensions of rows of A by columns of B.
+            </p>
+            <div className="flex flex-col sm:flex-row sm:space-x-10">
+                <div className="flex flex-col items-center mb-4 sm:mb-0 sm:w-1/3">
                     <h3 className="text-lg font-semibold mb-2">Matrix A</h3>
                     <div className="grid grid-cols-3 gap-1">
                         {matrixA.map((row, i) => (
@@ -111,7 +111,7 @@ const MatrixAnimation = () => {
                         ))}
                     </div>
                 </div>
-                <div className="text-center">
+                <div className="flex flex-col items-center mb-4 sm:mb-0 sm:w-1/3">
                     <h3 className="text-lg font-semibold mb-2">Matrix B</h3>
                     <div className="grid grid-cols-3 gap-1">
                         {matrixB.map((row, i) => (
@@ -130,7 +130,7 @@ const MatrixAnimation = () => {
                         ))}
                     </div>
                 </div>
-                <div className="text-center">
+                <div className="flex flex-col items-center sm:w-1/3">
                     <h3 className="text-lg font-semibold mb-2">Result</h3>
                     <div className="grid grid-cols-3 gap-1">
                         {resultMatrix.map((row, i) => (
@@ -138,7 +138,7 @@ const MatrixAnimation = () => {
                                 {row.map((cell, j) => (
                                     <div
                                         key={j}
-                                        className={`w-10 h-10 border border-gray-300 flex items-center justify-center transition-all duration-500 bg-transparent`}
+                                        className="w-10 h-10 border border-gray-300 flex items-center justify-center transition-all duration-500 bg-transparent"
                                         style={{ backgroundColor: getResultColor(i, j) }}
                                     >
                                         {cell}
@@ -149,15 +149,14 @@ const MatrixAnimation = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center">
+            <div className="text-center mb-4">
                 <h3 className="text-lg font-semibold mb-2">Multiplication Steps</h3>
-                {
-                animationMatrix.map((row, i) => (
-                    <div key={i} className="flex flex-col">
+                {animationMatrix.map((row, i) => (
+                    <div key={i} className="flex flex-col mb-2">
                         {row.map((operation, j) => (
                             <div
                                 key={j}
-                                className={`transition-all duration-500`}
+                                className="transition-all duration-500 mb-1"
                                 style={{ backgroundColor: step === i * row.length + j ? stepColors[i][j] : 'transparent' }}
                             >
                                 {operation}

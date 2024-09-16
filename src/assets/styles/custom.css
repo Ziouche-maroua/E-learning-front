@@ -68,6 +68,41 @@
     color: var(--second-text-color);
 }
 
+
+/* custom.css */
+
+@media (max-width: 768px) {
+    .matrix-input {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .inverse-matrix {
+      font-size: 12px;
+    }
+  
+    .matrix-container {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .matrix-input {
+      width: 100%;
+      font-size: 16px;
+    }
+  
+    .inverse-matrix {
+      font-size: 16px;
+    }
+  
+    .matrix-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+
 .varwhite-text {
     color: var(--second-text-color);
 }

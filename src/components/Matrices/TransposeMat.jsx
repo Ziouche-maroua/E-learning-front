@@ -51,7 +51,7 @@ const MatrixVisualizations = () => {
         <p className="mb-4">
           The transpose of a matrix is a new matrix obtained by swapping the rows and columns of the original matrix.
         </p>
-        <div className="flex justify-center items-center space-x-10">
+        <div className="flex justify-center items-center space-x-10 mr-2">
           <div className="mr-10 text-center">
             <p className="font-bold mb-2">A =</p>
             {renderMatrix(matrix, 3, originalColors)}
