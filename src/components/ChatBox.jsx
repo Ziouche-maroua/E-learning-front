@@ -55,7 +55,7 @@ const Chatbox = () => {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 w-80 sm:w-96 md:w-96 max-w-full flex flex-col items-end z-30">
+        <div className="mb-3 bottom-4 right-4 w-80 sm:w-96 md:w-96 max-w-full flex flex-col items-end z-30 md:fixed lg:bottom-4 lg:right-4">
             {state && (
                 <div className="flex flex-col bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden w-full mb-4 z-30">
                     <div className="flex items-center p-2 bg-[#ffc107] text-white z-30">
@@ -88,9 +88,9 @@ const Chatbox = () => {
                     </div>
                     <div className="p-2 border-t border-gray-300 text-black bg-yellow-100">
                         <span className="font-semibold">Suggested Questions:</span>
-                        <div className="mt-2 max-h-32 overflow-y-auto  ">
+                        <div className="mt-2 max-h-32 overflow-y-auto">
                             {matrixQuestions.map((question, index) => (
-                                <div key={index} className=" text-black cursor-pointer hover:underline" onClick={() => handleQuestionClick(question.question)}>
+                                <div key={index} className="text-black cursor-pointer hover:underline" onClick={() => handleQuestionClick(question.question)}>
                                     {question.question}
                                 </div>
                             ))}

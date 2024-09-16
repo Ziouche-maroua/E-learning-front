@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
-import "../../assets/styles/custom.css"
+import "../../assets/styles/custom.css";
+
 const MatrixCalculator = () => {
   const [matrix, setMatrix] = useState([
     [0, 0, 0],
@@ -19,13 +19,9 @@ const MatrixCalculator = () => {
     setMatrix(newMatrix);
   };
 
-  const isSquareMatrix = (mat) => {
-    return mat.length === mat[0].length;
-  };
+  const isSquareMatrix = (mat) => mat.length === mat[0].length;
 
-  const isZeroMatrix = (mat) => {
-    return mat.every(row => row.every(value => value === 0));
-  };
+  const isZeroMatrix = (mat) => mat.every(row => row.every(value => value === 0));
 
   const createIdentityMatrix = (size) => {
     const identity = [];
@@ -41,12 +37,11 @@ const MatrixCalculator = () => {
   const augmentMatrixWithIdentity = (mat) => {
     const size = mat.length;
     const identity = createIdentityMatrix(size);
-    const augmented = mat.map((row, i) => [...row, ...identity[i]]);
-    return augmented;
+    return mat.map((row, i) => [...row, ...identity[i]]);
   };
 
   const performGaussianElimination = () => {
-    setErrorMessage(''); // Clear previous error messages
+    setErrorMessage('');
     if (!isSquareMatrix(matrix)) {
       setErrorMessage('Matrix must be square to find the inverse.');
       return;
@@ -60,9 +55,7 @@ const MatrixCalculator = () => {
     const steps = [];
     const size = mat.length;
 
-    // Forward elimination to get Echelon Form
     for (let i = 0; i < size; i++) {
-      // Pivot if the diagonal element is zero
       if (mat[i][i] === 0) {
         let swapped = false;
         for (let j = i + 1; j < size; j++) {
@@ -78,14 +71,12 @@ const MatrixCalculator = () => {
         }
       }
 
-      // Make the diagonal contain all 1's
       let factor = mat[i][i];
       for (let j = 0; j < mat[i].length; j++) {
         mat[i][j] /= factor;
       }
-      steps.push({ matrix: JSON.parse(JSON.stringify(mat)), changedCells: [[i, i]] }); // Store the step
+      steps.push({ matrix: JSON.parse(JSON.stringify(mat)), changedCells: [[i, i]] });
 
-      // Make all rows below this one 0 in the current column
       for (let k = i + 1; k < size; k++) {
         factor = mat[k][i];
         const changedCells = [];
@@ -93,11 +84,10 @@ const MatrixCalculator = () => {
           mat[k][l] -= factor * mat[i][l];
           changedCells.push([k, l]);
         }
-        steps.push({ matrix: JSON.parse(JSON.stringify(mat)), changedCells }); // Store the step
+        steps.push({ matrix: JSON.parse(JSON.stringify(mat)), changedCells });
       }
     }
 
-    // Backward elimination to get Reduced Row Echelon Form (RREF)
     for (let i = size - 1; i >= 0; i--) {
       for (let k = i - 1; k >= 0; k--) {
         const factor = mat[k][i];
@@ -106,7 +96,7 @@ const MatrixCalculator = () => {
           mat[k][l] -= factor * mat[i][l];
           changedCells.push([k, l]);
         }
-        steps.push({ matrix: JSON.parse(JSON.stringify(mat)), changedCells }); // Store the step
+        steps.push({ matrix: JSON.parse(JSON.stringify(mat)), changedCells });
       }
     }
 
@@ -117,8 +107,8 @@ const MatrixCalculator = () => {
     setCurrentStep(0);
   };
 
-  const renderMatrix = (mat, changedCells = []) => {
-    return (
+  const renderMatrix = (mat, changedCells = []) => (
+    <div className="overflow-x-auto">
       <table className="table-auto mx-auto mb-4">
         <tbody>
           {mat.map((row, rowIndex) => (
@@ -131,10 +121,12 @@ const MatrixCalculator = () => {
                 return (
                   <td key={colIndex}>
                     <input
-                      type="text"
-                      value={isNaN(value) || !isFinite(value) ? '' : value.toFixed(2)}
-                      readOnly
-                      className={`border border-gray-300 w-12 h-10 text-center p-2 m-1 ${isChanged ? 'bg-yellow-100' : 'bg-blue-100'}`}
+                      type="number"
+                      value={isNaN(value) || !isFinite(value) ? '' : value}
+                      onChange={(e) => handleChange(rowIndex, colIndex, e.target.value)}
+                      className={`border border-gray-300 w-8 h-8 text-center p-1 m-1 ${isChanged ? 'bg-yellow-100' : 'bg-blue-100'}`}
+                      step="any" // Allows float values
+                      min="-1000000" // Allows negative values
                     />
                   </td>
                 );
@@ -143,8 +135,8 @@ const MatrixCalculator = () => {
           ))}
         </tbody>
       </table>
-    );
-  };
+    </div>
+  );
 
   const handleReset = () => {
     setMatrix([
@@ -160,23 +152,25 @@ const MatrixCalculator = () => {
   };
 
   return (
-    <div className=" shadow-lg rounded-lg p-8 w-full max-w-4xl mx-auto mt-8 border border-blue-200">
+    <div className="shadow-lg rounded-lg p-8 w-full max-w-4xl mx-auto mt-8 border border-blue-200">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-center mb-6 text-blue-600">Fill the Matrix</h1>
-        <div className="flex justify-center">
-          <div className="mr-4">
+        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="w-full sm:w-1/2">
             <h2 className="text-xl font-bold mb-4 text-center text-blue-600">Input Matrix</h2>
-            <table className="table-auto">
+            <table className="table-auto w-full">
               <tbody>
                 {matrix.map((row, rowIndex) => (
                   <tr key={rowIndex}>
                     {row.map((value, colIndex) => (
                       <td key={colIndex}>
                         <input
-                          type="text"
+                          type="number"
                           value={value}
                           onChange={(e) => handleChange(rowIndex, colIndex, e.target.value)}
-                          className="border varback-color border-gray-300 w-12 h-10 text-center p-2 m-1"
+                          className="border border-gray-300 w-12 h-10 text-center p-1 m-1"
+                          step="any" // Allows float values
+                          min="-1000000" // Allows negative values
                         />
                       </td>
                     ))}
@@ -186,7 +180,7 @@ const MatrixCalculator = () => {
             </table>
           </div>
           {inverseMatrix.length > 0 && (
-            <div>
+            <div className="w-full sm:w-1/2">
               <h2 className="text-xl font-bold mb-4 text-center text-blue-600">Inverse Matrix</h2>
               {renderMatrix(inverseMatrix)}
             </div>
@@ -223,18 +217,7 @@ const MatrixCalculator = () => {
                   Next Step
                 </button>
               </div>
-              {steps[currentStep] && (
-                <div className="mb-4">
-                  <h3 className="text-lg font-bold mb-2 text-blue-600">Step {currentStep + 1}</h3>
-                  {renderMatrix(steps[currentStep].matrix, steps[currentStep].changedCells)}
-                </div>
-              )}
-              {currentStep === 0 && (
-                <div className="text-center text-gray-600 font-bold">Initial Matrix</div>
-              )}
-              {currentStep === steps.length - 1 && (
-                <div className="text-center text-gray-600 font-bold">Final Inverse Matrix</div>
-              )}
+              {steps[currentStep] && renderMatrix(steps[currentStep].matrix, steps[currentStep].changedCells)}
             </div>
           )}
         </div>
@@ -242,18 +225,16 @@ const MatrixCalculator = () => {
       <div className="text-center">
         <button
           onClick={performGaussianElimination}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded shadow-lg mr-4"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded mr-2 mb-3"
         >
           Calculate Inverse
         </button>
-        {inverseMatrix.length > 0 && (
-          <button
-            onClick={handleReset}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded shadow-lg"
-          >
-            Reset
-          </button>
-        )}
+        <button
+          onClick={handleReset}
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
+        >
+          Reset
+        </button>
       </div>
     </div>
   );
