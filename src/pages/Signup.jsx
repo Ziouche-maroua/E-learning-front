@@ -10,7 +10,7 @@ import Cookies from "js-cookie";
 import '../assets/styles/custom.css'
 import TopBar from "../components/TopBar";
 const Signup = () => {
-
+  const apiUrl =  process.env.REACT_APP_API_URL; 
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -29,36 +29,39 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     console.log(data);
-
+  
     if (data.password !== data.confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
-
+  
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/student/register",
+        `${apiUrl}/student/register`,
         data
       );
-
+  
       if (response?.status === 201) {
         console.log(response.data);
         toast.success("Successful registration");
-        await Cookies.set("token", response.data.token); // Token will expire in 7 days
+        Cookies.set("token", response.data.token); // Token will expire in 7 days
       }
     } catch (error) {
-
-      if (error.response.status === 400) {
-
-        toast.error("User already exists");
-
-        console.log(Cookies.get("token"));
+      // Check if error.response exists and has a status property
+      if (error.response) {
+        if (error.response.status === 400) {
+          toast.error("User already exists");
+        } else {
+          toast.error("An error has occurred");
+        }
       } else {
-        console.error(error);
-        toast.error("An error has occurred");
+        // Handle network errors or other issues where error.response is not available
+        toast.error("Network error or server not reachable");
       }
+      console.error(error);
     }
   };
+  
 
   const handleGoogleSignUp = () => {
     console.log("Google sign up clicked");
@@ -129,7 +132,7 @@ const Signup = () => {
     <input
       type="text"
       placeholder="First name"
-      className="pl-10 pr-4 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
+      className="pl-10 pr-4 py-2 w-full text-black bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
       {...register("first_name", {
         required: "Please enter your first name",
         pattern: {
@@ -150,7 +153,7 @@ const Signup = () => {
     <input
       type="text"
       placeholder="Last name"
-      className="pl-10 pr-4 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
+      className="pl-10 pr-4 py-2 w-full text-black  bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
       {...register("last_name", {
         required: "Please enter your last name",
         minLength: {
@@ -167,7 +170,7 @@ const Signup = () => {
     <input
       type="text"
       placeholder="Matricule"
-      className="pl-10 pr-4 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
+      className="pl-10 pr-4 py-2 w-full text-black bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
       {...register("matricule_student", {
         required: "Please enter your matricule",
         minLength: {
@@ -184,7 +187,7 @@ const Signup = () => {
     <input
       type="email"
       placeholder="Email"
-      className="pl-10 pr-4 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
+      className="pl-10 pr-4 py-2 w-full  text-black bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
       {...register("email", {
         required: "Please enter an email",
         pattern: {
@@ -205,39 +208,56 @@ const Signup = () => {
     />
   </div>
 
-  {/* Password Field */}
-  <div className="relative w-full">
-    <input
-      type={showPassword ? "text" : "password"}
-      placeholder="Password"
-      className="pl-10 pr-4 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
-      {...register("password", {
-        required: "Please enter a password",
-        minLength: {
-          value: 6,
-          message: "Password must be at least 6 characters",
-        },
-      })}
-    />
-    {errors.password && <span className="text-red-500">{errors.password.message}</span>}
+ {/* Password Field */}
+<div className="relative w-full">
+  <input
+    type={showPassword ? "text" : "password"}
+    placeholder="Password"
+    className="pl-10 pr-10 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
+    {...register("password", {
+      required: "Please enter a password",
+      minLength: {
+        value: 6,
+        message: "Password must be at least 6 characters",
+      },
+    })}
+  />
+  {errors.password && <span className="text-red-500">{errors.password.message}</span>}
+  
+  {/* Eye Icon for Password Visibility */}
+  <div
+    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
+    onClick={togglePasswordVisibility}
+  >
+   {showPassword ? "🔒" : "👁️"} 
   </div>
+</div>
 
-  {/* Confirm Password Field */}
-  <div className="relative w-full">
-    <input
-      type={showPasswordTwo ? "text" : "password"}
-      placeholder="Confirm Password"
-      className="pl-10 pr-4 py-2 w-full bg-[#ffffff] border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
-      {...register("confirmPassword", {
-        required: "Please confirm your password",
-        minLength: {
-          value: 6,
-          message: "Password must be at least 6 characters",
-        },
-      })}
-    />
-    {errors.confirmPassword && <span className="text-red-500">{errors.confirmPassword.message}</span>}
+{/* Confirm Password Field */}
+<div className="relative w-full">
+  <input
+    type={showPasswordTwo ? "text" : "password"}
+    placeholder="Confirm Password"
+    className="pl-10 pr-10 py-2 w-full bg-[#ffffff] border text-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#67adee] focus:border-[#67adee]"
+    {...register("confirmPassword", {
+      required: "Please confirm your password",
+      minLength: {
+        value: 6,
+        message: "Password must be at least 6 characters",
+      },
+    })}
+  />
+  {errors.confirmPassword && <span className="text-red-500">{errors.confirmPassword.message}</span>}
+  
+  {/* Eye Icon for Confirm Password Visibility */}
+  <div
+    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
+    onClick={togglePasswordVisibilityTwo}
+  >
+    {showPasswordTwo ? "🔒" : "👁️"} 
   </div>
+</div>
+
 </div>
 
 
