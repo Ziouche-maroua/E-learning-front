@@ -58,14 +58,14 @@ const Login = () => {
     }
   };
 
-  const handleGoogleSignUp = () => {
-    console.log('Google sign up clicked');
-    // Handle Google sign up logic here
+  const handleGoogleLogin = () => {
+    console.log('Google login clicked');
+    // Handle Google login logic here
   };
 
-  const handleMicrosoftSignUp = () => {
-    console.log('Microsoft sign up clicked');
-    // Handle Microsoft sign up logic here
+  const handleMicrosoftLogin = () => {
+    console.log('Microsoft login clicked');
+    // Handle Microsoft login logic here
   };
 
   return (
@@ -91,14 +91,14 @@ const Login = () => {
           {/* google and microsoft login */}
           <div className="flex justify-between w-full mt-4 gap-2"> {/* Adjusted gap */}
   <button
-    onClick={handleGoogleSignUp}
+    onClick={handleGoogleLogin}
     className="flex items-center justify-center w-[140px] md:w-[160px] h-[40px] bg-[#283593] text-white font-semibold rounded-md shadow-md hover:bg-[#3f51b5] focus:outline-none focus:ring-2 focus:ring-[#3f51b5] focus:ring-offset-2"
   >
     <img src={googleIcon} alt="Google" className="w-5 h-5 mr-2" /> {/* Adjusted icon size */}
     <span className="hidden md:inline">Log in with</span>
   </button>
   <button
-    onClick={handleMicrosoftSignUp}
+    onClick={handleMicrosoftLogin}
     className="flex items-center justify-center w-[140px] md:w-[160px] h-[40px] bg-[#283593] text-white font-semibold rounded-md shadow-md hover:bg-[#3f51b5] focus:outline-none focus:ring-2 focus:ring-[#3f51b5] focus:ring-offset-2"
   >
     <img src={microsoftIcon} alt="Microsoft" className="w-5 h-5 mr-2" /> {/* Adjusted icon size */}
@@ -150,6 +150,12 @@ const Login = () => {
                     {errors.password.message}
                   </span>
                 )}
+                 <div
+    className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
+    onClick={togglePasswordVisibility}
+  >
+    {showPassword ? "🔒" : "👁️"} 
+  </div>
               </div>
             </div>
             <div className="flex justify-center mt-6">
