@@ -124,7 +124,7 @@ const MatrixCalculator = () => {
                       type="number"
                       value={isNaN(value) || !isFinite(value) ? '' : value}
                       onChange={(e) => handleChange(rowIndex, colIndex, e.target.value)}
-                      className={`border border-gray-300 w-8 h-8 text-center p-1 m-1 ${isChanged ? 'bg-yellow-100' : 'bg-blue-100'}`}
+                      className={`border border-gray-300 w-8 h-8  text-black text-center p-1 m-1 ${isChanged ? 'bg-yellow-100' : 'bg-blue-100'}`}
                       step="any" // Allows float values
                       min="-1000000" // Allows negative values
                     />
@@ -168,7 +168,7 @@ const MatrixCalculator = () => {
                           type="number"
                           value={value}
                           onChange={(e) => handleChange(rowIndex, colIndex, e.target.value)}
-                          className="border border-gray-300 w-12 h-10 text-center p-1 m-1"
+                          className="border text-black  border-gray-300 w-12 h-10 text-center p-1 m-1"
                           step="any" // Allows float values
                           min="-1000000" // Allows negative values
                         />
@@ -204,7 +204,7 @@ const MatrixCalculator = () => {
               <div className="flex justify-center mt-4 mb-4">
                 <button
                   onClick={() => setCurrentStep(currentStep - 1)}
-                  className={`bg-${currentStep <= 0 ? 'gray' : 'blue'}-500 hover:bg-${currentStep <= 0 ? 'gray' : 'blue'}-700 text-white font-bold py-1 px-2 rounded mr-2`}
+                  className={`bg-${currentStep <= 0 ? 'gray' : 'blue'}-500 hover:bg-${currentStep <= 0 ? 'gray' : 'blue'}-700  font-bold py-1 px-2 rounded mr-2`}
                   disabled={currentStep <= 0}
                 >
                   Previous Step
