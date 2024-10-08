@@ -9,7 +9,7 @@ import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 import '../assets/styles/custom.css'
 import TopBar from "../components/TopBar";
-import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
+// import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
 
 
  
@@ -69,7 +69,7 @@ const Signup = () => {
   };
   
 
-  const { loginWithRedirect } = useKindeAuth();
+ // const { loginWithRedirect } = useKindeAuth();
   
 
 
