@@ -29,7 +29,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       const loginResponse = await axios.post(
-        `${apiUrl}/student/login`,
+        `${apiUrl}/api/student/login`,
         data
       );
       console.log(loginResponse.data);

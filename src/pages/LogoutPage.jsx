@@ -8,7 +8,7 @@ function LogoutPage() {
     Cookies.remove("token");
     navigate("/login");
   }, []);
-  return <div className="pt-15">loading Log out page ...</div>;
+  return <div className="pt-15">loading...</div>;
 }
 
 export default LogoutPage;
