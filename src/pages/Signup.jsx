@@ -9,8 +9,14 @@ import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 import '../assets/styles/custom.css'
 import TopBar from "../components/TopBar";
+import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
+
+
+ 
+
 const Signup = () => {
-  const apiUrl =  process.env.REACT_APP_API_URL; 
+  const apiUrl =  process.env.REACT_APP_API_URL;
+  console.log(apiUrl) 
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -37,7 +43,7 @@ const Signup = () => {
   
     try {
       const response = await axios.post(
-        `${apiUrl}/student/register`,
+        `${apiUrl}/api/student/register`,
         data
       );
   
@@ -63,14 +69,20 @@ const Signup = () => {
   };
   
 
+  const { loginWithRedirect } = useKindeAuth();
+  
+
+
   const handleGoogleSignUp = () => {
-    console.log("Google sign up clicked");
-    // Handle Google sign up logic here
+    // loginWithRedirect({
+    //   provider: 'google',
+    // });
   };
 
   const handleMicrosoftSignUp = () => {
-    console.log("Microsoft sign up clicked");
-    // Handle Microsoft sign up logic here
+    // loginWithRedirect({
+    //   provider: 'microsoft',
+    // });
   };
 
   return (

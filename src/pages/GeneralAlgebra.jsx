@@ -20,7 +20,7 @@ function GeneralAlgebra() {
     const fetchChapters = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${apiUrl}/modules/${id}/chapters`, {
+        const response = await axios.get(`${apiUrl}/api/modules/${id}/chapters`, {
           headers: {
             Authorization: `Bearer ${Cookies.get("token")}`,
             "Content-Type": "application/json",
