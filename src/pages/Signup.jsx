@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import emailIcon from "../assets/images/email.png";
 import { useForm } from "react-hook-form";
 import googleIcon from "../assets/images/google.png";
@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast";
 import Cookies from "js-cookie";
 import '../assets/styles/custom.css'
 import TopBar from "../components/TopBar";
+
 // import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
 
 
@@ -24,6 +25,7 @@ const Signup = () => {
     register,
     formState: { errors },
   } = useForm();
+  const navigate=useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -50,7 +52,12 @@ const Signup = () => {
       if (response?.status === 201) {
         console.log(response.data);
         toast.success("Successful registration");
-        Cookies.set("token", response.data.token); // Token will expire in 7 days
+        await Cookies.set("token", response.data.token); // Token will expire in 7 days
+        const route = Cookies.get("redirectAfterSignup");
+        if (route) {
+          navigate(route);
+          Cookies.remove("redirectAfterSignup");
+        } else navigate("/");
       }
     } catch (error) {
       // Check if error.response exists and has a status property
