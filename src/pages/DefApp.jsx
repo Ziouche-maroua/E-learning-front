@@ -1,69 +1,42 @@
-
 import React, { useState } from 'react';
-import Chatbox from '../components/ChatBox'; 
-import Def from '../components/DefOfLinearTransformation';
-import DefDynamic from '../components/TransformationDynamicExample';
+import Chatbox from '../components/ChatBox';
+import Def from '../components/LinearTransformation/DefOfLinearTransformation';
+import DefDynamic from '../components/LinearTransformation/TransformationDynamicExample';
 import { Link } from 'react-router-dom';
 import TopBar from '../components/TopBar';
-
+import SectionMenu from '../components/SectionMenu';
+import { color } from 'd3';
 
 const DefApp = () => {
-  const [showSections, setShowSections] = useState(false);
-
-  const toggleSections = () => {
-    setShowSections(!showSections);
-  };
+  const sections = [
+    { name: 'Definition', link: '/chapter2/definition' },
+    { name: 'Properties', link: '/chapter2/properties' },
+    { name: 'Image and Kernel', link: '/chapter2/KernalImg' },
+    { name: 'Bijectif, Surjectif, Injectif', link: '/chapter2/InjectifSurjectif' },
+    { name: 'Endomorphism and Isomorphism', link: '/chapter2/Morphisme' },
+    { name: 'Quiz', link: '/chapter2/Quiz' },
+  ];
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col  overflow-x-hidden">{/* Added overflow-x-hidden to avoid horizontal scrolling */} 
       <TopBar />
-      <div className="flex flex-1 pt-16">
-      <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
-    <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-yellow-900 ">  LINEAR TRANSFORMATION
-            <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span></h2>
-    <ul className="space-y-9">
-      <li className=" bg-blue-200   p-2  text-blue-600 rounded-md">
-        <Link to="/chapter2/definition">Definition</Link>
-      </li>
-      <li className="bg-gray-300  p-2  rounded-md">
-        <Link to="/chapter2/properties">Properties</Link>
-      </li>
-      <li className="bg-gray-300 p-2 rounded-md">
-        <Link to="/chapter2/KernalImg">Image and Kernel</Link>
-      </li>
-      <li className="bg-gray-300  p-2 rounded-md">
-        <Link to="/chapter2/InjectifSurjectif">Bijectif, Surjectif, Injectif</Link>
-      </li>
-      <li className="bg-gray-300  p-2 rounded-md">
-        <Link to="/chapter2/Morphisme">Endomorphism and Isomorphism</Link>
-      </li>
-      <li className="bg-yellow-200 text-gray-800 p-2 rounded-md">
-        <Link to="/chapter2/Quiz">Take a quiz about linear transformation</Link>
-      </li>
+      <div className="flex flex-1 pt-16 "> 
       
-    </ul>
-  </div>
-        <div className="w-full lg:w-2/3 border p-4 mx-4 my-5 border-blue-800 shadow-blue-800">
-         
-          <p className="text-2xl font-bold text-gray-800 mb-4">
+      <SectionMenu chapter="Linear transformation" sections={sections} />
+      
+      <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ">
+          <p className="text-2xl kanit-font  mt-4 mb-8">
             A linear transformation is a mathematical function between two vector spaces that respects vector addition
             and scalar multiplication. It describes how vectors in one space are transformed into vectors in another
             while preserving the structure of the spaces involved.
           </p>
           <Def />
-          <p className="text-yellow-950">Try it yourself!</p>
+          <p className="text-2xl  kanit-font mt-4"  style={{color:'var(--section-title)'}}>Try it yourself!</p>
           <DefDynamic />
         </div>
       </div>
-      <div className="fixed bottom-4 right-4 lg:hidden">
-        <button
-          className="px-2 py-1 bg-blue-500 text-white rounded-md shadow-md"
-          onClick={toggleSections}
-        >
-          {showSections ? 'Hide Sections' : 'Show Sections'}
-        </button>
-      </div>
-    <Chatbox/>
+    
+      <Chatbox />
     </div>
   );
 };

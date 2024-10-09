@@ -1,46 +1,27 @@
 import React from 'react';
-import Chap1quiz from '../components/Chap1quiz';
+import Chap1quiz from '../components/VectorSpace/Chap1quiz';
 import Chatbox from '../components/ChatBox';
-import { Link } from 'react-router-dom';
-import TopBar from '../components/TopBar';
 
+import TopBar from '../components/TopBar';
+import SectionMenu from '../components/SectionMenu';
 
 
 const VSQuiz = () => {
+  const sections = [
+    { name: 'Definition', link: '/chapter1/definition' },
+    { name: 'Subspace', link: '/chapter1/Subspace' },
+    { name: 'Linearly Independent Family', link: '/chapter1/Lesfamilles' },
+    { name: 'Generating Family', link: '/chapter1/FamilleG' },
+    { name: 'Base and dimension', link: '/chapter1/BaseDim' },
+    { name: 'Take a quiz about vector space', link: '/chapter1/VSQuiz' },
+  ];
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col overflow-x-hidden">{/* Added overflow-x-hidden to avoid horizontal scrolling */}
 
     <TopBar />
-      <div className="flex flex-1 pt-16">   
-    <div className="w-1/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
-          <h2 className="text-3xl font-serif font-extrabold text-center mb-4 relative text-purple-900 "> ALGEBRA
-            <span className="absolute w-full h-1 bg-gray-600 bottom-0 left-0"></span></h2> 
-    <ul className="space-y-9">
-      <li className=" bg-gray-300 p-2 rounded-md ">
-        <Link to="/chapter1/definition">Definition</Link>
-        </li>
-        <li className="bg-gray-300 p-2 rounded-md">
-        <Link to="/chapter1/Subspace">Subspace</Link>
-      </li>
-      
-      <li className="bg-gray-300 p-2 rounded-md">
-        <Link to="/chapter1/Lesfamilles">Linearly Independent Family</Link>
-      </li>
-      <li className="bg-gray-300 p-2 rounded-md">
-        <Link to="/chapter1/FamilleG">Generating Family </Link>
-      </li>
-    
-      <li className="bg-gray-300 p-2 rounded-md">
-        <Link to="/chapter1/BaseDim">Base and dimension </Link>
-      </li>
-      
-      <li className="bg-yellow-200 text-gray-800 p-2 rounded-md">
-        <Link to="/chapter1/VSQuiz">Take a quiz about vector space</Link>
-      </li>
-      
-    </ul>
-  </div>
-    <div className="w-2/3 border border-blue-800 shadow-blue-800 p-4 mx-4 my-5 rounded-md">
+    <div className="flex flex-1 pt-16  "> 
+      <SectionMenu chapter="vectors" sections={sections} />
+      <div className="w-full lg:w-2/3 lg:ml-[37%] p-4 lg:my-5 lg:border lg:border-blue-800 lg:shadow-blue-800 rounded-md ">
       <Chap1quiz/>
       
     </div>
