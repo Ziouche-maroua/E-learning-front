@@ -9,7 +9,9 @@ import Cookies from "js-cookie";
 import Chatbox from "../components/ChatBox";
 
 function GeneralAlgebra() {
+
   const apiUrl = process.env.REACT_APP_API_URL;
+
   const [chapters, setChapters] = useState([]);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -20,13 +22,23 @@ function GeneralAlgebra() {
     const fetchChapters = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`${apiUrl}/api/modules/${id}/chapters`, {
-          headers: {
-            Authorization: `Bearer ${Cookies.get("token")}`,
-            "Content-Type": "application/json",
-          },
-        });
-        setChapters(response.data);
+
+        // Send HTTP GET request to the backend to retrieve modules information
+        const response = await axios.get(
+          `${apiUrl}/modules/${id}/chapters`,
+          {
+            headers: {
+              Authorization: `Bearer ${Cookies.get("token")}`, // Replace with your actual token
+              "Content-Type": "application/json",
+              // Add other headers as needed
+            },
+          }
+        );
+
+        // Update the state with the retrieved data
+        console.log(response);
+        await setChapters(response.data);
+
       } catch (error) {
         console.error(
           "Erreur lors de la récupération des informations utilisateur:",

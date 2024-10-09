@@ -16,8 +16,10 @@ import TopBar from "../components/TopBar";
  
 
 const Signup = () => {
+
   const apiUrl =  process.env.REACT_APP_API_URL;
   console.log(apiUrl) 
+
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
   const {
@@ -46,6 +48,7 @@ const Signup = () => {
     try {
       const response = await axios.post(
         `${apiUrl}/api/student/register`,
+
         data
       );
   
@@ -300,4 +303,5 @@ const Signup = () => {
 
 
 export default Signup;
+
 

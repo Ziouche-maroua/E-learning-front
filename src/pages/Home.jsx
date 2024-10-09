@@ -7,9 +7,11 @@ import algebra from '../assets/images/algebra.webp';
 import algorithm from '../assets/images/algorithm.png';
 import sfsd from '../assets/images/sfsd.webp';
 import probability from '../assets/images/probability.webp';
+
 import AnimatedText from '../components/Animations/AnimatedText';
 import FloatingImage from '../components/Animations/FloatingImage';
 import '../assets/styles/custom.css'; // Import the custom CSS file
+
 
 const Home = () => {
   return (
